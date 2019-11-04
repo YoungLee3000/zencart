@@ -4,9 +4,9 @@
 // |zen-cart Open Source E-commerce                                       |
 // +----------------------------------------------------------------------+
 // | Copyright (c) 2003 The zen-cart developers                           |
-// |                                                                      |   
-// | http://www.zen-cart.com/index.php                                    |   
-// |                                                                      |   
+// |                                                                      |
+// | http://www.zen-cart.com/index.php                                    |
+// |                                                                      |
 // | Portions Copyright (c) 2003 osCommerce                               |
 // +----------------------------------------------------------------------+
 // | This source file is subject to version 2.0 of the GPL license,       |
@@ -20,10 +20,10 @@
 // $Id: zones.php 1969 2005-09-13 06:57:21Z drbyte $
 //
 
-define('MODULE_SHIPPING_ZONES_TEXT_TITLE', 'Zone Rates');
-define('MODULE_SHIPPING_ZONES_TEXT_DESCRIPTION', 'Zone Based Rates');
-define('MODULE_SHIPPING_ZONES_TEXT_WAY', 'Shipping to');
-define('MODULE_SHIPPING_ZONES_TEXT_UNITS', 'lb(s)');
-define('MODULE_SHIPPING_ZONES_INVALID_ZONE', 'No shipping available to the selected country');
-define('MODULE_SHIPPING_ZONES_UNDEFINED_RATE', 'The shipping rate cannot be determined at this time');
+define('MODULE_SHIPPING_ZONES_TEXT_TITLE', 'Zones Tarifaires');
+define('MODULE_SHIPPING_ZONES_TEXT_DESCRIPTION', 'Frais de livraison par zone');
+define('MODULE_SHIPPING_ZONES_TEXT_WAY', 'Livraison vers');
+define('MODULE_SHIPPING_ZONES_TEXT_UNITS', 'kg(s)');
+define('MODULE_SHIPPING_ZONES_INVALID_ZONE', 'Pas de livraison possible vers le pays sélectionné');
+define('MODULE_SHIPPING_ZONES_UNDEFINED_RATE', 'Le coût de livraison ne peut être actuellement déterminé');
 ?>

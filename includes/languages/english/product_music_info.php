@@ -7,41 +7,41 @@
  * @version $Id: product_music_info.php 6371 2007-05-25 19:55:59Z ajeh $
  */
 
-define('TEXT_PRODUCT_NOT_FOUND', 'Sorry, the product was not found.');
-define('TEXT_CURRENT_REVIEWS', 'Current Reviews:');
-define('TEXT_RECORD_COMPANY_URL', 'For more information, please visit the Record Company\'s <a href="%s" target="_blank">webpage</a>.');
-define('TEXT_ARTIST_URL', 'For more information, please visit the Artist\'s <a href="%s" target="_blank">webpage</a>.');
-define('TEXT_DATE_ADDED', 'This product was added to our catalog on %s.');
-define('TEXT_DATE_AVAILABLE', 'This product will be in stock on %s.');
-define('TEXT_ALSO_PURCHASED_PRODUCTS', 'Customers who bought this product also purchased...');
-define('TEXT_PRODUCT_OPTIONS', 'Please Choose: ');
-define('TEXT_PRODUCT_RECORD_COMPANY', 'Record Company: ');
-define('TEXT_PRODUCT_ARTIST', 'Artist: ');
-define('TEXT_PRODUCT_MUSIC_GENRE', 'Music Genre: ');
-define('TEXT_PRODUCT_WEIGHT', 'Shipping Weight: ');
-define('TEXT_PRODUCT_QUANTITY', ' Units in Stock');
-define('TEXT_PRODUCT_MODEL', 'Model: ');
-define('TEXT_PRODUCT_COLLECTIONS', 'Media Collection: ');
+define('TEXT_PRODUCT_NOT_FOUND', 'Désolé, le produit n\'a pas été trouvé.');
+define('TEXT_CURRENT_REVIEWS', 'Avis en cours : ');
+define('TEXT_RECORD_COMPANY_URL', 'Pour plus d\'informations, veuillez consulter la <a href="%s" target="_blank">page web</a> de la maison de disques.');
+define('TEXT_ARTIST_URL', 'Pour plus d\'informations, veuillez consulter la <a href="%s" target="_blank">page web</a> de l\'artiste.');
+define('TEXT_DATE_ADDED', 'Ce produit a été ajouté à notre catalogue le %s.');
+define('TEXT_DATE_AVAILABLE', 'Ce produit sera en stock le %s.');
+define('TEXT_ALSO_PURCHASED_PRODUCTS', 'Les clients qui ont choisi ce produit ont également acheté ...');
+define('TEXT_PRODUCT_OPTIONS', 'Veuillez choisir : ');
+define('TEXT_PRODUCT_RECORD_COMPANY', 'Maison de disques : ');
+define('TEXT_PRODUCT_ARTIST', 'Artiste:  ');
+define('TEXT_PRODUCT_MUSIC_GENRE', 'Genre de musique : ');
+define('TEXT_PRODUCT_WEIGHT', 'Poids de livraison : ');
+define('TEXT_PRODUCT_QUANTITY', ' unités en stock');
+define('TEXT_PRODUCT_MODEL', 'Modèle : ');
+define('TEXT_PRODUCT_COLLECTIONS', 'Collection de médias : ');
 
 
 
 // previous next product
-define('PREV_NEXT_PRODUCT', 'Product ');
-define('PREV_NEXT_FROM', ' from ');
-define('IMAGE_BUTTON_PREVIOUS','Previous Item');
-define('IMAGE_BUTTON_NEXT','Next Item');
-define('IMAGE_BUTTON_RETURN_TO_PRODUCT_LIST','Back to Product List');
+define('PREV_NEXT_PRODUCT', 'Produit ');
+define('PREV_NEXT_FROM', ' de ');
+define('IMAGE_BUTTON_PREVIOUS','Article précédent');
+define('IMAGE_BUTTON_NEXT','Article suivant');
+define('IMAGE_BUTTON_RETURN_TO_PRODUCT_LIST','Retour à la liste des produits');
 
 // missing products
-//define('TABLE_HEADING_NEW_PRODUCTS', 'New Products For %s');
-//define('TABLE_HEADING_UPCOMING_PRODUCTS', 'Upcoming Products');
-//define('TABLE_HEADING_DATE_EXPECTED', 'Date Expected');
+//define('TABLE_HEADING_NEW_PRODUCTS', 'Nouveautés pour %s');
+//define('TABLE_HEADING_UPCOMING_PRODUCTS', 'Produits attendus');
+//define('TABLE_HEADING_DATE_EXPECTED', 'Date prévue');
 
-define('TEXT_ATTRIBUTES_PRICE_WAS',' [was: ');
-define('TEXT_ATTRIBUTE_IS_FREE',' now is: Free]');
+define('TEXT_ATTRIBUTES_PRICE_WAS',' [était : ');
+define('TEXT_ATTRIBUTE_IS_FREE',' est à présent : Gratuit]');
 define('TEXT_ONETIME_CHARGE_SYMBOL', ' *');
-define('TEXT_ONETIME_CHARGE_DESCRIPTION', ' One time charges may apply');
-define('TEXT_ATTRIBUTES_QTY_PRICE_HELP_LINK','Quantity Discounts Available');
+define('TEXT_ONETIME_CHARGE_DESCRIPTION', ' Des frais uniques peuvent s\'appliquer');
+define('TEXT_ATTRIBUTES_QTY_PRICE_HELP_LINK','Remises disponibles par quantités');
 define('ATTRIBUTES_QTY_PRICE_SYMBOL', zen_image(DIR_WS_TEMPLATE_ICONS . 'icon_status_green.gif', TEXT_ATTRIBUTES_QTY_PRICE_HELP_LINK, 10, 10) . '&nbsp;');
 
 define('ATTRIBUTES_PRICE_DELIMITER_PREFIX', ' ( ');

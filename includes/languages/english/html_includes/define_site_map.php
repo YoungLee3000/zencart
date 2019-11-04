@@ -1,2 +1,2 @@
-<p><strong>To assist you in navigating our site, we have provided the following map.</strong></p>
-<p>If you are having difficulty in locating something on our site, please visit our <a href="<?php echo zen_href_link(FILENAME_CONTACT_US, '', 'SSL'); ?>">Contact Us </a> page and let us know! </p>
+<p><strong>Pour vous aider à naviguer sur notre site, nous vous proposons le plan suivant.<br /></strong></p>
+<p>Si vous avez des difficultés pour trouver quelque chose sur notre site, veuillez visiter la page <a href="<?php echo zen_href_link(FILENAME_CONTACT_US); ?>">Contactez nous</a> et faites le nous savoir !</p>

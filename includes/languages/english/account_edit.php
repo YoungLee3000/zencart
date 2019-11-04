@@ -20,10 +20,10 @@
 // $Id: account_edit.php 1969 2005-09-13 06:57:21Z drbyte $
 //
 
-define('NAVBAR_TITLE_1', 'My Account');
-define('NAVBAR_TITLE_2', 'Edit Account');
+  define('NAVBAR_TITLE_1', 'Mon Compte');
+  define('NAVBAR_TITLE_2', 'Éditer mon compte');
 
-define('HEADING_TITLE', 'My Account Information');
+  define('HEADING_TITLE', 'Informations de mon compte');
 
-define('SUCCESS_ACCOUNT_UPDATED', 'Your account has been successfully updated.');
+  define('SUCCESS_ACCOUNT_UPDATED', 'Votre compte a été mis à jour avec succès.');
 ?>

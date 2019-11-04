@@ -7,7 +7,7 @@
  * @version $Id: perweightunit.php 2667 2005-12-24 05:31:58Z drbyte $
  */
 
-  define('MODULE_SHIPPING_PERWEIGHTUNIT_TEXT_TITLE', 'Per Unit');
-  define('MODULE_SHIPPING_PERWEIGHTUNIT_TEXT_DESCRIPTION', 'Per Unit');
-  define('MODULE_SHIPPING_PERWEIGHTUNIT_TEXT_WAY', 'Best Way');
+  define('MODULE_SHIPPING_PERWEIGHTUNIT_TEXT_TITLE', 'Par Unité');
+  define('MODULE_SHIPPING_PERWEIGHTUNIT_TEXT_DESCRIPTION', 'Par unité');
+  define('MODULE_SHIPPING_PERWEIGHTUNIT_TEXT_WAY', 'Meilleure route');
 ?>

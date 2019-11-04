@@ -20,6 +20,6 @@
 // $Id: ot_group_pricing.php 1969 2005-09-13 06:57:21Z drbyte $
 //
 
-  define('MODULE_ORDER_TOTAL_GROUP_PRICING_TITLE', 'Group Discount');
-  define('MODULE_ORDER_TOTAL_GROUP_PRICING_DESCRIPTION', 'Group Discount');
+  define('MODULE_ORDER_TOTAL_GROUP_PRICING_TITLE', 'Réduction de Groupe');
+  define('MODULE_ORDER_TOTAL_GROUP_PRICING_DESCRIPTION', 'Réduction de Groupe');
 ?>

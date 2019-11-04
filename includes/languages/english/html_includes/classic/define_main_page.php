@@ -1,4 +1,4 @@
-<a href="http://www.zen-cart.com/book"><img src="images/large/e-start-book.gif" alt="get your manual today" title="Have you got yours yet? Join the 1000's of Zen Cart users that have bought the only comprehensive owners manual !" /></a>
-<p>This content is located in the file at: <code> /languages/english/html_includes/classic/define_main_page.php</code></p>
-<p>You can quickly edit this content via Admin->Tools->Define Pages Editor, and select define_main_page from the pulldown.</p>
-<p><strong>NOTE: Always backup the files in<code> /languages/english/html_includes/your_template</code></strong></p>
+<a href="http://www.zen-cart.com/book"><img title="Avez vous déjà le vôtre ? Rejoignez les milliers d'utilisateurs de Zen Cart qui ont acheté le seul manuel utilisateur compréhensif !" alt="Obtenez votre manuel aujourd'hui" src="images/large/e-start-book.gif" /></a>
+<p>Ce contenu se situe dans le fichier: <code>/languages/english/html_includes/classic/define_main_page.php</code></p>
+<p>Vous pouvez modifier rapidement ce contenu via Admin->Outils->éditeur des pages 'define', puis choisir define_main_page dans le menu déroulant.</p>
+<p><strong>NOTE : Sauvegardez toujours les fichiers dans <code>/languages/french/html_includes/your_template</code></strong></p>

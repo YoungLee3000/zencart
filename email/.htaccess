@@ -19,24 +19,14 @@
 
 # deny *everything*
 <FilesMatch ".*">
-  <IfModule mod_authz_core.c>
-    Require all denied
-  </IfModule>
-  <IfModule !mod_authz_core.c>
-    Order Allow,Deny
-    Deny from all
-  </IfModule>
+  Order Allow,Deny
+  Deny from all
 </FilesMatch>
 
 # but now allow just *certain* necessary files:
 <FilesMatch "(?i).*\.(jpe?g|gif|png)$">
-  <IfModule mod_authz_core.c>
-    Require all granted
-  </IfModule>
-  <IfModule !mod_authz_core.c>
-    Order Allow,Deny
-    Allow from all
-  </IfModule>
+  Order Allow,Deny
+  Allow from all
 </FilesMatch>
 
 IndexIgnore */*

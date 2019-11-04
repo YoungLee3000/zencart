@@ -1,3 +1,3 @@
-<p><strong>Contact Us Sample Text ...</strong></p>
-<p>This section of text is from the Define Pages Editor located under Tools in the Admin.</p>
-<p>To remove this section of the text, delete it from the Define Pages Editor.</p>
+<p><strong>Exemple de texte pour la page Contactez nous ...</strong></p>
+<p>Ce texte peut être modifié dans l'éditeur des pages 'define' situé dans le menu Outils de l'Administration.</p>
+<p>Pour enlever ce texte, supprimez le dans ce même éditeur de pages.</p>

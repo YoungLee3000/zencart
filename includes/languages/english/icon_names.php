@@ -16,11 +16,10 @@ define('ICON_IMAGE_UPDATE', 'button_update_cart.gif');
 define('ICON_IMAGE_TINYCART', 'cart.gif');
 
 //alt tags for buttons
-define('ICON_ERROR_ALT', 'Error');
-define('ICON_SUCCESS_ALT', 'Success');
-define('ICON_WARNING_ALT', 'Warning');
-define('ICON_TRASH_ALT', 'Delete this item from the cart by clicking this icon.');
-define('ICON_UPDATE_ALT', 'Change your quantity by highlighting the number in the box, correcting the quantity and clicking this button.');
-define('ICON_TINYCART_ALT', 'Add this product to your cart by clicking here.');
-
+define('ICON_ERROR_ALT', 'Erreur');
+define('ICON_SUCCESS_ALT', 'Succès');
+define('ICON_WARNING_ALT', 'Attention');
+define('ICON_TRASH_ALT', 'Enlevez cet article du panier en cliquant cet icône.');
+define('ICON_UPDATE_ALT', 'Modifiez votre quantité en surlignant le nombre dans la boîte, en rectifiant la quantité et en cliquant ce bouton.');
+define('ICON_TINYCART_ALT', 'Ajoutez cet article dans votre panier en cliquant ici.');
 ?>

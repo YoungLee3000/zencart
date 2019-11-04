@@ -8,8 +8,8 @@
 // | http://www.zen-cart.com/index.php                                    |
 // |                                                                      |
 // | Portions Copyright (c) 2003 osCommerce                               |
-// | Created by: Linda McGrath zencart@WebMakers.com |
-//+----------------------------------------------------------------------+
+// | Created by: Linda McGrath zencart@WebMakers.com                      |
+//+-----------------------------------------------------------------------+
 // | This source file is subject to version 2.0 of the GPL license,       |
 // | that is bundled with this package in the file LICENSE, and is        |
 // | available through the world-wide-web at the following url:           |
@@ -21,10 +21,10 @@
 // $Id: down_for_maintenance.php 1969 2005-09-13 06:57:21Z drbyte $
 //
 
-define('NAVBAR_TITLE', 'Down for Maintenance');
-define('HEADING_TITLE', 'Down for Maintenance ...');
-define('DOWN_FOR_MAINTENANCE_TEXT_INFORMATION', 'The site is currently down for maintenance. Please excuse the dust, and try back later.');
-define('TEXT_MAINTENANCE_ON_AT_TIME', 'The Admin / Webmaster has enabled maintenance at : ');
-define('TEXT_MAINTENANCE_PERIOD', 'Maintenance period: ');
-define('DOWN_FOR_MAINTENANCE_STATUS_TEXT', 'To verify the site status ... Click here:');
+define('NAVBAR_TITLE', 'Arrêté pour maintenance');
+define('HEADING_TITLE', 'Arrêté pour maintenance');
+define('DOWN_FOR_MAINTENANCE_TEXT_INFORMATION', 'Le site est actuellement arrêté pour maintenance. Veuillez nous excuser pour la gêne occasionnée, et réessayez plus tard.');
+define('TEXT_MAINTENANCE_ON_AT_TIME', 'L\'Administrateur / Le Webmaster a activé la maintenance à : ');
+define('TEXT_MAINTENANCE_PERIOD', 'Durée de la maintenance : ');
+define('DOWN_FOR_MAINTENANCE_STATUS_TEXT', 'Pour vérifier le statut du site ... Cliquez ici :');
 ?>

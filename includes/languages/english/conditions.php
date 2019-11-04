@@ -4,9 +4,9 @@
 // |zen-cart Open Source E-commerce                                       |
 // +----------------------------------------------------------------------+
 // | Copyright (c) 2003 The zen-cart developers                           |
-// |                                                                      |   
-// | http://www.zen-cart.com/index.php                                    |   
-// |                                                                      |   
+// |                                                                      |
+// | http://www.zen-cart.com/index.php                                    |
+// |                                                                      |
 // | Portions Copyright (c) 2003 osCommerce                               |
 // +----------------------------------------------------------------------+
 // | This source file is subject to version 2.0 of the GPL license,       |
@@ -20,8 +20,8 @@
 // $Id: conditions.php 1969 2005-09-13 06:57:21Z drbyte $
 //
 
-define('NAVBAR_TITLE', 'Conditions of Use');
-define('HEADING_TITLE', 'Conditions of Use');
+  define('NAVBAR_TITLE', 'Conditions d\'Utilisation');
+  define('HEADING_TITLE', 'Conditions d\'Utilisation');
 
-define('TEXT_INFORMATION', 'Your Conditions of Use information should be on this page.');
+  define('TEXT_INFORMATION', 'Vos informations sur les conditions d\'utilisation devraient être sur cette page');
 ?>

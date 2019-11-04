@@ -20,18 +20,18 @@
 // $Id: popup_cvv_help.php 1969 2005-09-13 06:57:21Z drbyte $
 //
 
-define('HEADING_CVV', 'What is CVV?');
-define('TEXT_CVV_HELP1', 'Visa, Mastercard, Discover 3 Digit Card Verification Number<br /><br />
-                    For your safety and security, we require that you enter your card\'s verification number.<br /><br />
-                    The verification number is a 3-digit number printed on the back of your card.
-                    It appears after and to the right of your card number.<br />' .
+  define('HEADING_CVV', 'Que signifie CVV ?');
+  define('TEXT_CVV_HELP1', '<strong>Card Verification Number. Il s\'agit du cryptogramme des cartes bancaires Visa, Mastercard, Discover...</strong><br /><br />
+                    Pour votre sécurité et la protection de vos données personnelles, nous vous demandons d\'entrer le numéro de vérification de votre carte bancaire.<br /><br />
+                    Ce numéro de vérification est formé par les 3 derniers chiffres qui figurent au dos de votre carte.
+                    Ces chiffres sont habituellement imprimés à droite ou à gauche de votre numéro principal.<br /><br />' .
                     zen_image(DIR_WS_TEMPLATE_ICONS . 'cvv2visa.gif'));
 
-define('TEXT_CVV_HELP2', 'American Express 4 Digit Card Verification Number<br /><br />
-                    For your safety and security, we require that you enter your card\'s verification number.<br /><br />
-                    The American Express verification number is a 4-digit number printed on the front of your card.
-                    It appears after and to the right of your card number.<br />' .
+  define('TEXT_CVV_HELP2', '<strong>Cryptogramme à 4 chiffres des Cartes American Express</strong><br /><br />
+                    Pour votre sécurité et la protection de vos données personnelles, nous vous demandons d\'entrer le numéro de vérification de votre carte bancaire.<br />
+                    Le numéro de vérification est le numéro formé par les 3 derniers chiffres qui figurent au recto de votre carte.
+                    Ces chiffres sont habituellement imprimés à droite de votre numéro principal.<br /><br />' .
                     zen_image(DIR_WS_TEMPLATE_ICONS . 'cvv2amex.gif'));
 
-define('TEXT_CLOSE_CVV_WINDOW', 'Close Window [x]');
+  define('TEXT_CLOSE_CVV_WINDOW', '[ Fermer la fenêtre [x] ]');
 ?>

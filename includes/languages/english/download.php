@@ -7,4 +7,4 @@
  * @version $Id: download.php 15514 2010-02-18 07:27:05Z drbyte $
  */
 
-define('ERROR_CUSTOMER_DOWNLOAD_FAILURE', 'Customer Download Failure');
+define('ERROR_CUSTOMER_DOWNLOAD_FAILURE', 'Échec du téléchargement client');

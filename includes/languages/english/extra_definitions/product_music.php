@@ -4,9 +4,9 @@
 // |zen-cart Open Source E-commerce                                       |
 // +----------------------------------------------------------------------+
 // | Copyright (c) 2004 The zen-cart developers                           |
-// |                                                                      |   
-// | http://www.zen-cart.com/index.php                                    |   
-// |                                                                      |   
+// |                                                                      |
+// | http://www.zen-cart.com/index.php                                    |
+// |                                                                      |
 // | Portions Copyright (c) 2003 osCommerce                               |
 // +----------------------------------------------------------------------+
 // | This source file is subject to version 2.0 of the GPL license,       |
@@ -19,8 +19,8 @@
 // +----------------------------------------------------------------------+
 // $Id: 
 //
-define('BOX_HEADING_MUSIC_GENRES', 'Music Genres');
-define('BOX_HEADING_RECORD_COMPANY', 'Record Companies');
-define('PULL_DOWN_RECORD_COMPANIES', '- Reset -');
-define('PULL_DOWN_MUSIC_GENRES', '- Reset -');
+define('BOX_HEADING_MUSIC_GENRES', 'Genres de Musiques');
+define('BOX_HEADING_RECORD_COMPANY', 'Maisons de Disques');
+define('PULL_DOWN_RECORD_COMPANIES', '- Réinitialiser -');
+define('PULL_DOWN_MUSIC_GENRES', '- Réinitialiser -');
 ?>

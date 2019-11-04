@@ -7,12 +7,12 @@
  * @version GIT: $Id: Author: DrByte  Sun Feb 17 23:22:33 2013 -0500 Modified in v1.5.2 $
  */
 
-define('NAVBAR_TITLE', 'Your Download ...');
-define('HEADING_TITLE', 'Your Download ...');
+define('NAVBAR_TITLE', 'Votre téléchargement ...');
+define('HEADING_TITLE', 'Votre téléchargement ...');
 
-define('TEXT_INFORMATION', 'We\'re sorry but your download has expired.<br /><br />
-  If you had other downloads and wish to retrieve them,
-  please go to your <a href="' . zen_href_link(FILENAME_ACCOUNT, '', 'SSL') . '">My Account</a> page to view your order.<br /><br />
-  Or, if you believe that there is a problem with your order, please <a href="' . zen_href_link(FILENAME_CONTACT_US, '', 'SSL') . '">Contact Us</a> <br /><br />
-  Thank you!
+define('TEXT_INFORMATION', 'Nous sommes désolés mais votre téléchargement a expiré.<br /><br />
+  Si vous aviez d\'autres téléchargements et que vous voulez les récupérer,
+  veuillez vous rendre sur la page <a href="' . zen_href_link(FILENAME_ACCOUNT, '', 'SSL') . '">Mon compte</a> pour visualiser vos commandes.<br /><br />
+  Ou, si vous pensez qu\'il y a un problème avec votre commande, veuillez <a href="' . zen_href_link(FILENAME_CONTACT_US) . '">nous contacter</a> <br /><br />
+  Merci !
   ');

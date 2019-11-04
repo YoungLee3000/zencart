@@ -4,9 +4,9 @@
 // |zen-cart Open Source E-commerce                                       |
 // +----------------------------------------------------------------------+
 // | Copyright (c) 2004 The zen-cart developers                           |
-// |                                                                      |   
-// | http://www.zen-cart.com/index.php                                    |   
-// |                                                                      |   
+// |                                                                      |
+// | http://www.zen-cart.com/index.php                                    |
+// |                                                                      |
 // | Portions Copyright (c) 2003 osCommerce                               |
 // +----------------------------------------------------------------------+
 // | This source file is subject to version 2.0 of the GPL license,       |
@@ -23,5 +23,5 @@
 // comment out the ones you do not which to use
 // to show nothing, comment all out except one and define as ''
 //define('TEXT_PRODUCT_FREE_SHIPPING_ICON', 'FREE SHIPPING'); // for text or set to '' for nothing
-define('TEXT_PRODUCT_FREE_SHIPPING_ICON', zen_image(DIR_WS_TEMPLATE_IMAGES . 'always-free-shipping.gif', 'Always Free Shipping')); // for an image or comment out to use another
+define('TEXT_PRODUCT_FREE_SHIPPING_ICON', zen_image(DIR_WS_TEMPLATE_IMAGES . 'always-free-shipping.gif', 'Livraison Toujours Gratuite')); // for an image or comment out to use another
 ?>

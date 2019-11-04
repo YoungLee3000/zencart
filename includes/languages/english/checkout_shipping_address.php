@@ -7,26 +7,26 @@
  * @version $Id: checkout_shipping_address.php 2315 2005-11-07 08:41:46Z drbyte $
  */
 
-define('NAVBAR_TITLE', 'Change Shipping Address');
-define('NAVBAR_TITLE_1', 'Checkout');
-define('NAVBAR_TITLE_2', 'Change Shipping Address');
+define('NAVBAR_TITLE', 'Modifier l\'adresse de livraison');
+define('NAVBAR_TITLE_1', 'Encaissement');
+define('NAVBAR_TITLE_2', 'Modifier l\'adresse de livraison');
 
-define('HEADING_TITLE', 'Change the Shipping Address');
+define('HEADING_TITLE', 'Modifier l\'adresse de livraison');
 
-define('TABLE_HEADING_SHIPPING_ADDRESS', 'Shipping Address');
-define('TITLE_SHIPPING_ADDRESS', 'Current Shipping Address');
+define('TABLE_HEADING_SHIPPING_ADDRESS', 'Adresse de livraison');
+define('TITLE_SHIPPING_ADDRESS', 'Adresse de livraison actuelle');
 
-define('TABLE_HEADING_ADDRESS_BOOK_ENTRIES', '...Or Choose From Your Address Book Entries');
-define('TITLE_PLEASE_SELECT', 'Change the Shipping Address for This Order');
+define('TABLE_HEADING_ADDRESS_BOOK_ENTRIES', '... ou choisissez parmi les entrées du carnet d\'adresses');
+define('TITLE_PLEASE_SELECT', 'Modifiez l\'adresse de livraison pour cette commande');
 
-define('TABLE_HEADING_NEW_SHIPPING_ADDRESS', 'New Shipping Address');
-define('TEXT_CREATE_NEW_SHIPPING_ADDRESS', 'Please use the following form to create a new shipping address for use with this order.');
-define('TEXT_SELECT_OTHER_SHIPPING_DESTINATION', 'Please select the preferred shipping address if this order is to be delivered elsewhere.');
+define('TABLE_HEADING_NEW_SHIPPING_ADDRESS', 'Nouvelle adresse de livraison');
+define('TEXT_CREATE_NEW_SHIPPING_ADDRESS', 'Veuillez utiliser le formulaire suivant pour créer une nouvelle adresse de livraison à utiliser pour cette commande.');
+define('TEXT_SELECT_OTHER_SHIPPING_DESTINATION', 'Veuillez choisir l\'adresse de livraison préféréee si cette commande doit être livrée ailleurs.');
 
-define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', '<strong>Continue</strong>');
-define('TEXT_CONTINUE_CHECKOUT_PROCEDURE', '- to shipping method.');
+define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', '<strong>Continuer</strong>');
+define('TEXT_CONTINUE_CHECKOUT_PROCEDURE', '- vers la méthode de livraison.');
 
-define('SET_AS_PRIMARY', 'Set as Primary Address');
-define('NEW_ADDRESS_TITLE', 'Enter new address');
+define('SET_AS_PRIMARY', 'Établir en tant qu\'adresse principale');
+define('NEW_ADDRESS_TITLE', 'Entrez la nouvelle adresse');
 
 ?>

@@ -4,9 +4,9 @@
 // |zen-cart Open Source E-commerce                                       |
 // +----------------------------------------------------------------------+
 // | Copyright (c) 2003 The zen-cart developers                           |
-// |                                                                      |   
-// | http://www.zen-cart.com/index.php                                    |   
-// |                                                                      |   
+// |                                                                      |
+// | http://www.zen-cart.com/index.php                                    |
+// |                                                                      |
 // | Portions Copyright (c) 2003 osCommerce                               |
 // +----------------------------------------------------------------------+
 // | This source file is subject to version 2.0 of the GPL license,       |
@@ -23,5 +23,5 @@
 define('NAVBAR_TITLE', 'Page 4');
 define('HEADING_TITLE', 'Page 4');
 
-define('TEXT_INFORMATION', 'Page 4 information goes here.');
+define('TEXT_INFORMATION', 'Le texte de la page 4 va ici.');
 ?>

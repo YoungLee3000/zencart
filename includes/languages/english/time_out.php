@@ -7,13 +7,15 @@
  * @version $Id: time_out.php 3027 2006-02-13 17:15:51Z drbyte $
  */
 
-define('NAVBAR_TITLE', 'Login Time Out');
-define('HEADING_TITLE', 'Whoops! Your session has expired.');
-define('HEADING_TITLE_LOGGED_IN', 'Whoops! Sorry, but you are not allowed to perform the action requested. ');
-define('TEXT_INFORMATION', '<p>If you were placing an order, please login and your shopping cart will be restored. You may then go back to the checkout and complete your final purchases.</p><p>If you had completed an order and wish to review it' . (DOWNLOAD_ENABLED == 'true' ? ', or had a download and wish to retrieve it' : '') . ', please go to your <a href="' . zen_href_link(FILENAME_ACCOUNT, '', 'SSL') . '">My Account</a> page to view your order.</p>');
+define('NAVBAR_TITLE', 'Déconnexion Automatique');
+define('HEADING_TITLE', 'Hoop-là ! Votre session a expiré');
+define('HEADING_TITLE_LOGGED_IN', 'Hoop-là ! Désolé, mais vous n\'êtes pas autorisé(e) à effectuer l\'action demandée. ');
+define('TEXT_INFORMATION', '<p>Si vous êtiez en train de passer commande, veuillez vous connecter et votre panier sera restauré. Vous pourrez alors revenir à l\'encaissement et terminer votre achat final.</p><p>Si vous aviez terminé une commande et vous souhaitez la contôler' . (DOWNLOAD_ENABLED == 'true' ? ', ou si vous aviez un téléchargement et souhaitez le reprendre' : '') . ', veuillez vous rendre sur votre page <a href="' . zen_href_link(FILENAME_ACCOUNT, '', 'SSL') . '">Mon Compte</a> pour visualiser votre commande.');
 
-define('TEXT_INFORMATION_LOGGED_IN', 'You are still logged in to your account and may continue shopping. Please choose a destination from a menu.');
+  
 
-define('HEADING_RETURNING_CUSTOMER', 'Login');
-define('TEXT_PASSWORD_FORGOTTEN', 'Forgot Your Password?')
+define('TEXT_INFORMATION_LOGGED_IN', 'Vous êtes toujours connecté à votre compte et vous pouvez continuer vos achats. Veuillez choisir une destination à partir du menu.');
+
+define('HEADING_RETURNING_CUSTOMER', 'Connexion');
+define('TEXT_PASSWORD_FORGOTTEN', 'Mot de passe oublié ?');
 ?>

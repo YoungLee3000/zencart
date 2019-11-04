@@ -20,15 +20,15 @@
 // $Id: products_all.php 1969 2005-09-13 06:57:21Z drbyte $
 //
 
-define('NAVBAR_TITLE', 'All Products');
-define('HEADING_TITLE', 'All Products');
+define('NAVBAR_TITLE', 'Tous les Produits');
+define('HEADING_TITLE', 'Tous les Produits');
 
-define('TEXT_DATE_ADDED', 'Date Added:');
-define('TEXT_MANUFACTURER', 'Manufacturer:');
-define('TEXT_PRICE', 'Price:');
+define('TEXT_DATE_ADDED', 'Date de création :');
+define('TEXT_MANUFACTURER', 'Fabricant :');
+define('TEXT_PRICE', 'Prix :');
 
-define('TEXT_PRODUCTS_MODEL','Model: ');
-define('TEXT_PRODUCTS_WEIGHT','Weight: ');
-define('TEXT_PRODUCTS_QUANTITY','In Stock: ');
-define('TEXT_OUT_OF_STOCK','Out of Stock');
+define('TEXT_PRODUCTS_MODEL', 'Modèle : ');
+define('TEXT_PRODUCTS_WEIGHT','Poids : ');
+define('TEXT_PRODUCTS_QUANTITY','En stock : ');
+define('TEXT_OUT_OF_STOCK','Épuisé');
 ?>

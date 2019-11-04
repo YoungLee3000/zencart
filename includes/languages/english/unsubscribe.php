@@ -10,11 +10,11 @@
  * @version $Id: unsubscribe.php 3159 2006-03-11 01:35:04Z drbyte $
  */
 
-define('NAVBAR_TITLE', 'Unsubscribe');
-define('HEADING_TITLE', 'Unsubscribe from our Newsletter');
+  define('NAVBAR_TITLE', 'Désabonnement');
+  define('HEADING_TITLE', 'Désabonnement de notre bulletin');
 
-define('UNSUBSCRIBE_TEXT_INFORMATION', '<br />We\'re sorry to hear that you wish to unsubscribe from our newsletter. If you have concerns about your privacy, please see our <a href="' . zen_href_link(FILENAME_PRIVACY,'','NONSSL') . '"><span class="pseudolink">privacy notice</span></a>.<br /><br />Subscribers to our newsletter are kept notified of new products, price reductions, and site news.<br /><br />If you still do not wish to receive your newsletter, please click the button below. ');
-define('UNSUBSCRIBE_TEXT_NO_ADDRESS_GIVEN', '<br />We\'re sorry to hear that you wish to unsubscribe from our newsletter. If you have concerns about your privacy, please see our <a href="' . zen_href_link(FILENAME_PRIVACY,'','NONSSL') . '"><span class="pseudolink">privacy notice</span></a>.<br /><br />Subscribers to our newsletter are kept notified of new products, price reductions, and site news.<br /><br />If you still do not wish to receive your newsletter, please click the button below. You will be taken to your account-preferences page, where you may edit your subscriptions. You may be prompted to log in first.');
-define('UNSUBSCRIBE_DONE_TEXT_INFORMATION', '<br />Your email address, listed below, has been removed from our Newsletter Subscription list, as per your request. <br /><br />');
-define('UNSUBSCRIBE_ERROR_INFORMATION', '<br />The email address you specified was not found in our newsletter database, or has already been removed from our newletter subscription list. <br /><br />');
+  define('UNSUBSCRIBE_TEXT_INFORMATION', '<br />Nous sommes désolés d\'apprendre que vous souhaitez vous désabonner de notre bulletin. Si vous avez des inquiétudes concernant votre vie privée, nous vous invitons à prendre connaissance de notre <a href="' . zen_href_link(FILENAME_PRIVACY,'','NONSSL') . '"><u>politique de confidentialité,</u></a>.<br /><br />Les abonnés à notre bulletin sont informés des nouveaux produits, des réductions de prix, ainsi que de l\'actualité du site.<br /><br />Si vous ne souhaitez vraiment plus recevoir votre bulletin, veuillez cliquer sur le bouton ci-dessous.');
+  define('UNSUBSCRIBE_TEXT_NO_ADDRESS_GIVEN', '<br />Nous sommes désolés d\'apprendre que vous souhaitez vous désabonner de notre bulletin. Si vous avez des inquiétudes concernant votre vie privée, nous vous invitons à prendre connaissance de notre <a href="' . zen_href_link(FILENAME_PRIVACY,'','NONSSL') . '"><u>politique de confidentialité,</u></a>.<br /><br />Les abonnés à notre bulletin sont informés des nouveaux produits, des réductions de prix, ainsi que de l\'actualité du site.<br /><br />Si vous ne souhaitez vraiment plus recevoir votre bulletin, veuillez cliquer sur le bouton ci-dessous. Vous allez être redirigé vers vos préférences de compte, où vous pourrez modifier votre abonnement. Il pourra vous être demandé de vous connecter d\'abord.');
+  define('UNSUBSCRIBE_DONE_TEXT_INFORMATION', '<br />Votre adresse email, indiquée ci-dessous, a été supprimé de notre bulletin, ainsi que vous l\'avez demandé.<br /><br />');
+  define('UNSUBSCRIBE_ERROR_INFORMATION', '<br />L\'adresse email que vous avez indiquée ne figure pas dans la base de données de notre bulletin, ou a déjà été effacée de notre liste d\'abonnés au bulletin. <br /><br />');
 ?>

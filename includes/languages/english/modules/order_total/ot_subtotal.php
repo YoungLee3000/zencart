@@ -4,9 +4,9 @@
 // |zen-cart Open Source E-commerce                                       |
 // +----------------------------------------------------------------------+
 // | Copyright (c) 2003 The zen-cart developers                           |
-// |                                                                      |   
-// | http://www.zen-cart.com/index.php                                    |   
-// |                                                                      |   
+// |                                                                      |
+// | http://www.zen-cart.com/index.php                                    |
+// |                                                                      |
 // | Portions Copyright (c) 2003 osCommerce                               |
 // +----------------------------------------------------------------------+
 // | This source file is subject to version 2.0 of the GPL license,       |
@@ -20,6 +20,6 @@
 // $Id: ot_subtotal.php 1969 2005-09-13 06:57:21Z drbyte $
 //
 
-  define('MODULE_ORDER_TOTAL_SUBTOTAL_TITLE', 'Sub-Total');
-  define('MODULE_ORDER_TOTAL_SUBTOTAL_DESCRIPTION', 'Order Sub-Total');
+  define('MODULE_ORDER_TOTAL_SUBTOTAL_TITLE', 'Sous-Total');
+  define('MODULE_ORDER_TOTAL_SUBTOTAL_DESCRIPTION', 'Sous-Total de la Commande');
 ?>

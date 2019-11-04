@@ -1,54 +1,28 @@
 <?php
 /**
  * @package languageDefines
- * @copyright Copyright 2003-2019 Zen Cart Development Team
+ * @copyright Copyright 2003-2013 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @version $Id: DrByte 2019 Jan 04 Modified in v1.5.6a $
+ * @version GIT: $Id: Author: DrByte  Sun Feb 17 23:22:33 2013 -0500 Modified in v1.5.2 $
  */
 
-define('NAVBAR_TITLE_1', 'Checkout');
-define('NAVBAR_TITLE_2', 'Success - Thank You');
+define('NAVBAR_TITLE_1', 'Encaissement');
+define('NAVBAR_TITLE_2', 'Succès - Merci');
 
-define('HEADING_TITLE', 'Thank You! We Appreciate your Business!');
+define('HEADING_TITLE', 'Merci pour votre achat et votre confiance !');
 
 define('TEXT_SUCCESS', '');
-define('TEXT_NOTIFY_PRODUCTS', 'Please notify me of updates to these products');
-// Still used by some older templates
-define('TEXT_SEE_ORDERS', 'You can view your order history by going to the <a href="' . zen_href_link(FILENAME_ACCOUNT, '', 'SSL') . '" name="linkMyAccount">My Account</a> page and by clicking on "View All Orders".');
-define('TEXT_CONTACT_STORE_OWNER', 'Please direct any questions to customer service.');
-define('TEXT_THANKS_FOR_SHOPPING', 'Thanks for shopping with us online!');
+define('TEXT_NOTIFY_PRODUCTS', 'Veuillez me notifier des mises à jour de ces produits');
+define('TEXT_SEE_ORDERS', 'Vous pouvez consulter votre historique de commandes en vous rendant sur la page <a href="' . zen_href_link(FILENAME_ACCOUNT, '', 'SSL') . '">Mon Compte</a> et en cliquant sur "Voir toutes mes commandes".');
+define('TEXT_CONTACT_STORE_OWNER', 'Pour toute question concernant votre commande, merci de contacter notre <a href="' . zen_href_link(FILENAME_CONTACT_US) . '">Service Clientèle</a>.');
+define('TEXT_THANKS_FOR_SHOPPING', 'Nous vous remercions pour votre achat et votre confiance.');
 
 define('TABLE_HEADING_COMMENTS', '');
 
-define('FOOTER_DOWNLOAD', 'You can also download your products at a later time at \'%s\'');
+define('FOOTER_DOWNLOAD', 'Vous pouvez aussi télécharger vos achats ultérieurement sur \'%s\'');
 
-define('TEXT_YOUR_ORDER_NUMBER', '<strong>Your Order Number is:</strong> ');
+define('TEXT_YOUR_ORDER_NUMBER', '<strong>Votre numéro de commande est :</strong> ');
 
-define('TEXT_CHECKOUT_LOGOFF_GUEST', 'NOTE: To complete your order, a temporary account was created. You may close this account by clicking Log Off. Clicking Log Off also ensures that your receipt and purchase information is not visible to the next person using this computer. If you wish to continue shopping, feel free! You may log off at anytime using the link at the top of the page.');
-define('TEXT_CHECKOUT_LOGOFF_CUSTOMER', 'Thank you for shopping. Please click the Log Off link to ensure that your receipt and purchase information is not visible to the next person using this computer.');
-
-
-define('HEADING_ORDER_NUMBER', 'Order #%s');
-define('HEADING_ORDER_DATE', 'Order Date:');
-define('HEADING_ORDER_TOTAL', 'Order Total:');
-
-define('HEADING_DELIVERY_ADDRESS', 'Delivery Address');
-define('HEADING_SHIPPING_METHOD', 'Shipping Method');
-
-define('HEADING_PRODUCTS', 'Products');
-define('HEADING_TAX', 'Tax');
-define('HEADING_TOTAL', 'Total');
-define('HEADING_QUANTITY', 'Qty.');
-
-define('HEADING_BILLING_ADDRESS', 'Billing Address');
-define('HEADING_PAYMENT_METHOD', 'Payment Method');
-
-define('HEADING_ORDER_HISTORY', 'Status History &amp; Comments');
-define('TEXT_NO_COMMENTS_AVAILABLE', 'No comments available.');
-define('TABLE_HEADING_STATUS_DATE', 'Date');
-define('TABLE_HEADING_STATUS_ORDER_STATUS', 'Order Status');
-define('TABLE_HEADING_STATUS_COMMENTS', 'Comments');
-define('QUANTITY_SUFFIX', '&nbsp;ea.  ');
-define('ORDER_HEADING_DIVIDER', '&nbsp;-&nbsp;');
-define('TEXT_OPTION_DIVIDER', '&nbsp;-&nbsp;');
+define('TEXT_CHECKOUT_LOGOFF_GUEST', 'NOTE : Pour terminer votre commande, un compte temporaire a été créé. Vous pouvez fermer ce compte en cliquant sur "Se déconnecter". Cliquer sur "Se déconnecter" permet aussi de s\'assurer que les informations concernant votre achat ne sont pas visibles pour la personne suivante qui utilisera votre ordinateur. Si vous souhaitez continuer vos achats, n\'hésitez pas ! Vous pouvez vous déconnecter à tout moment en utilisant le lien en haut de la page.');
+define('TEXT_CHECKOUT_LOGOFF_CUSTOMER', 'Merci de votre achat. Veuillez cliquer sur le lien "Se déconnecter" pour s\'assurer que les informations concernant votre achat ne sont pas visibles pour la personne suivante qui utilisera votre ordinateur.');

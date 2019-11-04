@@ -7,29 +7,29 @@
  * @version $Id: checkout_shipping.php 18697 2011-05-04 14:35:20Z wilt $
  */
 
-define('NAVBAR_TITLE_1', 'Checkout');
-define('NAVBAR_TITLE_2', 'Shipping Method');
+define('NAVBAR_TITLE_1', 'Encaissement');
+define('NAVBAR_TITLE_2', 'Méthode de livraison');
 
-define('HEADING_TITLE', 'Step 1 of 3 - Delivery Information');
+define('HEADING_TITLE', 'Étape 1 sur 3 - Informations de livraison');
 
-define('TABLE_HEADING_SHIPPING_ADDRESS', 'Shipping Address');
-define('TEXT_CHOOSE_SHIPPING_DESTINATION', 'Your order will be shipped to the address at the left or you may change the shipping address by clicking the <em>Change Address</em> button.');
-define('TITLE_SHIPPING_ADDRESS', 'Shipping Information:');
+define('TABLE_HEADING_SHIPPING_ADDRESS', 'Adresse de livraison');
+define('TEXT_CHOOSE_SHIPPING_DESTINATION', 'Votre commande sera livrée à l\'adresse à gauche ou vous pouvez modifier l\'adresse de livraison en cliquant sur le bouton <em>Modifier l\'adresse</em>.');
+define('TITLE_SHIPPING_ADDRESS', 'Adresse de livraison :');
 
-define('TABLE_HEADING_SHIPPING_METHOD', 'Shipping Method:');
-define('TEXT_CHOOSE_SHIPPING_METHOD', 'Please select the preferred shipping method to use on this order.');
-define('TITLE_PLEASE_SELECT', 'Please Select');
-define('TEXT_ENTER_SHIPPING_INFORMATION', 'This is currently the only shipping method available to use on this order.');
-define('TITLE_NO_SHIPPING_AVAILABLE', 'Not Available At This Time');
-define('TEXT_NO_SHIPPING_AVAILABLE','<span class="alert">Sorry, we are not shipping to your region at this time.</span><br />Please contact us for alternate arrangements.');
+define('TABLE_HEADING_SHIPPING_METHOD', 'Méthode de livraison :');
+define('TEXT_CHOOSE_SHIPPING_METHOD', 'Veuillez choisir la méthode de livraison préférée à utiliser pour cette commande.');
+define('TITLE_PLEASE_SELECT', 'Veuillez choisir');
+define('TEXT_ENTER_SHIPPING_INFORMATION', 'C\'est actuellement la seule méthode de livraison disponible pour cette commande.');
+define('TITLE_NO_SHIPPING_AVAILABLE', 'Non disponible actuellement');
+define('TEXT_NO_SHIPPING_AVAILABLE','<span class="alert">Désolé, nous ne livrons pas votre région actuellement.</span><br />Veuillez nous contacter pour des mesures alternatives.');
 
-define('TABLE_HEADING_COMMENTS', 'Special Instructions or Comments About Your Order');
+define('TABLE_HEADING_COMMENTS', 'Instructions spéciales ou commentaires sur votre commande');
 
-define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', 'Continue to Step 2');
-define('TEXT_CONTINUE_CHECKOUT_PROCEDURE', '- choose your payment method.');
+define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', 'Continuer vers l\'étape 2');
+define('TEXT_CONTINUE_CHECKOUT_PROCEDURE', '- Choisir votre méthode de paiement.');
 
 // when free shipping for orders over $XX.00 is active
-define('FREE_SHIPPING_TITLE', 'Free Shipping');
-define('FREE_SHIPPING_DESCRIPTION', 'Free shipping for orders over %s');
+define('FREE_SHIPPING_TITLE', 'Livraison gratuite');
+define('FREE_SHIPPING_DESCRIPTION', 'Livraison gratuite pour les commandes d\'un montant supérieur à %s');
 
-define('ERROR_PLEASE_RESELECT_SHIPPING_METHOD', 'Your available shipping options have changed. Please re-select your desired shipping method.');
+define('ERROR_PLEASE_RESELECT_SHIPPING_METHOD', 'Vos options disponibles de livraison ont changé. Veuillez re-sélectionner votre méthode de livraison souhaitée.');

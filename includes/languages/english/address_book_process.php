@@ -7,30 +7,30 @@
  * @version $Id: address_book_process.php 9647 2008-09-17 00:10:08Z drbyte $
  */
 
-define('NAVBAR_TITLE_1', 'My Account');
-define('NAVBAR_TITLE_2', 'Address Book');
+define('NAVBAR_TITLE_1', 'Mon Compte');
+define('NAVBAR_TITLE_2', 'Carnet d\'Adresses');
 
-define('NAVBAR_TITLE_ADD_ENTRY', 'New Entry');
-define('NAVBAR_TITLE_MODIFY_ENTRY', 'Update Entry');
-define('NAVBAR_TITLE_DELETE_ENTRY', 'Delete Entry');
+define('NAVBAR_TITLE_ADD_ENTRY', 'Nouvelle entrée');
+define('NAVBAR_TITLE_MODIFY_ENTRY', 'Actualiser l\'entrée');
+define('NAVBAR_TITLE_DELETE_ENTRY', 'Supprimer l\'entrée');
 
-define('HEADING_TITLE_ADD_ENTRY', 'New Address Book Entry');
-define('HEADING_TITLE_MODIFY_ENTRY', 'Update Address Book Entry');
-define('HEADING_TITLE_DELETE_ENTRY', 'Delete Address Book Entry');
-define('HEADING_TITLE', 'Address Details');
+define('HEADING_TITLE_ADD_ENTRY', 'Nouvelle entrée du carnet d\'adresses');
+define('HEADING_TITLE_MODIFY_ENTRY', 'Modifier une entrée du carnet d\'adresses');
+define('HEADING_TITLE_DELETE_ENTRY', 'Supprimer une entrée du carnet d\'adresses');
+define('HEADING_TITLE', 'Détails de l\'adresse');
 
-define('DELETE_ADDRESS_TITLE', 'Delete Address');
-define('DELETE_ADDRESS_DESCRIPTION', 'Are you sure you would like to delete the selected address from your address book?');
+define('DELETE_ADDRESS_TITLE', 'Supprimer l\'adresse');
+define('DELETE_ADDRESS_DESCRIPTION', 'Êtes-vous sûr(e) de vouloir supprimer l\'adresse sélectionnée de votre carnet d\'adresses ?');
 
-define('NEW_ADDRESS_TITLE', 'New Address Book Entry');
+define('NEW_ADDRESS_TITLE', 'Nouvelle entrée du carnet d\'adresses');
 
-define('SELECTED_ADDRESS', 'Selected Address');
-define('SET_AS_PRIMARY', 'Set as primary address.');
+define('SELECTED_ADDRESS', 'Adresse sélectionnée');
+define('SET_AS_PRIMARY', 'Établir en tant qu\'adresse principale.');
 
-define('SUCCESS_ADDRESS_BOOK_ENTRY_DELETED', 'The selected address has been successfully removed from your address book.');
-define('SUCCESS_ADDRESS_BOOK_ENTRY_UPDATED', 'Your address book has been successfully updated.');
+define('SUCCESS_ADDRESS_BOOK_ENTRY_DELETED', 'L\'adresse sélectionnée a été supprimée de votre carnet d\'adresses avec succès.');
+define('SUCCESS_ADDRESS_BOOK_ENTRY_UPDATED', 'Votre carnet d\'adresses a été mis à jour avec succès.');
 
-define('WARNING_PRIMARY_ADDRESS_DELETION', 'The primary address cannot be deleted. Please set another address as the primary address and try again.');
+define('WARNING_PRIMARY_ADDRESS_DELETION', 'L\'adresse principale ne peut pas être suprimée. Veuillez définir une autre adresse comme adresse principale, et recommencez.');
 
-define('ERROR_NONEXISTING_ADDRESS_BOOK_ENTRY', 'The address book entry does not exist.');
-define('ERROR_ADDRESS_BOOK_FULL', 'Your address book is full. Please delete an unneeded address to save a new one.');
+define('ERROR_NONEXISTING_ADDRESS_BOOK_ENTRY', 'L\'entrée du carnet d\'adresses n\'existe pas.');
+define('ERROR_ADDRESS_BOOK_FULL', 'Votre carnet d\'adresses est plein. Veuillez supprimer une adresse inutile pour en enregistrer une nouvelle.');

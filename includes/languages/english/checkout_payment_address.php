@@ -8,20 +8,20 @@
  */
 
 
-define('NAVBAR_TITLE_1', 'Checkout');
-define('NAVBAR_TITLE_2', 'Change Billing Address');
+define('NAVBAR_TITLE_1', 'Encaissement');
+define('NAVBAR_TITLE_2', 'Modifier l\'adresse de facturation');
 
-define('HEADING_TITLE', 'Change the Billing Information');
+define('HEADING_TITLE', 'Modifier les informations de facturation');
 
-define('TABLE_HEADING_PAYMENT_ADDRESS', 'Billing Address');
-define('TEXT_SELECTED_PAYMENT_DESTINATION', 'This is the current billing address. Please make sure it matches the information on your credit card statement or correct it using the form below.');
-define('TITLE_PAYMENT_ADDRESS', 'Billing Address');
+define('TABLE_HEADING_PAYMENT_ADDRESS', 'Adresse de facturation');
+define('TEXT_SELECTED_PAYMENT_DESTINATION', 'Il s\'agit de l\'adresse de facturation en cours. Veuillez vous assurer qu\'elle correspond aux informations sur votre carte de crédit ou corrigez la à l\'aide du formulaire ci-dessous.');
+define('TITLE_PAYMENT_ADDRESS', 'Adresse de facturation');
 
-define('TEXT_SELECT_OTHER_PAYMENT_DESTINATION', 'Please select the preferred billing address if the invoice to this order is to be delivered elsewhere.');
-define('TITLE_PLEASE_SELECT', 'Change the Billing Address for This Order');
+define('TEXT_SELECT_OTHER_PAYMENT_DESTINATION', 'Veuillez sélectionner l\'adresse de facturation préférée si la facture relative à cette commande doit être expédiée ailleurs.');
+define('TITLE_PLEASE_SELECT', 'Modifier l\'adresse de facturation pour cette commande');
 
-define('TABLE_HEADING_NEW_PAYMENT_ADDRESS', '...Or Choose From Your Address Book Entries');
+define('TABLE_HEADING_NEW_PAYMENT_ADDRESS', '... ou choisissez depuis votre carnet d\'adresses');
 
-define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', '<strong>Continue</strong>');
-define('TEXT_CONTINUE_CHECKOUT_PROCEDURE', '- to payment method.');
+define('TITLE_CONTINUE_CHECKOUT_PROCEDURE', '<strong>Continuer</strong>');
+define('TEXT_CONTINUE_CHECKOUT_PROCEDURE', '- vers la méthode de paiement.');
 ?>

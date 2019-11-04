@@ -31,18 +31,18 @@ define('OTHER_IMAGE_REVIEWS_RATING_STARS_ONE', 'stars_1_small.gif');
  * ALT tags for other images
  */
 
-define('OTHER_BOX_NOTIFY_REMOVE_ALT', 'Remove this product notification.');
-define('OTHER_BOX_NOTIFY_YES_ALT', 'Notify me of updates to this product.');
-define('OTHER_BOX_WRITE_REVIEW_ALT', 'Write a review on this product.');
-define('OTHER_CALL_FOR_PRICE_ALT', 'Please Call for the Current Price.');
-define('OTHER_DOWN_FOR_MAINTENANCE_ALT', 'The site is currently down for maintenance. Please come back later.');
+define('OTHER_BOX_NOTIFY_REMOVE_ALT', 'Enlever cette notification de produit.');
+define('OTHER_BOX_NOTIFY_YES_ALT', 'Me notifier des mises à jour de ce produit.');
+define('OTHER_BOX_WRITE_REVIEW_ALT', 'Écrire un avis sur ce produit.');
+define('OTHER_CALL_FOR_PRICE_ALT', 'Veuillez appeler pour le prix en cours.');
+define('OTHER_DOWN_FOR_MAINTENANCE_ALT', 'Le site est actuellement arrêté pour maintenance. Merci de revenir plus tard.');
 define('OTHER_TRANPARENT_ALT', '');
-define('OTHER_IMAGE_CUSTOMERS_AUTHORIZATION_ALT', 'CUSTOMER APPROVAL IS PENDING ...');
-define('OTHER_REVIEWS_RATING_STARS_FIVE_ALT', 'Five Stars');
-define('OTHER_REVIEWS_RATING_STARS_FOUR_ALT', 'Four Stars');
-define('OTHER_REVIEWS_RATING_STARS_THREE_ALT', 'Three Stars');
-define('OTHER_REVIEWS_RATING_STARS_TWO_ALT', 'Two Stars');
-define('OTHER_REVIEWS_RATING_STARS_ONE_ALT', 'One Star');
+define('OTHER_IMAGE_CUSTOMERS_AUTHORIZATION_ALT', 'APPROBATION CLIENT EN ATTENTE ...');
+define('OTHER_REVIEWS_RATING_STARS_FIVE_ALT', '5 étoiles');
+define('OTHER_REVIEWS_RATING_STARS_FOUR_ALT', '4 étoiles');
+define('OTHER_REVIEWS_RATING_STARS_THREE_ALT', '3 étoiles');
+define('OTHER_REVIEWS_RATING_STARS_TWO_ALT', '2 étoiles');
+define('OTHER_REVIEWS_RATING_STARS_ONE_ALT', '1 étoile');
 //define('OTHER_xxx_ALT', '');
 
 ?>

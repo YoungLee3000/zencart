@@ -8,6 +8,6 @@
  * @version GIT: $Id: Author: DrByte  Fri Apr 5 19:06:27 2013 -0400 Modified in v1.5.2 $
  */
 
-  define('MODULE_ORDER_TOTAL_COD_TITLE', 'COD Fee');
-  define('MODULE_ORDER_TOTAL_COD_DESCRIPTION', 'COD Fee');
-  define('TEXT_INFO_COD_FEES', '<strong>Note:</strong> COD fees may apply');
+  define('MODULE_ORDER_TOTAL_COD_TITLE', 'Frais de Contre-Remboursement');
+  define('MODULE_ORDER_TOTAL_COD_DESCRIPTION', 'Frais de Contre-Remboursement');
+  define('TEXT_INFO_COD_FEES', '<strong>NOTE :</strong> Des frais de Contre-Remboursement peuvent être appliqués.');

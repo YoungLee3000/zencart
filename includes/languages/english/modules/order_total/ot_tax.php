@@ -4,9 +4,9 @@
 // |zen-cart Open Source E-commerce                                       |
 // +----------------------------------------------------------------------+
 // | Copyright (c) 2003 The zen-cart developers                           |
-// |                                                                      |   
-// | http://www.zen-cart.com/index.php                                    |   
-// |                                                                      |   
+// |                                                                      |
+// | http://www.zen-cart.com/index.php                                    |
+// |                                                                      |
 // | Portions Copyright (c) 2003 osCommerce                               |
 // +----------------------------------------------------------------------+
 // | This source file is subject to version 2.0 of the GPL license,       |
@@ -20,6 +20,6 @@
 // $Id: ot_tax.php 1969 2005-09-13 06:57:21Z drbyte $
 //
 
-  define('MODULE_ORDER_TOTAL_TAX_TITLE', 'Tax');
-  define('MODULE_ORDER_TOTAL_TAX_DESCRIPTION', 'Order Tax');
+  define('MODULE_ORDER_TOTAL_TAX_TITLE', 'Taxes');
+  define('MODULE_ORDER_TOTAL_TAX_DESCRIPTION', 'Taxes de la commande');
 ?>

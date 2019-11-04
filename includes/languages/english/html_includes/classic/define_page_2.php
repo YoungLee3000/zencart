@@ -1,5 +1,5 @@
-<p><strong>Page 2 Sample Text ...</strong></p>
-<p>This section of text is from the Define Pages Editor located under Tools in the Admin.</p>
-<p>To remove this section of the text, delete it from the Define Pages Editor.</p>
-<p>This file is located in<code> /languages/english/html_includes/classic/</code></p>
-<p><strong>NOTE: Always backup the files in<code> /languages/english/html_includes/your_template</code></strong></p>
+<p><strong>Exemple de texte pour la Page 2 ...</strong></p>
+<p>Ce texte peut être modifié dans l'éditeur des pages 'define' situé dans le menu Outils de l'Administration.</p>
+<p>Pour enlever ce texte, supprimez le avec ce même éditeur de pages.</p>
+<p>Ce fichier se situe dans <code>/languages/french/html_includes/classic/</code></p>
+<p><strong>NOTE : Sauvegardez toujours les fichiers dans <code>/languages/french/html_includes/your_template</code></strong></p>

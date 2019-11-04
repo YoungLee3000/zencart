@@ -7,52 +7,52 @@
  * @version $Id: index.php 19537 2011-09-20 17:14:44Z drbyte $
  */
 
-define('TEXT_MAIN','This is the main define statement for the page for english when no template defined file exists. It is located in: <strong>/includes/languages/english/index.php</strong>');
+define('TEXT_MAIN','C\'est le define principal pour la page française lorsqu\'aucun fichier défini par template n\'existe. Il se trouve dans: <strong>/includes/languages/french/index.php</strong>');
 
 // Showcase vs Store
 if (STORE_STATUS == '0') {
-  define('TEXT_GREETING_GUEST', 'Welcome <span class="greetUser">Guest!</span> Would you like to <a href="%s">log yourself in</a>?');
+  define('TEXT_GREETING_GUEST', 'Bienvenue <span class="greetUser">cher visiteur !</span> Voulez-vous <a href="%s">vous connecter</a> ?');
 } else {
-  define('TEXT_GREETING_GUEST', 'Welcome, please enjoy our online showcase.');
+  define('TEXT_GREETING_GUEST', 'Bienvenue, réjouissez-vous devant notre vitrine en ligne.');
 }
 
-define('TEXT_GREETING_PERSONAL', 'Hello <span class="greetUser">%s</span>! Would you like to see our <a href="%s">newest additions</a>?');
+define('TEXT_GREETING_PERSONAL', 'Bonjour <span class="greetUser">%s</span> ! Voulez-vous voir nos dernières <a href="%s">nouveautés</a> ?');
 
-define('TEXT_INFORMATION', 'Define your main Index page copy here.');
+define('TEXT_INFORMATION', 'Définissez votre principale copie de page Index ici.');
 
-//moved to english
-//define('TABLE_HEADING_FEATURED_PRODUCTS','Featured Products');
+//moved to french
+//define('TABLE_HEADING_FEATURED_PRODUCTS','Produits phares');
 
-//define('TABLE_HEADING_NEW_PRODUCTS', 'New Products For %s');
-//define('TABLE_HEADING_UPCOMING_PRODUCTS', 'Upcoming Products');
-//define('TABLE_HEADING_DATE_EXPECTED', 'Date Expected');
+//define('TABLE_HEADING_NEW_PRODUCTS', 'Nouveautés pour %s');
+//define('TABLE_HEADING_UPCOMING_PRODUCTS', 'Produits attendus');
+//define('TABLE_HEADING_DATE_EXPECTED', 'Date prévue');
 
 if ( ($category_depth == 'products') || (zen_check_url_get_terms()) ) {
   // This section deals with product-listing page contents
-  define('HEADING_TITLE', 'Available Products');
-  define('TABLE_HEADING_IMAGE', 'Product Image');
-  define('TABLE_HEADING_MODEL', 'Model');
-  define('TABLE_HEADING_PRODUCTS', 'Product Name');
-  define('TABLE_HEADING_MANUFACTURER', 'Manufacturer');
-  define('TABLE_HEADING_QUANTITY', 'Quantity');
-  define('TABLE_HEADING_PRICE', 'Price');
-  define('TABLE_HEADING_WEIGHT', 'Weight');
-  define('TABLE_HEADING_BUY_NOW', 'Buy Now');
-  define('TEXT_NO_PRODUCTS', 'There are no products to list in this category.');
-  define('TEXT_NO_PRODUCTS2', 'There is no product available from this manufacturer.');
-  define('TEXT_NUMBER_OF_PRODUCTS', 'Number of Products: ');
-  define('TEXT_SHOW', 'Filter Results by:');
-  define('TEXT_BUY', 'Buy 1 \'');
-  define('TEXT_NOW', '\' now');
-  define('TEXT_ALL_CATEGORIES', 'All Categories');
-  define('TEXT_ALL_MANUFACTURERS', 'All Manufacturers');
+  define('HEADING_TITLE', 'Produits disponibles');
+  define('TABLE_HEADING_IMAGE', 'Image Produit');
+  define('TABLE_HEADING_MODEL', 'Modèle');
+  define('TABLE_HEADING_PRODUCTS', 'Nom du produit');
+  define('TABLE_HEADING_MANUFACTURER', 'Fabricant');
+  define('TABLE_HEADING_QUANTITY', 'Quantité');
+  define('TABLE_HEADING_PRICE', 'Prix');
+  define('TABLE_HEADING_WEIGHT', 'Poids');
+  define('TABLE_HEADING_BUY_NOW', 'Acheter maintenant');
+  define('TEXT_NO_PRODUCTS', 'Aucun produit n\'est disponible dans cette catégorie.');
+  define('TEXT_NO_PRODUCTS2', 'Aucun produit n\'est disponible chez ce fabricant.');
+  define('TEXT_NUMBER_OF_PRODUCTS', 'Nombre de produits : ');
+  define('TEXT_SHOW', 'Filtrer les résultats par : ');
+  define('TEXT_BUY', 'Acheter 1 \'');
+  define('TEXT_NOW', '\' maintenant');
+  define('TEXT_ALL_CATEGORIES', 'Toutes catégories');
+  define('TEXT_ALL_MANUFACTURERS', 'Tous fabricants');
 } elseif ($category_depth == 'top') {
   // This section deals with the "home" page at the top level with no options/products selected
   /*Replace this text with the headline you would like for your shop. For example: 'Welcome to My SHOP!'*/
-  define('HEADING_TITLE', 'Congratulations! You have successfully installed your Zen Cart&reg; E-Commerce Solution.');
+  define('HEADING_TITLE', 'Félicitations ! Vous avez installé avec succès votre solution de e-commerce Zen Cart&reg;.');
 } elseif ($category_depth == 'nested') {
   // This section deals with displaying a subcategory
   /*Replace this line with the headline you would like for your shop. For example: 'Welcome to My SHOP!'*/
-  define('HEADING_TITLE', 'Congratulations! You have successfully installed your Zen Cart&reg; E-Commerce Solution.'); 
+  define('HEADING_TITLE', 'Félicitations ! Vous avez installé avec succès votre solution de e-commerce Zen Cart&reg;.');
 }
 ?>

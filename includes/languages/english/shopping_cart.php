@@ -1,29 +1,31 @@
 <?php
 /**
  * @package languageDefines
- * @copyright Copyright 2003-2019 Zen Cart Development Team
+ * @copyright Copyright 2003-2006 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @version $Id: Scott C Wilson 2019 Feb 14 Modified in v1.5.6b $
+ * @version $Id: shopping_cart.php 3183 2006-03-14 07:58:59Z birdbrain $
  */
 
-define('TEXT_INFORMATION', 'You may proceed with your purchase by clicking the Checkout button below. Shipping and Taxes and Discounts will be handled on subsequent pages.');
-
-define('NAVBAR_TITLE', 'The Shopping Cart');
-define('HEADING_TITLE', 'Your Shopping Cart Contents');
-define('HEADING_TITLE_EMPTY', 'Your Shopping Cart');
-define('TABLE_HEADING_REMOVE', 'Remove');
-define('TABLE_HEADING_QUANTITY', 'Qty.');
-define('TABLE_HEADING_MODEL', 'Model');
-define('TABLE_HEADING_PRICE','Unit');
-define('TEXT_CART_EMPTY', 'Your Shopping Cart is empty.');
-define('SUB_TITLE_SUB_TOTAL', 'Sub-Total:');
+define('NAVBAR_TITLE', 'Panier');
+define('HEADING_TITLE', 'Contenu de votre panier');
+define('HEADING_TITLE_EMPTY', 'Votre panier');
+define('TEXT_INFORMATION', 'Vous pouvez ajouter des instructions sur l\'utilisation du panier ici.<br \>(Défini dans includes/languages/french/shopping_cart.php)');
+define('TABLE_HEADING_REMOVE', 'Supprimer');
+define('TABLE_HEADING_QUANTITY', 'Qté');
+define('TABLE_HEADING_MODEL', 'Modèle');
+define('TABLE_HEADING_PRICE','Unitaire');
+define('TEXT_CART_EMPTY', 'Votre panier est vide.');
+define('SUB_TITLE_SUB_TOTAL', 'Sous-Total :');
 define('SUB_TITLE_TOTAL', 'Total:');
 
-define('TEXT_TOTAL_ITEMS', 'Total Items: ');
-define('TEXT_TOTAL_WEIGHT', '&nbsp;&nbsp;Weight: ');
-define('TEXT_TOTAL_AMOUNT', '&nbsp;&nbsp;Amount: ');
+define('OUT_OF_STOCK_CANT_CHECKOUT', 'Les produits marqués avec ' . STOCK_MARK_PRODUCT_OUT_OF_STOCK . ' sont hors stock ou il n\'y en a pas assez en stock pour honorer votre commande.<br />Veuillez modifier la quantité des produits marqué (' . STOCK_MARK_PRODUCT_OUT_OF_STOCK . '). Merci');
+define('OUT_OF_STOCK_CAN_CHECKOUT', 'Les produits marqués avec ' . STOCK_MARK_PRODUCT_OUT_OF_STOCK . ' sont hors stock.<br />Les objets non disponibles seront placés en attente.');
 
-define('TEXT_CART_HELP', '<a href="javascript:session_win();">[help (?)]</a>');
-define('TEXT_VISITORS_CART', TEXT_CART_HELP); // legacy define
+define('TEXT_TOTAL_ITEMS', 'Nombre Total d\'Article(s) : ');
+define('TEXT_TOTAL_WEIGHT', '&nbsp;&nbsp;Poids : ');
+define('TEXT_TOTAL_AMOUNT', '&nbsp;&nbsp;Montant : ');
+
+define('TEXT_VISITORS_CART', '<a href="javascript:session_win();">[Aide (?)]</a>');
 define('TEXT_OPTION_DIVIDER', '&nbsp;-&nbsp;');
+?>

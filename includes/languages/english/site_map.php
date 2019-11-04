@@ -7,19 +7,19 @@
  * @version $Id: site_map.php 3159 2006-03-11 01:35:04Z drbyte $
  */
 
-define('NAVBAR_TITLE', 'Site Map');
-define('HEADING_TITLE', 'Site Map');
+define('NAVBAR_TITLE', 'Plan du Site');
+define('HEADING_TITLE', 'Plan du Site');
 define('TEXT_INFORMATION','');
 
-define('PAGE_ACCOUNT', 'My Account');
-define('PAGE_ACCOUNT_EDIT', 'Account Information');
-define('PAGE_ADDRESS_BOOK', 'Address Book');
-define('PAGE_ACCOUNT_HISTORY', 'Order History');
-define('PAGE_ACCOUNT_NOTIFICATIONS', 'Newsletter Subscriptions');
-define('PAGE_SHOPPING_CART', 'Shopping Cart');
-define('PAGE_CHECKOUT_SHIPPING', 'Checkout');
-define('PAGE_ADVANCED_SEARCH', 'Advanced Search');
-define('PAGE_PRODUCTS_NEW', 'New Products');
-define('PAGE_SPECIALS', 'Specials');
-define('PAGE_REVIEWS', 'Reviews');
+define('PAGE_ACCOUNT', 'Mon Compte');
+define('PAGE_ACCOUNT_EDIT', 'Informations du compte');
+define('PAGE_ADDRESS_BOOK', 'Carnet d\'adresses');
+define('PAGE_ACCOUNT_HISTORY', 'Historique de commande');
+define('PAGE_ACCOUNT_NOTIFICATIONS', 'Abonnement au bulletin');
+define('PAGE_SHOPPING_CART', 'Panier');
+define('PAGE_CHECKOUT_SHIPPING', 'Encaissement');
+define('PAGE_ADVANCED_SEARCH', 'Recherche avancée');
+define('PAGE_PRODUCTS_NEW', 'Nouveautés');
+define('PAGE_SPECIALS', 'Promotions');
+define('PAGE_REVIEWS', 'Avis');
 ?>

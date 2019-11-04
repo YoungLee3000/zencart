@@ -4,9 +4,9 @@
 // |zen-cart Open Source E-commerce                                       |
 // +----------------------------------------------------------------------+
 // | Copyright (c) 2003 The zen-cart developers                           |
-// |                                                                      |   
-// | http://www.zen-cart.com/index.php                                    |   
-// |                                                                      |   
+// |                                                                      |
+// | http://www.zen-cart.com/index.php                                    |
+// |                                                                      |
 // | Portions Copyright (c) 2003 osCommerce                               |
 // +----------------------------------------------------------------------+
 // | This source file is subject to version 2.0 of the GPL license,       |
@@ -20,9 +20,9 @@
 // $Id: ot_shipping.php 1969 2005-09-13 06:57:21Z drbyte $
 //
 
-  define('MODULE_ORDER_TOTAL_SHIPPING_TITLE', 'Shipping');
-  define('MODULE_ORDER_TOTAL_SHIPPING_DESCRIPTION', 'Order Shipping Cost');
+  define('MODULE_ORDER_TOTAL_SHIPPING_TITLE', 'Frais de Port');
+  define('MODULE_ORDER_TOTAL_SHIPPING_DESCRIPTION', 'Frais de port pour la commande');
 
-  define('FREE_SHIPPING_TITLE', 'Free Shipping');
-  define('FREE_SHIPPING_DESCRIPTION', 'Free shipping for orders over %s');
+  define('FREE_SHIPPING_TITLE', 'Livraison Gratuite');
+  define('FREE_SHIPPING_DESCRIPTION', 'Livraison gratuite pour les commandes d\'un montant supérieur à %s');
 ?>

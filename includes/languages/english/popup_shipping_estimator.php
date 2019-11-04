@@ -19,8 +19,8 @@
 // +----------------------------------------------------------------------+
 // $Id: popup_shipping_estimator.php 2642 2005-12-21 15:35:44Z ajeh $
 //
-define('HEADING_SEARCH_HELP', 'Shipping Estimator:');
-define('TEXT_TOTAL_ITEMS', 'Total Items: ');
-define('TEXT_TOTAL_WEIGHT', '&nbsp;&nbsp;Weight: ');
-define('TEXT_TOTAL_AMOUNT', '&nbsp;&nbsp;Amount: ');
+  define('HEADING_SEARCH_HELP', 'Estimateur des Coûts de Livraison :');
+  define('TEXT_TOTAL_ITEMS', 'Nbre Total d\'Articles : ');
+  define('TEXT_TOTAL_WEIGHT', '&nbsp;&nbsp;Poids : ');
+  define('TEXT_TOTAL_AMOUNT', '&nbsp;&nbsp;Montant : ');
 ?>

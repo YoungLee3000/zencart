@@ -4,9 +4,9 @@
 // |zen-cart Open Source E-commerce                                       |
 // +----------------------------------------------------------------------+
 // | Copyright (c) 2003 The zen-cart developers                           |
-// |                                                                      |   
-// | http://www.zen-cart.com/index.php                                    |   
-// |                                                                      |   
+// |                                                                      |
+// | http://www.zen-cart.com/index.php                                    |
+// |                                                                      |
 // | Portions Copyright (c) 2003 osCommerce                               |
 // +----------------------------------------------------------------------+
 // | This source file is subject to version 2.0 of the GPL license,       |
@@ -21,5 +21,5 @@
 //
 
   define('MODULE_ORDER_TOTAL_TOTAL_TITLE', 'Total');
-  define('MODULE_ORDER_TOTAL_TOTAL_DESCRIPTION', 'Order Total');
+  define('MODULE_ORDER_TOTAL_TOTAL_DESCRIPTION', 'Total de la commande');
 ?>

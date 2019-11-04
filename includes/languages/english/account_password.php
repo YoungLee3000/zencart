@@ -20,13 +20,13 @@
 // $Id: account_password.php 1969 2005-09-13 06:57:21Z drbyte $
 //
 
-define('NAVBAR_TITLE_1', 'My Account');
-define('NAVBAR_TITLE_2', 'Change Password');
+define('NAVBAR_TITLE_1', 'Mon Compte');
+define('NAVBAR_TITLE_2', 'Changer de mot de passe');
 
-define('HEADING_TITLE', 'My Password');
+define('HEADING_TITLE', 'Mon mot de passe');
 
-define('MY_PASSWORD_TITLE', 'My Password');
+define('MY_PASSWORD_TITLE', 'Mon mot de passe');
 
-define('SUCCESS_PASSWORD_UPDATED', 'Your password has been successfully updated.');
-define('ERROR_CURRENT_PASSWORD_NOT_MATCHING', 'Your Current Password did not match the password in our records. Please try again.');
+define('SUCCESS_PASSWORD_UPDATED', 'Votre mot de passe a été mis à jour avec succès.');
+define('ERROR_CURRENT_PASSWORD_NOT_MATCHING', 'Votre mot de passe ne correspond pas à celui que nous avons d\'enregistré. Veuillez recommencer.');
 ?>

@@ -7,21 +7,21 @@
  * @version $Id: account_notifications.php 3007 2006-02-11 09:17:12Z drbyte $
  */
 
-define('NAVBAR_TITLE_1', 'My Account');
-define('NAVBAR_TITLE_2', 'Product Notifications');
+define('NAVBAR_TITLE_1', 'Mon compte');
+define('NAVBAR_TITLE_2', 'Notifications de Produits');
 
-define('HEADING_TITLE', 'Product Notifications');
+define('HEADING_TITLE', 'Notifications de Produits');
 
-define('MY_NOTIFICATIONS_TITLE', 'My Product Notifications');
-define('MY_NOTIFICATIONS_DESCRIPTION', 'The product notification list allows you to stay up to date on products you find of interest.<br /><br />To be up to date on all product changes, select <strong>Global Product Notifications</strong>.');
+define('MY_NOTIFICATIONS_TITLE', 'Mes notifications de produits');
+define('MY_NOTIFICATIONS_DESCRIPTION', 'La liste des notifications de produits vous permet de resté informé(e) sur les produits qui vous intéressent particulièrement.<br /><br />Pour être à jour sur les modifications de tous les produits, cochez la <strong>notification globale des produits</strong>.');
 
-define('GLOBAL_NOTIFICATIONS_TITLE', 'Global Product Notifications');
-define('GLOBAL_NOTIFICATIONS_DESCRIPTION', 'Receive notifications on all available products.');
+define('GLOBAL_NOTIFICATIONS_TITLE', 'Notification globale des produits');
+define('GLOBAL_NOTIFICATIONS_DESCRIPTION', 'Recevoir les notifications concernant tous les produits disponibles.');
 
-define('NOTIFICATIONS_TITLE', 'Product Notifications');
-define('NOTIFICATIONS_DESCRIPTION', 'To remove a product notification, clear that product\'s checkbox and click on Update.');
-define('NOTIFICATIONS_NON_EXISTING', 'There are currently no products marked to be notified of.<br /><br />To add products to your product notification list, click on the notification link available on the detailed product information page.');
-define('TEXT_NO_PURCHASES', 'No Purchases');
+define('NOTIFICATIONS_TITLE', 'Notifications de produit');
+define('NOTIFICATIONS_DESCRIPTION', 'Pour enlever une notification de produit, décochez la case et cliquer sur Actualiser.');
+define('NOTIFICATIONS_NON_EXISTING', 'Aucun produit n\'est actuellement sélectionné pour notification.<br /><br />Pour ajouter des produits à votre liste de notifications, cliquez sur le lien de notification disponible sur la page des informations détaillées du produit.');
+define('TEXT_NO_PURCHASES', 'Aucun achat');
 
-define('SUCCESS_NOTIFICATIONS_UPDATED', 'Your product notifications have been updated.');
+define('SUCCESS_NOTIFICATIONS_UPDATED', 'Vos notifications de produits ont été actualisées avec succès.');
 ?>

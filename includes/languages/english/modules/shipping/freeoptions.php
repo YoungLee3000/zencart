@@ -7,16 +7,16 @@
  * @version $Id: freeoptions.php 3830 2006-06-21 23:47:16Z ajeh $
  */
 
-define('MODULE_SHIPPING_FREEOPTIONS_TEXT_TITLE', 'Free Shipping Options');
+define('MODULE_SHIPPING_FREEOPTIONS_TEXT_TITLE', 'Options de livraison gratuite');
 define('MODULE_SHIPPING_FREEOPTIONS_TEXT_DESCRIPTION', '
-Free Options is used to display a Free Shipping option when other Shipping Modules are displayed.
-It can be based on: Always show, Order Total, Order Weight or Order Item Count.
-The Free Options module does not show when Free Shipper is displayed.<br /><br />
-Setting Total to >= 0.00 and <= nothing (leave blank) will activate this module to show with all shipping modules, except for Free Shipping - freeshipper.<br /><br />
-NOTE: Leaving all settings for Total, Weight and Item count blank will deactivate this module.<br /><br />
-NOTE: Free Shipping Options does not display if Free Shipping is used based on 0 weight is Free Shipping.
-See: freeshipper
+Options Gratuites est utilisé pour afficher une option de livraison gratuite lorsque d\'autres modules de livraison sont affichés.
+Il peut être basé sur : Toujours afficher, Total commande, Poids commande, Nombre d\'articles commandés.
+Le module d\'Options Gratuites ne s\'affiche pas quand Free Shipper est actif.<br /><br />
+Mettre un total à >= 0.00 et <= rien (laisser en blanc) activera ce module pour qu\'il s\'affiche avec les autres modules, sauf pour Livraison Gratuite - freeshipper.<br /><br />
+NOTE : Le fait de laisser tous les réglages vides pour Total, Poids et Nombre d\'articles désactivera ce module.<br /><br />
+NOTE : Les options de livraison gratuite ne s\'affichent pas si Livraison Gratuite est utilisé avec un poids de 0.
+Voir : freeshipper
 ');
-define('MODULE_SHIPPING_FREEOPTIONS_TEXT_WAY', 'Free Shipping');
+define('MODULE_SHIPPING_FREEOPTIONS_TEXT_WAY', 'Livraison gratuite');
 
 ?>

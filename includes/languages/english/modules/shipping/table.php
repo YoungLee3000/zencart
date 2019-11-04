@@ -4,9 +4,9 @@
 // |zen-cart Open Source E-commerce                                       |
 // +----------------------------------------------------------------------+
 // | Copyright (c) 2003 The zen-cart developers                           |
-// |                                                                      |   
-// | http://www.zen-cart.com/index.php                                    |   
-// |                                                                      |   
+// |                                                                      |
+// | http://www.zen-cart.com/index.php                                    |
+// |                                                                      |
 // | Portions Copyright (c) 2003 osCommerce                               |
 // +----------------------------------------------------------------------+
 // | This source file is subject to version 2.0 of the GPL license,       |
@@ -20,9 +20,9 @@
 // $Id: table.php 1969 2005-09-13 06:57:21Z drbyte $
 //
 
-define('MODULE_SHIPPING_TABLE_TEXT_TITLE', 'Table Rate');
-define('MODULE_SHIPPING_TABLE_TEXT_DESCRIPTION', 'Table Rate');
-define('MODULE_SHIPPING_TABLE_TEXT_WAY', 'Best Way');
-define('MODULE_SHIPPING_TABLE_TEXT_WEIGHT', 'Weight');
-define('MODULE_SHIPPING_TABLE_TEXT_AMOUNT', 'Amount');
+define('MODULE_SHIPPING_TABLE_TEXT_TITLE', 'Table Tarifaire');
+define('MODULE_SHIPPING_TABLE_TEXT_DESCRIPTION', 'Table tarifaire');
+define('MODULE_SHIPPING_TABLE_TEXT_WAY', 'Meilleure Route');
+define('MODULE_SHIPPING_TABLE_TEXT_WEIGHT', 'Poids');
+define('MODULE_SHIPPING_TABLE_TEXT_AMOUNT', 'Montant');
 ?>

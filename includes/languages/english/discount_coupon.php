@@ -1,45 +1,45 @@
 <?php
 /**
  * @package languageDefines
- * @copyright Copyright 2003-2019 Zen Cart Development Team
+ * @copyright Copyright 2003-2013 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
  * $Id: discount_coupon.php 14712 2009-10-28 22:05:08Z ajeh $
  */
 
-define('NAVBAR_TITLE', 'Discount Coupon');
-define('HEADING_TITLE', 'Discount Coupon');
+define('NAVBAR_TITLE', 'Bon de réduction');
+define('HEADING_TITLE', 'Bon de réduction');
 
 define('TEXT_INFORMATION', '');
-define('TEXT_COUPON_FAILED', '<span class="alert important">%s</span> does not appear to be a valid Coupon Redemption Code. Please try typing it in again.');
+define('TEXT_COUPON_FAILED', '<span class="alert important">%s</span> ne semble pas être un code valide de remboursement de coupon. Essayez de le reécrire.');
 
-define('HEADING_COUPON_HELP', 'Discount Coupon Help');
-define('TEXT_CLOSE_WINDOW', 'Close Window [x]');
-define('TEXT_COUPON_HELP_HEADER', '<p class="bold">The Discount Coupon Redemption Code you have entered is for ');
+define('HEADING_COUPON_HELP', 'Aide sur les bons de réductions');
+define('TEXT_CLOSE_WINDOW', 'Fermer la fenêtre [x]');
+define('TEXT_COUPON_HELP_HEADER', '<p class="bold">Le code de remboursement de bon de réduction que vous avez entré est pour ');
 define('TEXT_COUPON_HELP_NAME', '\'%s\'. </p>');
 define('TEXT_COUPON_HELP_FIXED', '');
-define('TEXT_COUPON_HELP_MINORDER', '<p>You need to spend %s to use this coupon, on qualifying products.</p>');
+define('TEXT_COUPON_HELP_MINORDER', '<p>Vous avez besoin de dépenser %s pour utiliser ce bon, sur des produits certifiés.</p>');
 define('TEXT_COUPON_HELP_FREESHIP', '');
-define('TEXT_COUPON_HELP_DESC', '<p><span class="bold">Discount Offer:</span> %s</p><p class="smallText">Certain other restrictions may apply. Please see below for other details.</p>');
-define('TEXT_COUPON_HELP_DATE', '<p>The coupon is valid between %s and %s</p>');
-define('TEXT_COUPON_HELP_RESTRICT', '<p class="biggerText bold">Discount Coupon Restrictions</p>');
-define('TEXT_COUPON_HELP_CATEGORIES', '<p class="bold">Category Restrictions:</p>');
-define('TEXT_COUPON_HELP_PRODUCTS', '<p class="bold">Product Restrictions:</p>');
-define('TEXT_ALLOW', 'Allow');
-define('TEXT_DENY', 'Deny');
+define('TEXT_COUPON_HELP_DESC', '<p><span class="bold">Offre de réduction :</span> %s</p><p class="smallText">Certaines restrictions peuvent s\'appliquer. Veuillez consulter les détails ci-dessous.</p>');
+define('TEXT_COUPON_HELP_DATE', '<p>Ce bon est valide entre %s et %s</p>');
+define('TEXT_COUPON_HELP_RESTRICT', '<p class="biggerText bold">Restrictions du bon de réduction</p>');
+define('TEXT_COUPON_HELP_CATEGORIES', '<p class="bold">Restriction à la catégorie:</p>');
+define('TEXT_COUPON_HELP_PRODUCTS', '<p class="bold">Restriction au produit:</p>');
+define('TEXT_ALLOW', 'Autoriser');
+define('TEXT_DENY', 'Interdire');
 
-define('TEXT_NO_CAT_TOP_ONLY_DENY', '<p>This coupon has specific Product Restrictions.</p>');
-define('TEXT_NO_CAT_RESTRICTIONS', '<p>This coupon is valid for all categories.</p>');
-define('TEXT_NO_PROD_RESTRICTIONS', '<p>This coupon is valid for all products.</p>');
-define('TEXT_NO_PROD_SALES', '<p>This coupon is not valid for products on sale.</p>');
-define('TEXT_CAT_ALLOWED', ' (Valid for this category)');
-define('TEXT_CAT_DENIED', ' (Not allowed on this category)');
-define('TEXT_PROD_ALLOWED', ' (Valid for this product)');
-define('TEXT_PROD_DENIED', ' (Not allowed product)');
+define('TEXT_NO_CAT_TOP_ONLY_DENY', '<p>Ce coupon a des restrictions sur produits spécifiques.');
+define('TEXT_NO_CAT_RESTRICTIONS', '<p>Ce bon est valable pour toutes les catégories.</p>');
+define('TEXT_NO_PROD_RESTRICTIONS', '<p>Ce bon est valable pour tous les produits.</p>');
+define('TEXT_CAT_ALLOWED', ' (Valable pour cette catégorie)');
+define('TEXT_CAT_DENIED', ' (Interdit pour cette catgéorie)');
+define('TEXT_PROD_ALLOWED', ' (Valable pour ce produit)');
+define('TEXT_PROD_DENIED', ' (Interdit pour ce produit)');
 // gift certificates cannot be purchased with Discount Coupons
-define('TEXT_COUPON_GV_RESTRICTION','<p class="smallText">Discount Coupons may not be applied towards the purchase of ' . TEXT_GV_NAMES . '. Limit 1 coupon per order.</p>');
+define('TEXT_COUPON_GV_RESTRICTION','<p class="smallText">Les bons de réduction ne peuvent être appliqué sur l\'achat de ' . TEXT_GV_NAMES . '. Limitation à 1 bon par commande.</p>');
 
-define('TEXT_DISCOUNT_COUPON_ID_INFO', 'Look-up Discount Coupon ... ');
-define('TEXT_DISCOUNT_COUPON_ID', 'Your Code: ');
+define('TEXT_DISCOUNT_COUPON_ID_INFO', 'Vérification du bon de réduction ... ');
+define('TEXT_DISCOUNT_COUPON_ID', 'Votre code : ');
 
-define('TEXT_COUPON_GV_RESTRICTION_ZONES', 'Billing Address Restrictions apply.');
+define('TEXT_COUPON_GV_RESTRICTION_ZONES', 'Des restrictions selon l\'adresse de facturation s\'appliquent.');
+?>

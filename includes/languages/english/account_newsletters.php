@@ -7,14 +7,14 @@
  * @version $Id: account_newsletters.php 3159 2006-03-11 01:35:04Z drbyte $
  */
 
-define('NAVBAR_TITLE_1', 'My Account');
-define('NAVBAR_TITLE_2', 'Newsletter Subscriptions');
+define('NAVBAR_TITLE_1', 'Mon compte');
+define('NAVBAR_TITLE_2', 'Abonnements aux bulletins');
 
-define('HEADING_TITLE', 'Newsletter Subscriptions');
+define('HEADING_TITLE', 'Abonnements aux bulletins');
 
-define('MY_NEWSLETTERS_TITLE', 'My Newsletter Subscriptions');
-define('MY_NEWSLETTERS_GENERAL_NEWSLETTER', 'General Newsletter');
-define('MY_NEWSLETTERS_GENERAL_NEWSLETTER_DESCRIPTION', 'Including store news, new products, special offers, and other promotional announcements.');
+define('MY_NEWSLETTERS_TITLE', 'Mes abonnements aux bulletins');
+define('MY_NEWSLETTERS_GENERAL_NEWSLETTER', 'Bulletin général');
+define('MY_NEWSLETTERS_GENERAL_NEWSLETTER_DESCRIPTION', 'Informations concernant l\'actualité de la boutique, les nouveaux produits, les promotions et autres offres spéciales.');
 
-define('SUCCESS_NEWSLETTER_UPDATED', 'Your newsletter subscriptions have been updated.');
+define('SUCCESS_NEWSLETTER_UPDATED', 'Vos abonnements aux bulletins a été actualisé avec succès.');
 ?>

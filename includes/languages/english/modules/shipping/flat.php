@@ -4,9 +4,9 @@
 // |zen-cart Open Source E-commerce                                       |
 // +----------------------------------------------------------------------+
 // | Copyright (c) 2003 The zen-cart developers                           |
-// |                                                                      |   
-// | http://www.zen-cart.com/index.php                                    |   
-// |                                                                      |   
+// |                                                                      |
+// | http://www.zen-cart.com/index.php                                    |
+// |                                                                      |
 // | Portions Copyright (c) 2003 osCommerce                               |
 // +----------------------------------------------------------------------+
 // | This source file is subject to version 2.0 of the GPL license,       |
@@ -20,7 +20,7 @@
 // $Id: flat.php 1969 2005-09-13 06:57:21Z drbyte $
 //
 
-define('MODULE_SHIPPING_FLAT_TEXT_TITLE', 'Flat Rate');
-define('MODULE_SHIPPING_FLAT_TEXT_DESCRIPTION', 'Flat Rate');
-define('MODULE_SHIPPING_FLAT_TEXT_WAY', 'Best Way');
+define('MODULE_SHIPPING_FLAT_TEXT_TITLE', 'Au Forfait');
+define('MODULE_SHIPPING_FLAT_TEXT_DESCRIPTION', 'Au Forfait');
+define('MODULE_SHIPPING_FLAT_TEXT_WAY', 'Meilleure route');
 ?>

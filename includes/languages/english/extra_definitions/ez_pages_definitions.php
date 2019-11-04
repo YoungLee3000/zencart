@@ -11,8 +11,8 @@
 
 
 // ez-pages sidebox title name
-define('BOX_HEADING_EZPAGES','Important Links');
-define('TEXT_EZ_PAGES_TABLE_CONTEXT', 'Table of Contents');
+define('BOX_HEADING_EZPAGES','Liens Importants');
+define('TEXT_EZ_PAGES_TABLE_CONTEXT', 'Table des Matières');
 define('CURRENT_PAGE_INDICATOR', '&nbsp;*&nbsp;');
 define('NOT_CURRENT_PAGE_INDICATOR', '&nbsp;-&nbsp;');
 
