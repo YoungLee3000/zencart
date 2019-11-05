@@ -118,14 +118,15 @@ unset($log_prefix, $log_date);
  * Error reporting level to log
  * Default: E_ALL ^E_NOTICE
  */
-$errors_to_log = (version_compare(PHP_VERSION, 5.3, '>=') ? E_ALL & ~E_DEPRECATED & ~E_NOTICE : version_compare(PHP_VERSION, 5.4, '>=') ? E_ALL & ~E_DEPRECATED & ~E_NOTICE & ~E_STRICT : E_ALL & ~E_NOTICE);
+//$errors_to_log = (version_compare(PHP_VERSION, 5.3, '>=') ? E_ALL & ~E_DEPRECATED & ~E_NOTICE : version_compare(PHP_VERSION, 5.4, '>=') ? E_ALL & ~E_DEPRECATED & ~E_NOTICE & ~E_STRICT : E_ALL & ~E_NOTICE);
+$errors_to_log = E_ERROR;
 ///// DO NOT EDIT BELOW THIS LINE /////
 
 //////////////////// DEBUG HANDLING //////////////////////////////////
 if (in_array('*', $pages_to_debug) || in_array($current_page_base, $pages_to_debug)) {
-    @ini_set('log_errors', 1);          // store to file
+    @ini_set('log_errors', 0);          // store to file
     @ini_set('log_errors_max_len', 0);  // unlimited length of message output
-    @ini_set('display_errors', 0);      // do not output errors to screen/browser/client
+    @ini_set('display_errors', 1);      // do not output errors to screen/browser/client
     @ini_set('error_log', $debug_logfile_path);  // the filename to log errors into
     @ini_set('error_reporting', $errors_to_log ); // log only errors according to defined rules
     set_error_handler('zen_debug_error_handler', $errors_to_log);
