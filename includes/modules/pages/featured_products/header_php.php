@@ -3,15 +3,11 @@
  * Featured Products
  *
  * @package page
- * @copyright Copyright 2003-2018 Zen Cart Development Team
+ * @copyright Copyright 2003-2006 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @version $Id: lat9 Mon Jul 23 14:00:26 2018 -0400 Modified in v1.5.6 $
+ * @version $Id: header_php.php 6912 2007-09-02 02:23:45Z drbyte $
  */
-
-// This should be first line of the script:
-$zco_notifier->notify('NOTIFY_HEADER_START_FEATURED_PRODUCTS');
-
 require(DIR_WS_MODULES . zen_get_module_directory('require_languages.php'));
 $breadcrumb->add(NAVBAR_TITLE);
 // display order dropdown
@@ -21,23 +17,26 @@ require(DIR_WS_MODULES . zen_get_module_directory(FILENAME_LISTING_DISPLAY_ORDER
 
 $featured_products_array = array();
 
-$featured_products_query_raw = "SELECT p.products_id, p.products_type, pd.products_name, p.products_image, p.products_price, p.products_tax_class_id, p.products_date_added, m.manufacturers_name, p.products_model, p.products_quantity, p.products_weight, p.product_is_call,
-                                  p.product_is_always_free_shipping, p.products_qty_box_status,
-                                  p.master_categories_id
-                                  FROM (" . TABLE_PRODUCTS . " p
-                                  LEFT JOIN " . TABLE_MANUFACTURERS . " m on (p.manufacturers_id = m.manufacturers_id), " .
-TABLE_PRODUCTS_DESCRIPTION . " pd
-                                  LEFT JOIN " . TABLE_FEATURED . " f on pd.products_id = f.products_id )
-                                  WHERE p.products_status = 1 and p.products_id = f.products_id and f.status = 1
-                                  AND p.products_id = pd.products_id and pd.language_id = :languagesID " .
-$order_by;
+// bof dynamic filter 1 of 1
+include(DIR_WS_MODULES . zen_get_module_directory(FILENAME_DYNAMIC_FILTER));
 
-$featured_products_query_raw = $db->bindVars($featured_products_query_raw, ':languagesID', $_SESSION['languages_id'], 'integer');
+$listing_sql = "SELECT p.products_id, p.products_type, pd.products_name, p.products_image, p.products_price, p.products_tax_class_id, p.products_date_added, m.manufacturers_name, 
+                  p.products_model, p.products_quantity, p.products_weight, p.product_is_call, p.product_is_always_free_shipping, p.products_qty_box_status, p.master_categories_id, m.manufacturers_id";
 
-// Notifier Point
-$zco_notifier->notify('NOTIFY_FEATURED_PRODUCTS_SQL_STRING', array(), $featured_products_query_raw);
+$listing_sql .= " FROM " . TABLE_PRODUCTS . " p LEFT JOIN " . TABLE_MANUFACTURERS . " m on p.manufacturers_id = m.manufacturers_id" .
+               " LEFT JOIN " . TABLE_FEATURED . " f on p.products_id = f.products_id" .
+               " LEFT JOIN " . TABLE_PRODUCTS_TO_CATEGORIES . " p2c on p.products_id = p2c.products_id" .
+               " LEFT JOIN " . TABLE_PRODUCTS_DESCRIPTION . " pd on p.products_id = pd.products_id" .
+               ($filter_attr == true ? " JOIN " . TABLE_PRODUCTS_ATTRIBUTES . " p2a on p.products_id = p2a.products_id" .
+               " JOIN " . TABLE_PRODUCTS_OPTIONS . " po on p2a.options_id = po.products_options_id" .
+               " JOIN " . TABLE_PRODUCTS_OPTIONS_VALUES . " pov on p2a.options_values_id = pov.products_options_values_id" .
+               (defined('TABLE_PRODUCTS_WITH_ATTRIBUTES_STOCK') ? " JOIN " . TABLE_PRODUCTS_WITH_ATTRIBUTES_STOCK . " p2as on p.products_id = p2as.products_id " : "") : '');
 
-$featured_products_split = new splitPageResults($featured_products_query_raw, MAX_DISPLAY_PRODUCTS_FEATURED_PRODUCTS);
+$listing_sql .= " WHERE p.products_status = 1 and f.status = 1 and pd.language_id = :languagesID " .
+$filter . " GROUP BY p.products_id " . $having . $order_by;
+$listing_sql = $db->bindVars($listing_sql, ':languagesID', $_SESSION['languages_id'], 'integer');
+$featured_products_split = new splitPageResults($listing_sql, MAX_DISPLAY_PRODUCTS_FEATURED_PRODUCTS);
+// eof dynamic filter 1 of 1
 
 //check to see if we are in normal mode ... not showcase, not maintenance, etc
 $show_submit = zen_run_normal();
@@ -80,7 +79,4 @@ if (PRODUCT_FEATURED_LISTING_MULTIPLE_ADD_TO_CART > 0 and $show_submit == true a
     $show_bottom_submit_button = false;
   }
 }
-
-// This should be last line of the script:
-$zco_notifier->notify('NOTIFY_HEADER_END_FEATURED_PRODUCTS', $how_many);
-//EOF
+?>

@@ -1,0 +1,3 @@
+<p>Please use the form below to submit your testimonial. <strong><?php echo STORE_NAME;?></strong> reserves the right to edit your testimonial, if needed.</p>
+<p>This content is located in the file at: <code> /languages/english/html_includes/YOUR_TEMPLATE/define_testimonials_add.php</code></p>
+<p>You can quickly edit this content via Admin->Tools->Define Pages Editor, and select define_testimonials_add from the pulldown.</p>

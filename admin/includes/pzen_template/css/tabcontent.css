@@ -1,0 +1,71 @@
+﻿/**PZENTEMPLATE_BRAND**/
+
+ul.tabs {
+    display: inline-block;
+    float: left;
+    font-size: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0;
+    text-align: left;
+    width: 17%;
+}
+ul.tabs li {
+    display: inline;
+    float: left;
+    height: auto;
+    width: 100%;
+}      
+ul.tabs li a
+{
+    text-decoration: none;
+    position: relative;
+    padding: 8px 10px;
+    border: 1px solid #CCC;
+    border-bottom-color:#D6D6D6;
+    color: #000;
+    background: #F0F0F0;
+    outline:none;
+	float:left;
+	width:101%;
+	border-left-color: transparent;
+}
+ul.tabs li a:hover{
+	backgroudn:#F0F0F0;
+}
+ul.tabs li a:visited
+{
+    color: #000;
+}
+        
+ul.tabs li a:hover
+{
+    border: 1px solid #D6D6D6;
+    background:#F0F0F0;
+}
+        
+ul.tabs li.selected a, ul.tabs li.selected a:hover
+{
+    position: relative;
+    top: 0px;
+    font-weight:bold;
+    background: white;
+    border: 1px solid #D6D6D6;
+    border-right-color: white;
+	border-left-color: transparent;
+}
+        
+        
+ul.tabs li.selected a:hover
+{
+    text-decoration: none;
+}
+div.tabcontents {
+  background-color: #ffffff;
+  border: 1px solid #d6d6d6;
+  float: right;
+  margin-left: 1px;
+  min-height: 600px;
+  padding: 0 2%;
+  width: 82.9%;
+}

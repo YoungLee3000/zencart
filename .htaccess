@@ -1,0 +1,326 @@
+###############################################################################
+# Add custom headers and options
+###############################################################################
+# Notes:
+#
+# Examples: Adding IE compatibility / edge flags, language and encoding flags,
+# php or suphp directives, configure other Apache modules such as page_speed,
+# and enable or disable Apache httpd options.
+#
+# Do NOT configure anything directly relating to physical or virtual resources
+# in this section. These should be addressed later on in this file.
+###############################################################################
+#Options -Indexes
+
+###############################################################################
+# Enable mod_rewrite processing using the rules in this .htaccess file
+###############################################################################
+# Notes:
+#
+# <IfModule> should be avoided at all costs. If mod_rewrite is not available
+# it is almost always better to return HTTP 500 status. This way we see there
+# is an issue as soon as the .htaccess file is uploaded.
+#
+# For mod_rewrite to work, the Apache server option to allow symbolic links to
+# be followed must be enabled. Most providers supporting mod_rewrite will
+# already have it enabled for you, but if your rewrite rules are not working
+# you can un-comment the first directive below to manually enable the option.
+#
+# Don't forget, mod_rewrite directives are processed in order until a matching
+# RewriteRule with the [L] flag is encountered. So the more specific a rule is
+# the closer it should appear to the top of this file.
+###############################################################################
+#Options +FollowSymLinks
+RewriteEngine on
+
+###############################################################################
+# Tell mod_rewrite where this file is relative to the server document_root
+###############################################################################
+# Notes:
+#
+# This directive should only be enabled if this .htaccess file is not placed
+# in the document_root (usually public_html, www, or web) of the (sub)domain.
+#
+# An easy way to determine the location relative to the server document_root is
+# to look at the URL used to access a file in this folder. For example if you
+# access a "page" in the same folder as this file by typing in the URL
+# "www.mydomain.com/myfolder/index.html" then "myfolder" will be the location
+# of this file relative to the server document_root.
+#
+# Another quick and easy way to determine the correct setting for this is to
+# look at the defined value for DIR_WS_CATALOG and DIR_WS_HTTPS_CATALOG in
+# Zen Cart's configure.php files. All three values should match.
+#
+# Don't forget the leading and trailing /. This directive requires both!
+###############################################################################
+#RewriteBase /shop/
+
+
+###############################################################################
+# Redirect if request was for index.php (no query)
+###############################################################################
+# Notes:
+#
+# This is only required if the site generates references to index.php with no
+# parameters. This rule will force a 301 redirect to the site root when a
+# request is made for "/index.php" with no query terms (?key=value).
+###############################################################################
+#RewriteCond %{QUERY_STRING} ^$
+#RewriteRule ^index\.php$ / [R=301,L]
+
+
+###############################################################################
+# Add any custom 301 redirects
+###############################################################################
+# Notes:
+#
+# In general these should be few and far between. If you use a RewriteRule
+# be sure to add the L flag to let Apache mod_rewrite know to stop processing
+# and skip any RewriteRules defined later in the .htaccess file.
+###############################################################################
+
+
+###############################################################################
+# Redirect if request was for index.php (with or without query)
+###############################################################################
+# Notes:
+#
+# This is a performance optimization. If the request is for index.php simply
+# pass the request on and do not process any other mod_rewrite directives in
+# this file.
+#
+# Basically this avoids the overhead of checking if index.php is a real file
+# or directory (used in subsequent mod_rewrite rules) before sending the
+# request to index.php.
+###############################################################################
+RewriteRule ^index\.php$ - [L]
+
+
+###############################################################################
+# Start Ultimate (SEO) URLs
+###############################################################################
+# Notes:
+#
+# You should not make any changes in this section unless you really understand
+# how it will impact your web site. Mistakes can break things.
+###############################################################################
+
+# Handles the new URL formats
+RewriteRule ^(.*)-c-([0-9_]+)/(.*)-p-([0-9]+)(.*)$ index\.php?main_page=product_info&products_id=$4&cPath=$2&%{QUERY_STRING} [L]
+RewriteRule ^(.*)-c-([0-9_]+)/(.*)-pi-([0-9]+)(.*)$ index\.php?main_page=popup_image&pID=$4&cPath=$2&%{QUERY_STRING} [L]
+RewriteRule ^(.*)-c-([0-9_]+)/(.*)-pr-([0-9]+)(.*)$ index\.php?main_page=product_reviews&products_id=$4&cPath=$2&%{QUERY_STRING} [L]
+RewriteRule ^(.*)-c-([0-9_]+)/(.*)-pri-([0-9]+)(.*)$ index\.php?main_page=product_reviews_info&products_id=$4&cPath=$2&%{QUERY_STRING} [L]
+
+# Original (unchanged) URL formats
+RewriteRule ^(.*)-p-([0-9]+)(.*)$ index\.php?main_page=product_info&products_id=$2&%{QUERY_STRING} [L]
+RewriteRule ^(.*)-m-([0-9]+)(.*)$ index\.php?main_page=index&manufacturers_id=$2&%{QUERY_STRING} [L]
+RewriteRule ^(.*)-pi-([0-9]+)(.*)$ index\.php?main_page=popup_image&pID=$2&%{QUERY_STRING} [L]
+RewriteRule ^(.*)-pr-([0-9]+)(.*)$ index\.php?main_page=product_reviews&products_id=$2&%{QUERY_STRING} [L]
+RewriteRule ^(.*)-pri-([0-9]+)(.*)$ index\.php?main_page=product_reviews_info&products_id=$2&%{QUERY_STRING} [L]
+RewriteRule ^(.*)-ezp-([0-9]+)(.*)$ index\.php?main_page=page&id=$2&%{QUERY_STRING} [L]
+RewriteRule ^(.*)-c-([0-9_]+)(.*)$ index\.php?main_page=index&cPath=$2&%{QUERY_STRING} [L]
+
+# Rewrite all other requests (if the file / directory does not exist)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index\.php?main_page=$1&%{QUERY_STRING} [L]
+
+###############################################################################
+# Add any other directives relating to the handling of physical files
+###############################################################################
+# Notes:
+#
+# If processing makes it this far, the request was for a real file or folder.
+# Example: Adding further processing related to browser caching or security.
+###############################################################################
+
+<IfModule mod_deflate.c>
+  # Compress HTML, CSS, JavaScript, Text, XML and fonts
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE application/x-font
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/x-font-otf
+  AddOutputFilterByType DEFLATE application/x-font-truetype
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/x-icon
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+
+  # Remove browser bugs (only needed for really old browsers)
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  Header append Vary User-Agent
+</IfModule>
+
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(bmp|css|flv|gif|ico|jpg|jpeg|js|pdf|png|svg|swf|tif|tiff)$">
+        Header set Last-Modified "Mon, 10 Oct 2016 00:00:00 GMT"
+    </FilesMatch>
+</IfModule>
+
+<ifModule mod_headers.c>
+    Header set Connection keep-alive
+</ifModule>
+
+
+# ######################################################################
+# # MEDIA TYPES AND CHARACTER ENCODINGS                                #
+# ######################################################################
+
+# ----------------------------------------------------------------------
+# | Media types                                                        |
+# ----------------------------------------------------------------------
+
+# Serve resources with the proper media types (f.k.a. MIME types).
+#
+# https://www.iana.org/assignments/media-types/media-types.xhtml
+# https://httpd.apache.org/docs/current/mod/mod_mime.html#addtype
+
+
+
+
+# ----------------------------------------------------------------------
+# | Reducing MIME type security risks                                  |
+# ----------------------------------------------------------------------
+
+# Prevent some browsers from MIME-sniffing the response.
+#
+# This reduces exposure to drive-by download attacks and cross-origin
+# data leaks, and should be left uncommented, especially if the server
+# is serving user-uploaded content or content that could potentially be
+# treated as executable by the browser.
+#
+# http://www.slideshare.net/hasegawayosuke/owasp-hasegawa
+# http://blogs.msdn.com/b/ie/archive/2008/07/02/ie8-security-part-v-comprehensive-protection.aspx
+# https://msdn.microsoft.com/en-us/library/ie/gg622941.aspx
+# https://mimesniff.spec.whatwg.org/
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# ----------------------------------------------------------------------
+# | ETags                                                              |
+# ----------------------------------------------------------------------
+
+# Remove `ETags` as resources are sent with far-future expires headers.
+#
+# https://developer.yahoo.com/performance/rules.html#etags
+# https://tools.ietf.org/html/rfc7232#section-2.3
+
+# `FileETag None` doesn't work in all cases.
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+
+FileETag None
+
+# ----------------------------------------------------------------------
+# | Expires headers                                                    |
+# ----------------------------------------------------------------------
+
+# Serve resources with far-future expires headers.
+#
+# (!) If you don't control versioning with filename-based
+# cache busting, you should consider lowering the cache times
+# to something like one week.
+#
+# https://httpd.apache.org/docs/current/mod/mod_expires.html
+
+<IfModule mod_expires.c>
+
+    ExpiresActive on
+    ExpiresDefault                                      "access plus 1 month"
+
+  # CSS
+    ExpiresByType text/css                              "access plus 1 hour"
+
+  # Data interchange
+    ExpiresByType application/atom+xml                  "access plus 1 hour"
+    ExpiresByType application/rdf+xml                   "access plus 1 hour"
+    ExpiresByType application/rss+xml                   "access plus 1 hour"
+
+    ExpiresByType application/json                      "access plus 0 seconds"
+    ExpiresByType application/ld+json                   "access plus 0 seconds"
+    ExpiresByType application/schema+json               "access plus 0 seconds"
+    ExpiresByType application/vnd.geo+json              "access plus 0 seconds"
+    ExpiresByType application/xml                       "access plus 0 seconds"
+    ExpiresByType text/xml                              "access plus 0 seconds"
+
+  # Favicon (cannot be renamed!) and cursor images
+    ExpiresByType image/vnd.microsoft.icon              "access plus 1 year"
+    ExpiresByType image/x-icon                          "access plus 1 year"
+
+  # HTML
+    ExpiresByType text/html                             "access plus 0 seconds"
+
+  # JavaScript
+    ExpiresByType application/javascript                "access plus 1 hour"
+    ExpiresByType application/x-javascript              "access plus 1 hour"
+    ExpiresByType text/javascript                       "access plus 1 hour"
+
+  # Manifest files
+    ExpiresByType application/manifest+json             "access plus 1 year"
+
+    ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+    ExpiresByType text/cache-manifest                   "access plus 0 seconds"
+
+  # Media files
+    ExpiresByType audio/ogg                             "access plus 1 month"
+    ExpiresByType image/bmp                             "access plus 1 month"
+    ExpiresByType image/gif                             "access plus 1 month"
+    ExpiresByType image/jpeg                            "access plus 1 month"
+    ExpiresByType image/png                             "access plus 1 month"
+    ExpiresByType image/svg+xml                         "access plus 1 month"
+    ExpiresByType image/webp                            "access plus 1 month"
+    ExpiresByType video/mp4                             "access plus 1 month"
+    ExpiresByType video/ogg                             "access plus 1 month"
+    ExpiresByType video/webm                            "access plus 1 month"
+
+  # Web fonts
+    # Embedded OpenType (EOT)
+    ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
+    ExpiresByType font/eot                              "access plus 1 month"
+
+    # OpenType
+    ExpiresByType font/opentype                         "access plus 1 month"
+
+    # TrueType
+    ExpiresByType application/x-font-ttf                "access plus 1 month"
+
+    # Web Open Font Format (WOFF) 1.0
+    ExpiresByType application/font-woff                 "access plus 1 month"
+    ExpiresByType application/x-font-woff               "access plus 1 month"
+    ExpiresByType font/woff                             "access plus 1 month"
+
+    # Web Open Font Format (WOFF) 2.0
+    ExpiresByType application/font-woff2                "access plus 1 month"
+
+  # Other
+    ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
+
+</IfModule>
