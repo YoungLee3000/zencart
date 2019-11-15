@@ -66,16 +66,16 @@
 									if (HEADER_CURRENCIES_DISPLAY == 'True') {
 								?>
 								<!-- currency start -->
-								<div class="currency dropdown text-right">
-									<div class="dropdown-label hidden-sm hidden-xs"><?php echo HEADER_TITLE_CURRENCY; ?></div>
+								<!-- <div class="currency dropdown text-right">
+									<div class="dropdown-label hidden-sm hidden-xs"><?php //echo HEADER_TITLE_CURRENCY; ?></div>
 									<a class="dropdown-toggle" data-toggle="dropdown">
-										<?php echo $_SESSION['currency']; ?><span class="caret"></span>
+										<?php //echo $_SESSION['currency']; ?><span class="caret"></span>
 									</a>
 									<ul class="dropdown-menu dropdown-menu--xs-full">
-										<?php include(DIR_WS_MODULES . zen_get_module_directory('header_currencies.php')); ?>
-										<li class="dropdown-menu__close"><a href="#"><span class="icon icon-close"></span><?php echo TEXT_DROP_MENU_CLOSE; ?></a></li>
+										<?php //include(DIR_WS_MODULES . zen_get_module_directory('header_currencies.php')); ?>
+										<li class="dropdown-menu__close"><a href="#"><span class="icon icon-close"></span><?php //echo TEXT_DROP_MENU_CLOSE; ?></a></li>
 									</ul>
-								</div>
+								</div> -->
 								<!-- currency end -->
 								<?php } ?>
 							
@@ -83,16 +83,16 @@
 									if (HEADER_LANGUAGES_DISPLAY == 'True') {
 								?>
 								<!-- language start -->
-								<div class="currency dropdown text-right">
-									<div class="dropdown-label hidden-sm hidden-xs"><?php echo HEADER_TITLE_LANGUAGE; ?></div>
+								<!-- <div class="currency dropdown text-right">
+									<div class="dropdown-label hidden-sm hidden-xs"><?php// echo HEADER_TITLE_LANGUAGE; ?></div>
 									<a class="dropdown-toggle" data-toggle="dropdown">
-										<?php echo $lng->catalog_languages[$_SESSION['languages_code']]['name']; ?><span class="caret"></span>
+										<?php //echo $lng->catalog_languages[$_SESSION['languages_code']]['name']; ?><span class="caret"></span>
 									</a>
 									<ul class="dropdown-menu dropdown-menu--xs-full">
-										<?php include(DIR_WS_MODULES . zen_get_module_directory('header_languages.php')); ?>
-										<li class="dropdown-menu__close"><a href="#"><span class="icon icon-close"></span><?php echo TEXT_DROP_MENU_CLOSE; ?></a></li>
+										<?php //include(DIR_WS_MODULES . zen_get_module_directory('header_languages.php')); ?>
+										<li class="dropdown-menu__close"><a href="#"><span class="icon icon-close"></span><?php //echo TEXT_DROP_MENU_CLOSE; ?></a></li>
 									</ul>
-								</div>
+								</div> -->
 								<!-- language end -->
 								<?php } ?>
 								

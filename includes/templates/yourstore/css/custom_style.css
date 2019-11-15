@@ -1465,7 +1465,7 @@ a.underline:hover{text-decoration: none;}
 .without-declaration-list li a:hover{text-decoration: none;}
 .list-indent-left{margin-left: 34px;}
 .list-icon{padding: 0;margin: 0;list-style-type: none;}
-.list-icon li{position: relative;min-height: 52px;margin-bottom: 20px;padding: 10px 0 0 72px;letter-spacing: -0.02em;}
+.list-icon li{position: relative;min-height: 52px;margin-bottom: 20px;padding: 10px 0 0 0;letter-spacing: -0.02em;}
 .list-icon span{display: block;position: absolute;left: 0;top: 0;font-size: 30px;line-height: 1.7em;width: 52px;height: 52px;color: #fff;text-align: center;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;}
 .list-icon .fa-fax{font-size: 22px;line-height: 2.3em;}
 .list-icon .icon-mail{font-size: 26px;line-height: 1.9em;}
@@ -1483,8 +1483,8 @@ a.underline:hover{text-decoration: none;}
 .list-bg-round li span{display: table-cell;vertical-align: middle;height: 60px;width: 60px;}
 .list-bg-round li b{display: block;text-align: center;}
 /* map */
-#map{height: 474px;width: 100%;}
-.contact-map iframe{border: medium none;height: 474px;width: 100%;float: left;}
+#map{height: 0px;width: 100%;}
+.contact-map iframe{border: medium none;height: 0px;width: 100%;float: left;}
 /* /map */
 .sizes-row{margin: 0;padding: 0;list-style: none;}
 .sizes-row li{min-width: 70px;display: inline-block;text-align: center;}
