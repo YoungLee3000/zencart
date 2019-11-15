@@ -6,25 +6,20 @@
  * Displays contact us page form.
  *
  * @package templateSystem
- * @copyright Copyright 2003-2011 Zen Cart Development Team
+ * @copyright Copyright 2003-2016 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @version $Id: tpl_contact_us_default.php 18695 2011-05-04 05:24:19Z drbyte $
+ * @version $Id: rbarbour zcadditions.com Fri Feb 26 00:03:33 2016 -0500 Modified in v1.5.5 $
  */
-?><head><title>Contact Us</title></head>
-<?php 
-//$template_query = "SELECT * FROM " . TABLE_TEMPLATE_SETTINGS;
-//$template_result = $db->Execute($template_query);
 ?>
-
 
 <span class="breadcrumb-title"><?php echo $var_pageDetails->fields['pages_title']; ?></span>
 
 <div class="centerColumn" id="contactUsDefault">
 	<?php echo zen_draw_form('contact_us', zen_href_link(FILENAME_CONTACT_US, 'action=send')); ?>
-    <!--<div class="title-box">
+    <!-- <div class="title-box">
 		<h2 id="contactus-heading" class="title-under text-uppercase text-center"><?php //echo HEADING_TITLE; ?></h2>
-	</div>-->
+	</div> -->
     <?php
   		if (isset($_GET['action']) && ($_GET['action'] == 'success')) {
 	?>
@@ -33,7 +28,7 @@
   		} 
 	?>
     <?php if ($messageStack->size('contact') > 0) echo $messageStack->output('contact'); ?>
-    <div class="contact-details">
+    <!-- <div class="contact-details">
         <div class="contact-info">
     		<div class="row">
                 <div class="static-content col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -44,7 +39,7 @@
                             /**
                              * require html_define for the contact_us page
                              */
-                              require($define_page); 
+                              //require($define_page); 
                             ?>
                         <?php
                           }
@@ -54,39 +49,42 @@
                 </div>
             </div>
         </div>
-   	</div>
+   	</div> -->
 	<div class="row">
 		<div class="col-md-3 col-sm-12 col-xs-12">
 			<h2 class="text-uppercase title-bottom"><?php echo HEADING_CONTACTS_TEXT; ?></h2>
 			<ul class="list-icon">
 				<?php if($store_address != NULL) { ?>
 				<li>
-					<span class="icon icon-home"></span>
+					<!-- <span class="icon icon-home"></span> -->
 					<strong><?php echo LABEL_CONTACTS_ADDRESS; ?>&nbsp;&nbsp;</strong><?php echo $store_address; ?>
 				</li>
 				<?php } ?>
 				<?php if($store_contact != NULL) { ?>
 				<li>
-					<span class="icon icon-call"></span>
+					<!-- <span class="icon icon-call"></span> -->
 					<strong><?php echo LABEL_CONTACTS_PHONE; ?>&nbsp;&nbsp;</strong><?php echo $store_contact; ?>
 				</li>
 				<?php } ?>
 				<?php if($store_fax != NULL) { ?>
 				<li>
-					<span class="fa fa-fax"></span>
+					<!-- <span class="fa fa-fax"></span> -->
 					<strong><?php echo LABEL_CONTACTS_FAX; ?>&nbsp;&nbsp;</strong><?php echo $store_fax; ?>
 				</li>
 				<?php } ?>
 				<?php if($store_timings != NULL) { ?>
 				<li>
-					<span class="icon icon-schedule"></span>
+					<!-- <span class="icon icon-schedule"></span> -->
 					<strong><?php echo LABEL_CONTACTS_HOURS; ?>&nbsp;&nbsp;</strong><?php echo $store_timings; ?>
 				</li>
 				<?php } ?>
 				<?php if($store_email != NULL) { ?>
 				<li>
-					<span class="icon icon-mail"></span>
-					<strong><?php echo LABEL_CONTACTS_EMAIL; ?>&nbsp;&nbsp;</strong><?php echo $store_email; ?>
+					
+					<strong><?php echo LABEL_CONTACTS_EMAIL; ?>&nbsp;&nbsp;</strong>
+					<br/>
+					<?php echo $store_email; ?>
+					<!-- <span class="icon icon-mail"></span> -->
 				</li>
 				<?php } ?>
 			</ul>

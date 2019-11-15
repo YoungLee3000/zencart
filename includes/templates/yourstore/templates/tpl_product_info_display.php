@@ -271,7 +271,9 @@
 						<li class="active">
 							<a data-toggle="tab" href="#description" class="text-uppercase">
 								<?php echo TEXT_PRODUCT_DESCRIPTION; ?>
+								
 							</a>
+
 						</li>
 						<?php if ($flag_show_product_info_reviews == 1) { ?>
 						<li>
@@ -293,6 +295,10 @@
 						<div id="description" class="tab-pane active" role="tabpanel">
 							<div class="product-tab">
 								<p class="text"><?php echo stripslashes($products_description); ?></p>
+								<p style="font-size: 22px;"><strong>Les tailles des maillots sont les suivantes: </strong></p>
+								<img src="includes/templates/yourstore/images/size_figure/man.jpg"  />
+								<br/>
+								<img src="includes/templates/yourstore/images/size_figure/child.jpg" />
 								<!--bof Product URL -->
 								<?php
 								  if (zen_not_null($products_url)) {
@@ -395,13 +401,13 @@
 
 	<section class="content">
 		<!--bof also new products module-->
-		<?php require($template->get_template_dir('tpl_modules_whats_new.php', DIR_WS_TEMPLATE, $current_page_base,'templates'). '/' . 'tpl_modules_whats_new.php');?>
+		<?php //require($template->get_template_dir('tpl_modules_whats_new.php', DIR_WS_TEMPLATE, $current_page_base,'templates'). '/' . 'tpl_modules_whats_new.php');?>
 		<!--eof also new products module-->
 	</section>
 
 	<section class="content">
 		<!--bof also special products module-->
-		<?php require($template->get_template_dir('tpl_modules_specials_default.php', DIR_WS_TEMPLATE, $current_page_base,'templates'). '/' . 'tpl_modules_specials_default.php');?>
+		<?php //require($template->get_template_dir('tpl_modules_specials_default.php', DIR_WS_TEMPLATE, $current_page_base,'templates'). '/' . 'tpl_modules_specials_default.php');?>
 		<!--eof also special products module-->
 	</section>
 
