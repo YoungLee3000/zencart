@@ -228,10 +228,10 @@ INSERT INTO pzen_bottombanner (id, item_type, sort_order, item_image, item_desc,
 
 CREATE TABLE IF NOT EXISTS pzen_sidebarbanner(
   id int(11) NOT NULL AUTO_INCREMENT,
-  item_type int(11) NOT NULL COMMENT '1=Slide, 2=Banner',
-  sort_order int(11) NOT NULL,
+  item_type int(11) NOT NULL DEFAULT '2' COMMENT '1=Slide, 2=Banner',
+  sort_order int(11) NOT NULL DEFAULT '0',
   item_image varchar(200) NOT NULL,
-  item_desc text NOT NULL,
+  item_desc text NULL,
   item_link text NOT NULL,
   created_at datetime NOT NULL default '0001-01-01 00:00:00',
   updated_at datetime NOT NULL default '0001-01-01 00:00:00',

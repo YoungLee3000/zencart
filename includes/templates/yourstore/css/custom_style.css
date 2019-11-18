@@ -1709,7 +1709,7 @@ hr.hr-lg{margin-top: 50px;margin-bottom: 50px;}
 /*#header{
   position: relative;
   z-index: 100001;}*/
-#header img.logo{display: inline-block;max-height: 120px;}
+#header img.logo{display: inline-block;max-height: 100px;}
 #header .settings{padding: 16px 0 0 0;display: inline-block;}
 @media (max-width: 1200px){#header .search.link-inline{margin-right: 0px;}}
 @media (min-width: 1770px){#header .search.link-inline{margin-right: 13px;}}
