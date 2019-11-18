@@ -19,7 +19,7 @@
 /**
  * require the columnar_display template to show the products
  */
-  require($template->get_template_dir('tpl_columnar_display.php',DIR_WS_TEMPLATE, $current_page_base,'common'). '/tpl_columnar_display.php');
+  //require($template->get_template_dir('tpl_columnar_display.php',DIR_WS_TEMPLATE, $current_page_base,'common'). '/tpl_columnar_display.php');
 ?>
 <?php if($border_width != NULL && $this_is_home_page) { ?>
 <?php if($saf_display_style != "split") { ?>

@@ -29,10 +29,10 @@
                 </a>
             </li>
         <?php } ?>
-        <li class="contact_us">
+        <!-- <li class="contact_us">
             <a href="<?php echo zen_href_link(FILENAME_CONTACT_US, '', 'SSL'); ?>">
                 <?php echo HEADER_TITLE_CONTACT_US; ?>
             </a>
-        </li>	
+        </li> -->	
     </ul>
 </div>

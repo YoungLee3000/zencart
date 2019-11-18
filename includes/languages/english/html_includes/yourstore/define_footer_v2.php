@@ -2,27 +2,27 @@
     <!-- footer-data -->
     <div class="container inset-bottom-60">
         <div class="row" >
-        	<div class="col-xl-3 visible-xl">
+        	<!-- <div class="col-xl-3 visible-xl">
                 <div class="footer-logo hidden-xs">
-                    <!--  Logo  --> 
+                      Logo  
                     <a class="logo" href="<?php echo zen_href_link(FILENAME_DEFAULT, '', SSL); ?>"> <img alt="<?php if($logo_image!=NULL){ echo "logo"; } ?>" src="<?php echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'images').'/uploads/'.$logo_image;?>" /> </a> 
-                    <!-- /Logo --> 
+                     /Logo 
                 </div>
                 <div class="box-about">
                     <div class="mobile-collapse">
                         <h4 class="mobile-collapse__title visible-xs">ABOUT US</h4>
                         <div class="mobile-collapse__content">									
-                            <!-- address -->
+                            address 
                             <address class="box-address">
                                 <span class="icon icon-home"></span> <?php echo $store_address; ?> <br>
                                 <span class="icon icon-call"></span> <b class="color-dark"><?php echo $store_contact; ?> </b><br>
                                 <span class="icon icon-markunread"></span> <a class="color" href="mailto:<?php echo $store_email; ?>"><?php echo $store_email; ?></a>
                             </address>
-                            <!-- /address -->									
+                             /address 									
                         </div>
                     </div>
                 </div>					
-            </div>
+            </div> -->
             <div class="col-sm-4 col-md-4 col-lg-3 col-xl-2">
                 <div class="mobile-collapse">
                 	<!-- Information column -->
@@ -65,8 +65,33 @@
                     </div>
                     <!-- /subscribe-box -->
 				<?php } ?>
+                    
+
+                    
+
+                    <!--About me-->
+                    <div class="box-about">
+                        <div class="mobile-collapse">
+                            <h4 class="mobile-collapse__title visible-xs">ABOUT US</h4>
+
+                            <div class="mobile-collapse__content">                                  
+                                <address class="box-address">
+                                    <!-- <span class="icon icon-home"></span> <?php echo $store_address; ?> <br> -->
+                                    <!-- <span class="icon icon-call"></span> <b class="color-dark"><?php echo $store_contact; ?> </b><br> -->
+                                    <span class="icon icon-markunread"></span> <a class="color" href="mailto:<?php echo $store_email; ?>"><?php echo $store_email; ?></a>
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/About me-->  
+
+                    <!--   Logo   -->
+                    <a class="logo" href="<?php echo zen_href_link(FILENAME_DEFAULT, '', SSL); ?>"> <img alt="<?php if($logo_image!=NULL){ echo "logo"; } ?>" src="<?php echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'images').'/uploads/'.$logo_image;?>" /> </a> 
+                    <!--  /Logo    -->
+                    
                     <!-- social-icon -->
                     <div class="divider divider--md"></div>
+                  
                     <div class="social-links social-links--large social-links-layout-02">
                         <?php
                             include zen_get_file_directory(DIR_WS_LANGUAGES . $_SESSION['language'] . '/html_includes/', FILENAME_DEFINE_FOOTER_SOCIAL_LINKS, 'false'); 

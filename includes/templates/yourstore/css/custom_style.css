@@ -1705,11 +1705,11 @@ hr.hr-lg{margin-top: 50px;margin-bottom: 50px;}
 /****************************************
 * header
 *****************************************/
-.logo img{max-height: 80px;}
+.logo img{max-height: 100px;}
 /*#header{
   position: relative;
   z-index: 100001;}*/
-#header img.logo{display: inline-block;max-height: 80px;}
+#header img.logo{display: inline-block;max-height: 120px;}
 #header .settings{padding: 16px 0 0 0;display: inline-block;}
 @media (max-width: 1200px){#header .search.link-inline{margin-right: 0px;}}
 @media (min-width: 1770px){#header .search.link-inline{margin-right: 13px;}}
@@ -2092,7 +2092,7 @@ footer .social-links-layout-02{margin: 4px 0 47px 0;}
 @media (max-width: 767px){footer .social-links-layout-02{margin: 0px 0 0;}}
 /* /social-links */
 /* footer box-address */
-footer .box-address{font-size: 18px;}
+footer .box-address{font-size: 18px; margin-top: 20px;}
 footer .box-address .icon{position: relative;display: inline-block;top: 2px;margin-right: 4px;}
 /* /footer box-address */
 /* v-links-list */
