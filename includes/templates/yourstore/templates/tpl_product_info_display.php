@@ -59,6 +59,22 @@
 							</div>
 						</div>
 					</div>
+					<!--bof video shows-->
+					<div id="video_zone" >
+						<?php
+							require($template->get_template_dir('/tpl_modules_video_image.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_video_image.php'); ?>
+					</div>
+					<!--eof video shows-->
+					<div class="vAndi">
+						<div class="vAndiCont">
+							<div class="videoBtn SWactive">
+								Video
+							</div>
+							<div class="imgBtn">
+								Image
+							</div>
+						</div>
+					</div>
 					<?php } ?>
 					<div class="product-info <?php echo ($prodinfo_image_layout==1)? 'col-sm-6 col-md-6 col-lg-6 col-xl-6' : 'col-sm-8 col-md-8 col-lg-8 col-xl-8'; ?>">
 						<?php if($flag_show_product_info_model == 1 || $flag_show_product_info_quantity == 1) { ?>
