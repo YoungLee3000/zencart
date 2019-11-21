@@ -35,8 +35,25 @@
 				  <?php	if (zen_not_null($products_image)) { ?>
 					<div class="<?php echo ($prodinfo_image_layout==1)? 'col-sm-6 col-md-6 col-lg-6 col-xl-6' : 'col-sm-4 col-md-4 col-lg-4 col-xl-4'; ?> hidden-xs">
 
+						
 						<!--bof zone of figure and video-->
 						<div id="zone_content">
+							<!--bof switch button-->
+							<div class="vAndi">
+								<ul class="vAndiCont">
+									<li>
+										<div class="videoBtn switch"/>
+											Video
+										</div>
+									</li>
+									<li>
+										<div class="imgBtn">
+											Photo
+										</div>
+									</li>
+								</ul>
+							</div> 
+							<!--eof switch button--> 
 
 							<!--bof figure shows-->
 							<div id="figure_zone">
@@ -67,31 +84,23 @@
 							<div id="video_zone">
 							<?php
 								require($template->get_template_dir('/tpl_modules_video_image.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_video_image.php'); ?>
+
+								<div class="video_btn_zone">
+									<img src="includes/templates/yourstore/images/img_assit/playerBtn.png" width="100" height="100" />
+								</div>
 							</div> 
 							<!--eof video shows--> 
 
-							<div class="video_btn_zone">
-								<img src="includes/templates/yourstore/images/img_assit/playerBtn.png" width="100" height="100" />
-							</div>
+							
 
-							<!--bof switch button-->
-							<div class="vAndi">
-								<div class="vAndiCont">
-									<div class="videoBtn switch"/>
-										Video
-									</div>
-									<div class="imgBtn">
-										Photo
-									</div>
-								</div>
-							</div> 
-							<!--eof switch button--> 
+							
 
 						</div>
 						<!--bof zone of figure and video-->
 						<script>
     	
     						var g_imgObj = $(".video_inner img");
+    						g_imgObj.eq(0).show().siblings().hide();
     						var g_length = g_imgObj.length;
     						var g_count = 0;
     						var g_timer = null;
@@ -99,7 +108,7 @@
     						function expand() {
     							clearTimeout(g_timer);
     							if ($("#video_zone").css("display") == 'none' ) return;
-    							if ($("#video_zone").css("display") != 'none' && $("#video_btn_zone").css("display") != 'none' ) return;
+    							if ($("#video_zone").css("display") != 'none' && $(".video_btn_zone").css("display") != 'none' ) return;
   			
  								if (g_count < g_length ){
  									g_imgObj.eq(g_count).show().siblings().hide();
@@ -107,7 +116,7 @@
  									g_count = g_count + 1;
  									if (g_count == g_length){
  										g_timer = setTimeout(function(){
- 											if ($("#video_zone").css("display") != 'none') $("#video_btn_zone").show();
+ 											if ($("#video_zone").css("display") != 'none') $(".video_btn_zone").show();
  										},g_region);
  									}
  									else{
@@ -116,7 +125,7 @@
  								}
     						}
     						function beginPlay(){
-    							$("#video_btn_zone").hide();
+    							$(".video_btn_zone").hide();
     							g_count = 0;
     							expand();
     							//setInterval(expand,2000);
@@ -132,13 +141,14 @@
 								$("#video_zone").show();
 								$(".video_btn_zone").show();
 								$("#figure_zone").hide();
+								g_imgObj.eq(0).show().siblings().hide();
 							})
 
 							$(".imgBtn").on("click",function(){
 								$(".videoBtn").removeClass("switch");
 								$(".imgBtn").addClass("switch");
 								$("#video_zone").hide();
-								$("#video_btn_zone").hide();
+								$(".video_btn_zone").hide();
 								$("#figure_zone").show();
 								clearTimeout(g_timer);
 								g_imgObj.eq(g_count).removeClass('active').siblings().removeClass('active');
@@ -185,6 +195,24 @@
 							</div>
 							<!--bof figure video zone-->
 							<div id="mb_zone_content">
+
+								<!--bof switch button-->
+								<div class="vAndi">
+									<ul class="vAndiCont">
+										<li>
+											<div class="videoBtn mb_switch">
+												Video
+											</div>
+										</li>
+										<li>
+											<div class="imgBtn">
+												Photo
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!--eof switch button-->
+
 								<!--bof figure shows-->
 								<div id="mb_figure_zone">
 									<ul id="mobileGallery">
@@ -200,25 +228,11 @@
 								<div id="mb_video_zone" >
 									<?php
 										require($template->get_template_dir('/tpl_modules_video_image.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_video_image.php'); ?>
+										<div class="video_btn_zone">
+											<img src="includes/templates/yourstore/images/img_assit/playerBtn.png" width="100" height="100" />
+										</div>
 								</div>
 								<!--eof video shows-->
-
-								<div class="video_btn_zone">
-									<img src="includes/templates/yourstore/images/img_assit/playerBtn.png" width="100" height="100" />
-								</div>
-
-								<!--bof switch button-->
-								<div class="vAndi">
-									<div class="vAndiCont">
-										<div class="videoBtn mb_switch">
-											Video
-										</div>
-										<div class="imgBtn">
-											Photo
-										</div>
-									</div>
-								</div>
-								<!--eof switch button-->
 
 							</div>
 							<!--eof figure video zone-->
