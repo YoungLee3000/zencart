@@ -34,47 +34,121 @@
 				<div class="row <?php echo ($prodinfo_image_layout==1)? 'big-size' : 'small-size'; ?> product-view">
 				  <?php	if (zen_not_null($products_image)) { ?>
 					<div class="<?php echo ($prodinfo_image_layout==1)? 'col-sm-6 col-md-6 col-lg-6 col-xl-6' : 'col-sm-4 col-md-4 col-lg-4 col-xl-4'; ?> hidden-xs">
-						<div class="product-main-image">
-							
-							<!--bof Main Product Image -->
+
+						<!--bof zone of figure and video-->
+						<div id="zone_content">
+
+							<!--bof figure shows-->
+							<div id="figure_zone">
+								<div class="product-main-image">
+								<!--bof Main Product Image -->
+								<?php
+									require($template->get_template_dir('/tpl_modules_main_product_image.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_main_product_image.php');
+								?>
+								<!--eof product image -->
+								</div>
+								<div id="productAdditionalImages">
+									<div class="product-images-carousel">
+										<ul id="smallGallery">
+										<!--bof product additional images-->
+										<?php
+										/**
+									 	* display the products additional images
+									 	*/
+											require($template->get_template_dir('/tpl_modules_additional_images.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_additional_images.php'); ?>
+										<!--eof product additional images-->
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!--eof figure shows-->
+
+							<!-- bof video shows-->
+							<div id="video_zone">
 							<?php
-							/**
-							* display the main product image
-							*/ ?>
-							<?php
-								require($template->get_template_dir('/tpl_modules_main_product_image.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_main_product_image.php');
-							?>
-							<!--eof product image -->
-						</div>
-						<div id="productAdditionalImages">
-							<div class="product-images-carousel">
-								<ul id="smallGallery">
-									<!--bof product additional images--><?php
-									/**
-									 * display the products additional images
-									 */
-									require($template->get_template_dir('/tpl_modules_additional_images.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_additional_images.php'); ?>
-									<!--eof product additional images-->
-								</ul>
+								require($template->get_template_dir('/tpl_modules_video_image.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_video_image.php'); ?>
+							</div> 
+							<!--eof video shows--> 
+
+							<div class="video_btn_zone">
+								<img src="includes/templates/yourstore/images/img_assit/playerBtn.png" width="100" height="100" />
 							</div>
+
+							<!--bof switch button-->
+							<div class="vAndi">
+								<div class="vAndiCont">
+									<div class="videoBtn switch"/>
+										Video
+									</div>
+									<div class="imgBtn">
+										Photo
+									</div>
+								</div>
+							</div> 
+							<!--eof switch button--> 
+
 						</div>
+						<!--bof zone of figure and video-->
+						<script>
+    	
+    						var g_imgObj = $(".video_inner img");
+    						var g_length = g_imgObj.length;
+    						var g_count = 0;
+    						var g_timer = null;
+    						var g_region = 2000;
+    						function expand() {
+    							clearTimeout(g_timer);
+    							if ($("#video_zone").css("display") == 'none' ) return;
+    							if ($("#video_zone").css("display") != 'none' && $("#video_btn_zone").css("display") != 'none' ) return;
+  			
+ 								if (g_count < g_length ){
+ 									g_imgObj.eq(g_count).show().siblings().hide();
+    								g_imgObj.eq(g_count).addClass('active').siblings().removeClass('active');
+ 									g_count = g_count + 1;
+ 									if (g_count == g_length){
+ 										g_timer = setTimeout(function(){
+ 											if ($("#video_zone").css("display") != 'none') $("#video_btn_zone").show();
+ 										},g_region);
+ 									}
+ 									else{
+ 										g_timer = setTimeout(expand,g_region);
+ 									}	
+ 								}
+    						}
+    						function beginPlay(){
+    							$("#video_btn_zone").hide();
+    							g_count = 0;
+    							expand();
+    							//setInterval(expand,2000);
+    						}
+
+    						$(".video_btn_zone").on("click", function() {
+			 					beginPlay();
+							})
+
+							$(".videoBtn").on("click",function(){
+								$(".videoBtn").addClass("switch");
+								$(".imgBtn").removeClass("switch");
+								$("#video_zone").show();
+								$(".video_btn_zone").show();
+								$("#figure_zone").hide();
+							})
+
+							$(".imgBtn").on("click",function(){
+								$(".videoBtn").removeClass("switch");
+								$(".imgBtn").addClass("switch");
+								$("#video_zone").hide();
+								$("#video_btn_zone").hide();
+								$("#figure_zone").show();
+								clearTimeout(g_timer);
+								g_imgObj.eq(g_count).removeClass('active').siblings().removeClass('active');
+    							g_imgObj.eq(g_count).show().siblings().show();
+							})
+    	
+ 
+    					</script>
 					</div>
-					<!--bof video shows-->
-					<div id="video_zone" >
-						<?php
-							require($template->get_template_dir('/tpl_modules_video_image.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_video_image.php'); ?>
-					</div>
-					<!--eof video shows-->
-					<div class="vAndi">
-						<div class="vAndiCont">
-							<div class="videoBtn SWactive">
-								Video
-							</div>
-							<div class="imgBtn">
-								Image
-							</div>
-						</div>
-					</div>
+					
 					<?php } ?>
 					<div class="product-info <?php echo ($prodinfo_image_layout==1)? 'col-sm-6 col-md-6 col-lg-6 col-xl-6' : 'col-sm-8 col-md-8 col-lg-8 col-xl-8'; ?>">
 						<?php if($flag_show_product_info_model == 1 || $flag_show_product_info_quantity == 1) { ?>
@@ -102,17 +176,60 @@
 								<?php //echo TEXT_PRODUCT_AVAILABILITY.(($products_quantity>0 ) ? '<strong class="color">&nbsp;'.TEXT_PRODUCT_QUANTITY.'</strong>'  : '<strong class="alert-text">&nbsp;'.TITLE_OUT_OF_STOCK.'</strong>'); ?>
 							</div>
 						</div> -->
+
+						<?php if(zen_not_null($products_image)) { 
+						?>
+						
 						<div class="visible-xs">
-							<div class="clearfix"></div>
-							<ul id="mobileGallery">
-								<!--bof product additional images--><?php
-								/**
-								 * display the products additional images
-								 */
-								require($template->get_template_dir('/tpl_modules_additional_images_device.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_additional_images_device.php'); ?>
-								<!--eof product additional images-->
-							</ul>
+							<div class="clearfix">
+							</div>
+							<!--bof figure video zone-->
+							<div id="mb_zone_content">
+								<!--bof figure shows-->
+								<div id="mb_figure_zone">
+									<ul id="mobileGallery">
+										<!--bof product additional images-->
+										<?php
+										require($template->get_template_dir('/tpl_modules_additional_images_device.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_additional_images_device.php'); ?>
+										<!--eof product additional images-->
+									</ul>
+								</div>
+								<!--eof figure shows-->
+
+								<!--bof video shows-->
+								<div id="mb_video_zone" >
+									<?php
+										require($template->get_template_dir('/tpl_modules_video_image.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_video_image.php'); ?>
+								</div>
+								<!--eof video shows-->
+
+								<div class="video_btn_zone">
+									<img src="includes/templates/yourstore/images/img_assit/playerBtn.png" width="100" height="100" />
+								</div>
+
+								<!--bof switch button-->
+								<div class="vAndi">
+									<div class="vAndiCont">
+										<div class="videoBtn mb_switch">
+											Video
+										</div>
+										<div class="imgBtn">
+											Photo
+										</div>
+									</div>
+								</div>
+								<!--eof switch button-->
+
+							</div>
+							<!--eof figure video zone-->
 						</div>
+							
+
+						
+						<?php 
+						}
+						?>
+						
 						<?php if(zen_get_product_is_always_free_shipping($products_id_current) && $flag_show_product_info_free_shipping) { ?>
 						<div id="freeShippingIcon"><?php echo TEXT_PRODUCT_FREE_SHIPPING_ICON; ?></div>
 						<?php } ?>

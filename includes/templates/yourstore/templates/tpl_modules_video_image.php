@@ -13,12 +13,8 @@
 <?php require(DIR_WS_MODULES . zen_get_module_directory(FILENAME_MAIN_PRODUCT_IMAGE)); ?>
 
 
-<div id="product_flash"  class="centeredContent back">
-    <br />
-    <div id="box" >
-        <ul id="product_flash_btn">
-
-
+<div class="video_inner" >
+        
 <?php
 
     if (!defined('IS_ADMIN_FLAG')) {
@@ -88,18 +84,12 @@
     if ($num_images) {
         for ($i=0, $n=$num_images; $i<$n; $i++) {
 ?>
-            <li>
-                <a href="<?php echo $images_array[$i]; ?>" rel="MagicZoomPlusImageMainImage" rev="<?php echo $images_array[$i]; ?>">
-                  <img src="<?php echo $images_array[$i]; ?>" width="42" height="32"  />
-                </a>
-            </li>
+            <img src="<?php echo $images_array[$i]; ?>" width="400" height="400"  />
 <?php
         }
 
     } 
 ?>
-        </ul>
-    </div>
 </div>
 
 
