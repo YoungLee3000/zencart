@@ -13,7 +13,7 @@
 <?php require(DIR_WS_MODULES . zen_get_module_directory(FILENAME_MAIN_PRODUCT_IMAGE)); ?>
 
 
-<div class="video_inner" >
+<div class="video_banner" >
         
 <?php
 
@@ -84,7 +84,7 @@
     if ($num_images) {
         for ($i=0, $n=$num_images; $i<$n; $i++) {
 ?>
-            <img src="<?php echo $images_array[$i]; ?>" width="400" height="400"  />
+            <img src="<?php echo $images_array[$i]; ?>" width="400" height="400"  class="video_item"/>
 <?php
         }
 

@@ -42,13 +42,13 @@
 							<div class="vAndi">
 								<ul class="vAndiCont">
 									<li>
-										<div class="videoBtn switch"/>
-											Video
+										<div class="imgBtn  switch"/>
+											Photo
 										</div>
 									</li>
 									<li>
-										<div class="imgBtn">
-											Photo
+										<div class="videoBtn">
+											Video
 										</div>
 									</li>
 								</ul>
@@ -99,9 +99,11 @@
 						<!--bof zone of figure and video-->
 						<script>
     	
-    						var g_imgObj = $(".video_inner img");
-    						g_imgObj.eq(0).show().siblings().hide();
+    						var g_imgObj = $("#video_zone div.video_banner img");
+    						//g_imgObj.eq(0).show().siblings().hide();
     						var g_length = g_imgObj.length;
+    						console.log(g_length);
+
     						var g_count = 0;
     						var g_timer = null;
     						var g_region = 2000;
@@ -111,11 +113,14 @@
     							if ($("#video_zone").css("display") != 'none' && $(".video_btn_zone").css("display") != 'none' ) return;
   			
  								if (g_count < g_length ){
- 									g_imgObj.eq(g_count).show().siblings().hide();
-    								g_imgObj.eq(g_count).addClass('active').siblings().removeClass('active');
+ 									g_imgObj.eq(g_count).css('z-index','1000').siblings().css('z-index','1');
+ 									g_imgObj.eq(g_count).addClass('active').siblings().removeClass('active');
+ 									
+ 									
  									g_count = g_count + 1;
  									if (g_count == g_length){
  										g_timer = setTimeout(function(){
+ 											g_imgObj.eq(g_count).removeClass('active').siblings().removeClass('active');
  											if ($("#video_zone").css("display") != 'none') $(".video_btn_zone").show();
  										},g_region);
  									}
@@ -128,7 +133,7 @@
     							$(".video_btn_zone").hide();
     							g_count = 0;
     							expand();
-    							//setInterval(expand,2000);
+    							
     						}
 
     						$(".video_btn_zone").on("click", function() {
@@ -141,7 +146,9 @@
 								$("#video_zone").show();
 								$(".video_btn_zone").show();
 								$("#figure_zone").hide();
-								g_imgObj.eq(0).show().siblings().hide();
+								g_imgObj.eq(0).removeClass('active').siblings().removeClass('active');
+								g_imgObj.eq(0).css('z-index','1000').siblings().css('z-index','1');
+							
 							})
 
 							$(".imgBtn").on("click",function(){
@@ -152,7 +159,7 @@
 								$("#figure_zone").show();
 								clearTimeout(g_timer);
 								g_imgObj.eq(g_count).removeClass('active').siblings().removeClass('active');
-    							g_imgObj.eq(g_count).show().siblings().show();
+    							
 							})
     	
  
@@ -200,13 +207,13 @@
 								<div class="vAndi">
 									<ul class="vAndiCont">
 										<li>
-											<div class="videoBtn mb_switch">
-												Video
+											<div class="imgBtn mb_switch">
+												Photo
 											</div>
 										</li>
 										<li>
-											<div class="imgBtn">
-												Photo
+											<div class="videoBtn ">
+												Video
 											</div>
 										</li>
 									</ul>
@@ -236,6 +243,72 @@
 
 							</div>
 							<!--eof figure video zone-->
+							<script>
+    	
+    							var mb_g_imgObj = $("#mb_video_zone div.video_banner img");
+    							//mb_g_imgObj.eq(0).show().siblings().hide();
+    							var mb_g_length = mb_g_imgObj.length;
+
+    							var mb_g_count = 0;
+    							var mb_g_timer = null;
+    							var mb_g_region = 2000;
+    							function mb_expand() {
+    								clearTimeout(mb_g_timer);
+    								if ($("#mb_video_zone").css("display") == 'none' ) return;
+    								if ($("#mb_video_zone").css("display") != 'none' && $(".video_btn_zone").css("display") != 'none' ) return;
+  			
+ 									if (mb_g_count < mb_g_length ){
+ 										mb_g_imgObj.eq(mb_g_count).css('z-index','1000').siblings().css('z-index','1');
+ 										mb_g_imgObj.eq(mb_g_count).addClass('active').siblings().removeClass('active');
+ 									
+ 									
+ 										mb_g_count = mb_g_count + 1;
+ 										if (mb_g_count == mb_g_length){
+ 											mb_g_timer = setTimeout(function(){
+ 												mb_g_imgObj.eq(mb_g_count).removeClass('active').siblings().removeClass('active');
+ 												if ($("#mb_video_zone").css("display") != 'none') $(".video_btn_zone").show();
+ 											},mb_g_region);
+ 										}
+ 										else{
+ 											mb_g_timer = setTimeout(mb_expand,mb_g_region);
+ 										}	
+ 									}
+    							}
+
+    							function mb_beginPlay(){
+    								$(".video_btn_zone").hide();
+    								mb_g_count = 0;
+    								mb_expand();
+    							
+    							}
+
+    							$("#mb_zone_content .video_btn_zone").on("click", function() {
+			 						mb_beginPlay();
+								})
+
+								$("#mb_zone_content .videoBtn").on("click",function(){
+									$("#mb_zone_content .videoBtn").addClass("mb_switch");
+									$("#mb_zone_content .imgBtn").removeClass("mb_switch");
+									$("#mb_video_zone").show();
+									$("#mb_video_zone .video_btn_zone").show();
+									$("#mb_figure_zone").hide();
+									mb_g_imgObj.eq(0).css('z-index','1000').siblings().css('z-index','1');
+									mb_g_imgObj.eq(0).removeClass('active').siblings().removeClass('active');
+								})
+
+								$("#mb_zone_content .imgBtn").on("click",function(){
+									$("#mb_zone_content .videoBtn").removeClass("mb_switch");
+									$("#mb_zone_content .imgBtn").addClass("mb_switch");
+									$("#mb_video_zone").hide();
+									$("#mb_video_zone  .video_btn_zone").hide();
+									$("#mb_figure_zone").show();
+									clearTimeout(mb_g_timer);
+									mb_g_imgObj.eq(mb_g_count).removeClass('active').siblings().removeClass('active');
+    								
+								})
+    	
+ 
+    						</script>
 						</div>
 							
 

@@ -12,10 +12,10 @@
 			      </div>
 			      <div class="modal-newsletter text-center">
 					<img class="logo img-responsive1" alt="<?php if($logo_image!=NULL){ echo "logo"; } ?>" src="<?php echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'images').'/uploads/'.$logo_image;?>" />
-			        <h2 class="text-uppercase modal-title">JOIN US NOW!</h2>
-			        <p class="color-dark">And get hot news about the theme</p>
+			        <h2 class="text-uppercase modal-title">Regarde - nous!</h2>
+			        <p class="color-dark">Obtenir des informations sur les produits les plus récents</p>
 			        <p class="color font24 custom-font font-lighter">
-			           	YOURStore 
+			           	BonMaillot 
 			        </p>
 					<?php if($display_newsletter==1){ ?>
 					<div class="subscribe-box">
