@@ -5313,70 +5313,74 @@ span.swatch-label-title {min-height: 50px;display: inline-block;}
 
 #video_zone{
     text-align:center;
-    position: relative;
+    height:400px;
+    position: absolute;
     overflow: hidden;
-    /*z-index: 1;*/
+    width: 100%;
+    z-index: 1;
     display: none;
-    height: 400px;
 }
 
 #mb_video_zone{
     text-align:center;
     height:400px;
-    position: relative;
     overflow: hidden;
+    position: absolute;
+    width: 100%;
     display: none;
+    z-index: 1;
 }
 
 #figure_zone{
-    /*display: none;*/
-    position: relative;
+    /*display: none*/
     z-index: 0;
+    position: relative;
+    height: 500px;
+    margin-bottom: 100px;
 }
 #mb_figure_zone{
 	position: relative;
+	height: 400px;
 	z-index: 0;
 }
 
-
-
-div.video_banner 
-{	
-
-}
-
-img.video_item{
-	-webkit-transform: scale(1.0);   
-	-moz-transform: scale(1.0);   	
-	-ms-transform: scale(1.0);       
-	-o-transform: scale(1.0);       
-	transform: scale(1.0);
-	position: absolute;
-
-	margin-left: -200px;
-    margin-top: 50px;
-}
-
- div.video_banner>img.active 
+.video_banner div.banner_item
 {
-	-webkit-transform: scale(1.2);   
-	-moz-transform: scale(1.2);   	
-	-ms-transform: scale(1.2);       
-	-o-transform: scale(1.2);       
+	/*-webkit-transform: scale(1); 
+	-moz-transform: scale(1);   
+	-ms-transform: scale(1);   
+	-o-transform: scale(1);   
+	transform: scale(1);*/
+	z-index: -1;
+	background-position: 20%,20%;
+	width:100%;
+	height: 400px;
+	transition: visibility 2s;
+	background: no-repeat;
+
+
+}
+
+ .video_banner  div.active 
+{
+	-webkit-transform: scale(1.2);   /* Safari 和 Chrome*/
+	-moz-transform: scale(1.2);   	/* Firefox*/
+	-ms-transform: scale(1.2);       /* IE 9*/
+	-o-transform: scale(1.2);       /*Opera*/
 	transform: scale(1.2);
 
 
 	-webkit-transition: -webkit-transform 2s linear 0s;
-	-moz-transition: -webkit-transform 2s linear 0s;
-	-ms-transition: -webkit-transform 2s linear 0s;
-	-o-transition: -webkit-transform 2s linear 0s;
+	-moz-transition: -moz-transform 2s linear 0s;
+	-ms-transition: -ms-transform 2s linear 0s;
+	-o-transition: -o-transform 2s linear 0s;
 	transition: transform 2s linear 0s;
 }
 
 
 .video_btn_zone{
 
-	z-index: 1000;
+	z-index: 2;
 	position: absolute;
 	top: 50%;   
     left: 50%;   
@@ -5402,25 +5406,17 @@ img.video_item{
 }
 
 .videoBtn, .imgBtn{
-	display: inline;
+	/*display: inline;*/
 	background: #1FC0A0;
 	margin-left: 20px;
 	padding: 10px;
 	color: white;
-}
-#zone_content div.videoBtn:hover, #zone_content div.imgBtn:hover{
-	background: #f5f5f5;
-	color: #1FC0A0;
 }
 
 #zone_content div.videoBtn.switch, #zone_content div.imgBtn.switch {
 	background: #FE3F47;
 }
 
-#zone_content div.videoBtn.switch:hover, #zone_content div.imgBtn.switch:hover {
-	background: #f5f5f5;
-	color: #1FC0A0;
-}
 
 #mb_zone_content div.videoBtn.mb_switch,#mb_zone_content div.imgBtn.mb_switch {
 	background: #FE3F47;

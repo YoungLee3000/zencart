@@ -83,8 +83,12 @@
 
     if ($num_images) {
         for ($i=0, $n=$num_images; $i<$n; $i++) {
+          $img_item = 'url(' . $images_array[$i] . ')';
 ?>
-            <img src="<?php echo $images_array[$i]; ?>" width="400" height="400"  class="video_item"/>
+            <!-- <img src="<?php echo $images_array[$i]; ?>" style="width: 400px;height: 400px;overflow: hidden;" /> -->
+
+            <div style="<?php echo 'background-image: ' . $img_item . ';' ; ?> "  class='banner_item' >
+            </div>
 <?php
         }
 

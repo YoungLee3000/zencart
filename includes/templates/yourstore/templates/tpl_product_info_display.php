@@ -42,12 +42,12 @@
 							<div class="vAndi">
 								<ul class="vAndiCont">
 									<li>
-										<div class="imgBtn  switch"/>
+										<div class="imgBtn switch">
 											Photo
 										</div>
 									</li>
 									<li>
-										<div class="videoBtn">
+										<div class="videoBtn "/>
 											Video
 										</div>
 									</li>
@@ -99,41 +99,55 @@
 						<!--bof zone of figure and video-->
 						<script>
     	
-    						var g_imgObj = $("#video_zone div.video_banner img");
+    						var g_imgObj = $(".video_banner div.banner_item");
     						//g_imgObj.eq(0).show().siblings().hide();
     						var g_length = g_imgObj.length;
-    						console.log(g_length);
-
+    						// var g_imgSrc = new Array();
+    						// for (var i=0; i<g_length; i++){
+    						// 	g_imgSrc[i] = g_imgObj.eq(i).attr('src');
+    						// 	console.log(g_imgSrc[i]);
+    						// }
     						var g_count = 0;
     						var g_timer = null;
     						var g_region = 2000;
     						function expand() {
-    							clearTimeout(g_timer);
+    							//clearTimeout(g_timer);
     							if ($("#video_zone").css("display") == 'none' ) return;
     							if ($("#video_zone").css("display") != 'none' && $(".video_btn_zone").css("display") != 'none' ) return;
   			
  								if (g_count < g_length ){
- 									g_imgObj.eq(g_count).css('z-index','1000').siblings().css('z-index','1');
+ 									g_imgObj.eq(g_count).show().siblings().hide();
  									g_imgObj.eq(g_count).addClass('active').siblings().removeClass('active');
- 									
- 									
- 									g_count = g_count + 1;
- 									if (g_count == g_length){
- 										g_timer = setTimeout(function(){
- 											g_imgObj.eq(g_count).removeClass('active').siblings().removeClass('active');
+ 									//g_imgObj.eq(0).attr('src',g_imgSrc[g_count]);
+ 									//g_imgObj.eq(0).addClass('active');
+ 									//g_imgObj.eq(g_count).attr('opacity','1.0').siblings().attr('opacity','0.0');
+    								// if (g_imgObj.eq(0).hasClass('active')){
+    								// 	g_imgObj.eq(0).removeClass('active');
+    								// }
+    								// else{
+    								// 	g_imgObj.eq(0).addClass('active');
+    								// }
+    								clearTimeout(g_timer);
+    								g_timer = setTimeout(function(){
+    									g_imgObj.eq(g_count).removeClass('active');
+    									g_count = g_count + 1;
+ 										if (g_count == g_length){
+ 											g_imgObj.eq(0).show().siblings().hide();
  											if ($("#video_zone").css("display") != 'none') $(".video_btn_zone").show();
- 										},g_region);
- 									}
- 									else{
- 										g_timer = setTimeout(expand,g_region);
- 									}	
+ 										}
+ 										else{
+ 											expand();
+ 										}	
+    								},g_region);
+ 									
  								}
     						}
+
     						function beginPlay(){
     							$(".video_btn_zone").hide();
     							g_count = 0;
     							expand();
-    							
+    							//setInterval(expand,2000);
     						}
 
     						$(".video_btn_zone").on("click", function() {
@@ -146,9 +160,9 @@
 								$("#video_zone").show();
 								$(".video_btn_zone").show();
 								$("#figure_zone").hide();
-								g_imgObj.eq(0).removeClass('active').siblings().removeClass('active');
-								g_imgObj.eq(0).css('z-index','1000').siblings().css('z-index','1');
-							
+								//g_imgObj.eq(0).attr('opacity','1.0').siblings().attr('opacity','0.0');
+								g_imgObj.eq(0).show().siblings().hide();
+								//g_imgObj.eq(0).attr('src',g_imgSrc[0]);
 							})
 
 							$(".imgBtn").on("click",function(){
@@ -158,8 +172,11 @@
 								$(".video_btn_zone").hide();
 								$("#figure_zone").show();
 								clearTimeout(g_timer);
-								g_imgObj.eq(g_count).removeClass('active').siblings().removeClass('active');
-    							
+								//g_imgObj.eq(0).attr('opacity','1.0').siblings().attr('opacity','0.0');
+								//g_imgObj.eq(0).attr('src',g_imgSrc[0]);
+								//g_imgObj.eq(0).removeClass('active')
+								g_imgObj.eq(0).removeClass('active').siblings().removeClass('active');
+    				 			g_imgObj.eq(0).show().siblings().show();
 							})
     	
  
@@ -212,7 +229,7 @@
 											</div>
 										</li>
 										<li>
-											<div class="videoBtn ">
+											<div class="videoBtn">
 												Video
 											</div>
 										</li>
@@ -243,46 +260,48 @@
 
 							</div>
 							<!--eof figure video zone-->
+
 							<script>
     	
-    							var mb_g_imgObj = $("#mb_video_zone div.video_banner img");
-    							//mb_g_imgObj.eq(0).show().siblings().hide();
-    							var mb_g_length = mb_g_imgObj.length;
-
-    							var mb_g_count = 0;
-    							var mb_g_timer = null;
-    							var mb_g_region = 2000;
+    							var mb_gimgObj = $("#mb_video_zone .video_banner div.banner_item");
+    						
+    							var mb_glength = mb_gimgObj.length;
+    						
+    							var mb_gcount = 0;
+    							var mb_gtimer = null;
+    							var mb_gregion = 2000;
     							function mb_expand() {
-    								clearTimeout(mb_g_timer);
+    								
     								if ($("#mb_video_zone").css("display") == 'none' ) return;
-    								if ($("#mb_video_zone").css("display") != 'none' && $(".video_btn_zone").css("display") != 'none' ) return;
+    								if ($("#mb_video_zone").css("display") != 'none' && $("#mb_video_zone .video_btn_zone").css("display") != 'none' ) return;
   			
- 									if (mb_g_count < mb_g_length ){
- 										mb_g_imgObj.eq(mb_g_count).css('z-index','1000').siblings().css('z-index','1');
- 										mb_g_imgObj.eq(mb_g_count).addClass('active').siblings().removeClass('active');
+ 									if (mb_gcount < mb_glength ){
+ 										mb_gimgObj.eq(mb_gcount).show().siblings().hide();
+ 										mb_gimgObj.eq(mb_gcount).addClass('active').siblings().removeClass('active');
  									
+    									clearTimeout(mb_gtimer);
+    									mb_gtimer = setTimeout(function(){
+    										mb_gimgObj.eq(mb_gcount).removeClass('active');
+    										mb_gcount = mb_gcount + 1;
+ 											if (mb_gcount == mb_glength){
+ 												mb_gimgObj.eq(0).show().siblings().hide();
+ 												if ($("#mb_video_zone").css("display") != 'none') $("#mb_video_zone .video_btn_zone").show();
+ 											}
+ 											else{
+ 												mb_expand();
+ 											}	
+    									},mb_gregion);
  									
- 										mb_g_count = mb_g_count + 1;
- 										if (mb_g_count == mb_g_length){
- 											mb_g_timer = setTimeout(function(){
- 												mb_g_imgObj.eq(mb_g_count).removeClass('active').siblings().removeClass('active');
- 												if ($("#mb_video_zone").css("display") != 'none') $(".video_btn_zone").show();
- 											},mb_g_region);
- 										}
- 										else{
- 											mb_g_timer = setTimeout(mb_expand,mb_g_region);
- 										}	
  									}
     							}
 
     							function mb_beginPlay(){
-    								$(".video_btn_zone").hide();
-    								mb_g_count = 0;
+    								$("#mb_video_zone .video_btn_zone").hide();
+    								mb_gcount = 0;
     								mb_expand();
-    							
     							}
 
-    							$("#mb_zone_content .video_btn_zone").on("click", function() {
+    							$("#mb_video_zone .video_btn_zone").on("click", function() {
 			 						mb_beginPlay();
 								})
 
@@ -292,23 +311,26 @@
 									$("#mb_video_zone").show();
 									$("#mb_video_zone .video_btn_zone").show();
 									$("#mb_figure_zone").hide();
-									mb_g_imgObj.eq(0).css('z-index','1000').siblings().css('z-index','1');
-									mb_g_imgObj.eq(0).removeClass('active').siblings().removeClass('active');
+								
+									mb_gimgObj.eq(0).show().siblings().hide();
+								
 								})
 
 								$("#mb_zone_content .imgBtn").on("click",function(){
 									$("#mb_zone_content .videoBtn").removeClass("mb_switch");
 									$("#mb_zone_content .imgBtn").addClass("mb_switch");
 									$("#mb_video_zone").hide();
-									$("#mb_video_zone  .video_btn_zone").hide();
+									$("#mb_video_zone .video_btn_zone").hide();
 									$("#mb_figure_zone").show();
-									clearTimeout(mb_g_timer);
-									mb_g_imgObj.eq(mb_g_count).removeClass('active').siblings().removeClass('active');
-    								
+									clearTimeout(mb_gtimer);
+									
+									mb_gimgObj.eq(0).removeClass('active').siblings().removeClass('active');
+    				 				mb_gimgObj.eq(0).show().siblings().show();
 								})
     	
  
     						</script>
+
 						</div>
 							
 
