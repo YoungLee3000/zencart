@@ -1,187 +1,188 @@
 <?php
 /**
  * @package languageDefines
- * @copyright Copyright 2003-2012 Zen Cart Development Team
+ * @copyright Copyright 2003-2018 Zen Cart Development Team
  * @copyright Portions Copyright 2005 CardinalCommerce
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @version GIT: $Id: Author: DrByte  Thu Aug 16 01:57:33 2012 -0400 Modified in v1.5.1 $
+ * @version $Id: Drbyte Sun Jan 7 21:30:21 2018 -0500 Modified in v1.5.6 $
  */
 
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_ADMIN_TITLE_WPP', 'Paiement PayPal Pro');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_ADMIN_TITLE_NONUSA', 'Paiements PayPal Pro sur site Web');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_ADMIN_TITLE_PRO20', 'Paiements PayPal Pro sur site Web Payflow Edition (UK)');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_ADMIN_TITLE_WPP', 'PayPal Payments Pro');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_ADMIN_TITLE_NONUSA', 'PayPal Website Payments Pro');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_ADMIN_TITLE_PRO20', 'PayPal Website Payments Pro Payflow Edition (UK)');
 
   if (IS_ADMIN_FLAG === true) {
-    define('MODULE_PAYMENT_PAYPALDP_TEXT_ADMIN_DESCRIPTION', '<strong>Paiement PayPal Pro sur site Web</strong>%s<br />' . '<a href="http://www.zen-cart.com/partners/paypal" target="_blank">Gérer votre compte PayPal.</a>' . '<br /><br /><font color="green">Instructions de configuration :</font><br /><span class="alert">1. </span><a href="http://www.zen-cart.com/partners/paypal" target="_blank">Créez votre compte PayPal - Cliquez ici.</a><br />' . 
-(defined('MODULE_PAYMENT_PAYPALDP_STATUS') ? '' : '... puis cliquez sur &quot;installer&quot; ci-dessus pour activer le support PayPal Express Checkout.</br>') . 
-(!defined('MODULE_PAYMENT_PAYPALWPP_APISIGNATURE') || MODULE_PAYMENT_PAYPALWPP_APISIGNATURE == '' ? '<span class="alert">2. </span><strong>API pièces justificatives</strong> à partir de l\'option API pièces justificatives dans les paramètres de votre profil PayPal. Ce module utilise l\'option <strong>API Signature</strong> -- Vous aurez besoin d\'un nom d\'utilisateur, d\'un mot de passe et d\'une signature à entrer dans les champs ci-dessous.' : '<span class="alert">2. </span>Assurez-vous d\'avoir entré correctement les informations de sécurité nom d\'utilisateur / mot de passe, etc, ci-dessous.') .
-'<font color="green"><hr /><strong>Pré-requis:</strong></font><br /><hr />*<strong>Express Checkout</strong> doit être installé et activé pour utiliser les Paiements Pro sur site Web, comme indiqué dans les conditions du service PayPal.<br /><hr />' );
+    define('MODULE_PAYMENT_PAYPALDP_TEXT_ADMIN_DESCRIPTION', '<strong>PayPal Payments Pro</strong>%s<br />' . '<a href="https://www.paypal.com" target="_blank">Manage your PayPal account.</a>' . '<br /><br /><font color="green">Configuration Instructions:</font><br /><span class="alert">1. </span><a href="http://www.zen-cart.com/partners/paypal-pro" target="_blank">Sign up for your PayPal account - click here.</a><br />' .
+(defined('MODULE_PAYMENT_PAYPALDP_STATUS') ? '' : '... and click "install" above to enable PayPal Payments Pro.<br /><a href="http://www.zen-cart.com/getpaypal" target="_blank">For additional detailed help, see this FAQ article</a><br />') .
+(!defined('MODULE_PAYMENT_PAYPALWPP_APISIGNATURE') || MODULE_PAYMENT_PAYPALWPP_APISIGNATURE === '' ? '<span class="alert">2. </span><strong>API credentials</strong> from the API Credentials option in your PayPal Profile Settings area. This module uses the <strong>API Signature</strong> option -- you will need the username, password and signature to enter in the fields below.' : '<span class="alert">2. </span>Ensure you have entered the appropriate security data for username/pwd etc, below.') .
+'<font color="green"><hr /><strong>Requirements:</strong></font><br /><hr />*<strong>Express Checkout</strong> must be installed and activated in order to use PayPal Payments Pro, according to PayPal Terms of Service. <br />*Also requires CURL over SSL for outbound communications. CURL should be enabled for ports 80 and 443.<hr />' );
   }
 
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_DESCRIPTION', 'Carte de crédit');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_TITLE', 'Carte de crédit');
-  define('MODULE_PAYMENT_PAYPALDP_DP_TEXT_TYPE', 'Carte de crédit (WPP)');
-  define('MODULE_PAYMENT_PAYPALDP_PF_TEXT_TYPE', 'Carte de crédit (PF)');
-  define('MODULE_PAYMENT_PAYPALDP_ERROR_HEADING', 'Nous sommes désolés, mais nous n\'avons pas pu traiter votre carte de crédit.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CARD_ERROR', 'Les informations de carte de crédit que vous avez entré contiennent une erreur. Veuillez vérifier puis réessayer.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_FIRSTNAME', 'Prénom du propriétaire de la carte : ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_LASTNAME', 'Nom du propriétaire de la carte : ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_OWNER', 'Propriétaire de la carte : ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_TYPE', 'Type de carte : ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_NUMBER', 'Numéro de carte : ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_EXPIRES', 'Date d\'expiration de la carte : ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_ISSUE', 'Date d\'émission de la carte : ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_MAESTRO_ISSUENUMBER', 'Date d\'émission Maestro : ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_CHECKNUMBER', 'Numéro CVV : ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_CHECKNUMBER_LOCATION', '(au dos de votre carte)');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_TRANSACTION_FOR', 'Transaction pour');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_DECLINED', 'Votre carte de crédit a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour plus d\'informations.');
-  define('MODULE_PAYMENT_PAYPALDP_CANNOT_BE_COMPLETED', 'Nous n\'avons pas pu valider votre commande. Veuillez sélectionner un autre mode de paiement, ou contactez nous pour trouver une solution.');
-  define('MODULE_PAYMENT_PAYPALDP_INVALID_RESPONSE', 'Nous n\'avons pas pu traiter votre commande. Veuillez sélectionner un autre mode de paiement, ou contactez nous pour trouver une solution.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_GEN_ERROR', 'Une erreur est survenue en contactant l\'organisme de paiement. Veuillez réessayer, sélectionner un autre mode de paiement, ou contactez nous pour trouver une solution.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_EMAIL_ERROR_MESSAGE', 'Cher propriétaire de boutique,' . "\n" . 'Une erreur est survenue en essayant d\'initialiser une transaction de paiement-validation. Par courtoisie, uniquement le "numéro" d\'erreur a été affiché à votre client. Vous trouverez le détail de cette erreur ci-dessous.' . "\n\n");
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_EMAIL_ERROR_SUBJECT', 'ALERTE : Erreur de paiement direct PayPal');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_ADDR_ERROR', 'Les informations d\'adresse que vous avez entré ne semblent pas valides ou ne correspondent pas. Veuillez choisir ou ajouter une adresse différente puis réessayer.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_INSUFFICIENT_FUNDS_ERROR', 'PayPal n\'a pas pu solder cette transaction correctement. Veuillez choisir une autre option de paiement ou changer les options de solde dans votre compte PayPal avant de procéder au paiement.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_ERROR', 'Une erreur est survenue en essayant de traiter votre carte de crédit. Veuillez réessayer, sélectionner un autre mode de paiement, ou contactez nous pour trouver une solution.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_BAD_CARD', 'Nous nous excusons pour la gêne occasionnée, mais nous n\'acceptons pas le type de carte de crédit que vous avez saisi. Veuillez utiliser une autre carte de crédit ou vérifier que les informations que vous avez entré sont correctes, ou contactez nous pour trouver une solution.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_BAD_LOGIN', 'Il y a eu un problème à la validation de votre compte. Veuillez réessayer.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_JS_CC_OWNER', '* Le nom du propriétaire de la carte doit comprendre au moins ' . CC_OWNER_MIN_LENGTH . ' caractères.\n');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_JS_CC_NUMBER', '* Le numéro de carte de crédit doit comprendre au moins ' . CC_NUMBER_MIN_LENGTH . ' caractères.\n');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_JS_CC_CVV', '* Le numéro CVV à 3 ou 4 chiffres doit être relevé au dos de la carte de crédit.\n');
-  define('MODULE_PAYMENT_PAYPALDP_ERROR_AVS_FAILURE_TEXT', 'ALERTE : Échec de la vérification d\'adresse. ');
-  define('MODULE_PAYMENT_PAYPALDP_ERROR_CVV_FAILURE_TEXT', 'ALERTE : Échec de la vérification du code CVV. ');
-  define('MODULE_PAYMENT_PAYPALDP_ERROR_AVSCVV_PROBLEM_TEXT', ' Commande en attente de validation par le propriétaire de la boutique.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_DESCRIPTION', 'Credit Card');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_TITLE', 'Credit Card');
+  define('MODULE_PAYMENT_PAYPALDP_DP_TEXT_TYPE', 'Credit Card (WPP)');
+  define('MODULE_PAYMENT_PAYPALDP_PF_TEXT_TYPE', 'Credit Card (PF)');
+  define('MODULE_PAYMENT_PAYPALDP_ERROR_HEADING', 'We\'re sorry, but we were unable to process your credit card.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CARD_ERROR', 'The credit card information you entered contains an error.  Please check it and try again.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_FIRSTNAME', 'First Name:');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_LASTNAME', 'Last Name:');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_OWNER', 'Card Owner:');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_TYPE', 'Card Type:');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_NUMBER', 'Card Number:');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_EXPIRES', 'Expiry Date:');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_ISSUE', 'Issue Date:');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_MAESTRO_ISSUENUMBER', 'Maestro Issue No.:');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_CHECKNUMBER', 'CVV Number:');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CREDIT_CARD_CHECKNUMBER_LOCATION', '(on back of the credit card)');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_TRANSACTION_FOR', 'Transaction for');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_DECLINED', 'Your credit card was declined. Please try another card or contact your bank for more information.');
+  define('MODULE_PAYMENT_PAYPALDP_CANNOT_BE_COMPLETED', 'We were not able to process your order. Please select an alternate payment method, or contact the store owner for assistance.');
+  define('MODULE_PAYMENT_PAYPALDP_INVALID_RESPONSE', 'We were not able to process your order. Please try again, select an alternate payment method, or contact the store owner for assistance.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_GEN_ERROR', 'An error occurred when we tried to contact the payment processor. Please try again, select an alternate payment method, or contact the store owner for assistance.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_EMAIL_ERROR_MESSAGE', 'Dear store owner,' . "\n" . 'An error occurred when attempting to initiate the payment-validation transaction. As a courtesy, only the error "number" was shown to your customer.  The details of the error are shown below.' . "\n\n");
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_EMAIL_ERROR_SUBJECT', 'ALERT: PayPal Direct Payment Error');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_ADDR_ERROR', 'The address information you entered does not appear to be valid or cannot be matched. Please select or add a different address and try again.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_INSUFFICIENT_FUNDS_ERROR', 'PayPal was unable to successfully fund this transaction. Please choose another payment option or review funding options in your PayPal account before proceeding.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_ERROR', 'An error occurred when we tried to process your credit card. Please try again, select an alternate payment method, or contact the store owner for assistance.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_BAD_CARD', 'We apologize for the inconvenience, but the credit card you entered is not one that we accept. Please use a different credit card or verify that the details you entered are correct, or contact the store owner for assistance.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_BAD_LOGIN', 'There was a problem validating your account. Please try again.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_JS_CC_OWNER', '* The cardholder\'s name must be at least ' . CC_OWNER_MIN_LENGTH . ' characters.\n');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_JS_CC_NUMBER', '* The credit card number must be at least ' . CC_NUMBER_MIN_LENGTH . ' characters.\n');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_JS_CC_CVV', '* The 3 or 4 digit CVV number must be entered from the back of the credit card.\n');
+  define('MODULE_PAYMENT_PAYPALDP_ERROR_AVS_FAILURE_TEXT', 'ALERT: Address Verification Failure. ');
+  define('MODULE_PAYMENT_PAYPALDP_ERROR_CVV_FAILURE_TEXT', 'ALERT: Card CVV Code Verification Failure. ');
+  define('MODULE_PAYMENT_PAYPALDP_ERROR_AVSCVV_PROBLEM_TEXT', ' Order is on hold pending review by Store Owner.');
 
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_STATE_ERROR', 'L\'état assigné à votre compte est invalide. Veuillez vous rendre dans les paramètres de votre compte et le changer.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_NOT_WPP_ACCOUNT_ERROR', 'Nous nous excusons pour la gêne occasionnée. Le paiement n\'a pas pu être initialisé car le compte PayPal configuré par le propriétaire de la boutique n\'est pas un compte Paiement PayPal Pro ou les services du portail PayPal n\'ont pas été achetés. Ou vous avez essayé de payer avec une carte AmEx dont le marchand n\'a pas autorisé le support. Veuillez choisir un autre mode de paiement pour votre commande ou peut-être une autre carte de crédit.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_NOT_US_WPP_ACCOUNT_ERROR', 'Nous nous excusons pour la gêne occasionnée. Le paiement n\'a pas pu être initialisé car le compte PayPal configuré par le propriétaire de la boutique n\'est pas un compte Paiement PayPal Pro US ou les services du portail PayPal n\'ont pas été achetés (ou n\'ont pas été activés en acceptant les conditions de facturation sur le site Web PayPal). Veuillez choisir un autre mode de paiement pour votre commande.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_NOT_UKWPP_ACCOUNT_ERROR', 'Nous nous excusons pour la gêne occasionnée. Le paiement n\'a pas pu être initialisé car le compte PayPal configuré par le propriétaire de la boutique n\'est pas un compte Paiement PayPal Pro 2.0 (UK) ou les services du portail PayPal n\'ont pas été achetés ou activés correctement. Veuillez choisir un autre mode de paiement pour votre commande.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_SANDBOX_VS_LIVE_ERROR', 'Nous nous excusons pour la gêne occasionnée. Les paramètres d\'identification du compte PayPal ne sont pas encore définis, ou les informations de sécurité de l\'API sont incorrectes. Nous ne pouvons pas terminer votre transaction. Veuillez avertir le propriétaire de la boutique afin qu\'il corrige ce problème.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_WPP_BAD_COUNTRY_ERROR', 'Nous sommes désolé -- Le compte PayPal configuré par le propriétaire de la boutique est situé dans un pays qui n\'est pas pris en charge par Paiement PayPal Pro pour le moment. Veuillez choisir un autre mode de paiement pour finaliser votre commande.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CANNOT_USE_THIS_CURRENCY_ERROR', 'Nous sommes désolé -- La carte de crédit que vous utilisez n\'est pas compatible avec la devise que vous avez choisie pour l\'encaissement. Veuillez modifier votre choix de devise ou choisir un autre mode de paiement pour finaliser votre commande.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_NOT_CONFIGURED', '<span class="alert">&nbsp;(NOTE: Le module n\'est pas encore configuré)</span>');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CARD_TYPE_NOT_SUPPORTED', 'Vous avez essayé de payer votre achat en utilisant une carte de crédit qui n\'est pas acceptée par ce marchand. Nous nous excusons pour la gêne occasionnée et nous vous invitons à réessayer avec un type de carte différent, ou contacter le propriétaire de la boutique pour d\'autres choix de modes de paiement.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_GETDETAILS_ERROR', 'Il y a eu un problème en récupérant les détails de la transaction. ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_TRANSSEARCH_ERROR', 'Il y a eu un problème en recherchant les transactions correspondant aux critères que vous avez indiqué. ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_VOID_ERROR', 'Il y a eu un problème en annulant la transaction. ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_REFUND_ERROR', 'Il y a eu un problème en remboursant le montant de transaction spécifié. ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_AUTH_ERROR', 'Il y a eu un problème à l\'autorisation de la transaction. ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CAPT_ERROR', 'Il y a eu un problème pour prélever la transaction. ');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_REFUNDFULL_ERROR', 'Votre demande de remboursement a été rejetée par PayPal.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_INVALID_REFUND_AMOUNT', 'Vous avez demandé un remboursement partiel mais n\'avez pas indiqué de montant.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_REFUND_FULL_CONFIRM_ERROR', 'Vous avez demandé un remboursement complet mais n\'avez pas confirmé votre intention en cochant la case de confirmation.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_INVALID_AUTH_AMOUNT', 'Vous avez demandé une autorisation mais vous n\'avez pas indiqué de montant.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_INVALID_CAPTURE_AMOUNT', 'Vous avez demandé un prélèvement mais n\'avez pas indiqué de montant.');
-  define('MODULE_PAYMENT_PAYPALWPP_TEXT_VOID_CONFIRM_CHECK', 'Confirmer');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_VOID_CONFIRM_ERROR', 'Vous avez demandé à annuler une transaction mais n\'avez pas confirmé votre intention en cochant la case de confirmation.');
-  define('MODULE_PAYMENT_PAYPALWPP_TEXT_AUTH_FULL_CONFIRM_CHECK', 'Confirmer');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_AUTH_CONFIRM_ERROR', 'Vous avez demandé une autorisation mais n\'avez pas confirmé votre intention en cochant la case de confirmation.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CAPTURE_FULL_CONFIRM_ERROR', 'Vous avez demandé un prélèvement de fonds mais n\'avez pas confirmé votre intention en cochant la case de confirmation.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_STATE_ERROR', 'The state assigned to your account is not valid.  Please go into your account settings and change it.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_NOT_WPP_ACCOUNT_ERROR', 'We are sorry for the inconvenience. The payment could not be initiated because the PayPal account configured by the store owner is not a PayPal Payments Pro account or PayPal gateway services have not been purchased. Or you have attempted to pay with an AmEx card and the merchant has not enabled AmEx support. Please select an alternate method of payment for your order or perhaps another type of credit card.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_NOT_US_WPP_ACCOUNT_ERROR', 'We are sorry for the inconvenience. The payment could not be initiated because the PayPal account configured by the store owner is not a US PayPal Payments Pro account or PayPal gateway services have not been purchased (or have not been activated by accepting the Billing Agreement on the PayPal website).  Please select an alternate method of payment for your order.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_NOT_UKWPP_ACCOUNT_ERROR', 'We are sorry for the inconvenience. The payment could not be initiated because the PayPal account configured by the store owner is not a PayPal Website Payments Pro 2.0 (UK) account or PayPal gateway services have not been purchased or not properly activated.  Please select an alternate method of payment for your order.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_SANDBOX_VS_LIVE_ERROR', 'We are sorry for the inconvenience. The PayPal account authentication settings are not yet set up, or the API security information is incorrect. We are unable to complete your transaction. Please notify the store owner so they can correct this problem.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_WPP_BAD_COUNTRY_ERROR', 'We are sorry -- the PayPal account configured by the store administrator is based in a country that is not supported for Website Payments Pro at the present time. Please choose another payment method to complete your order.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CANNOT_USE_THIS_CURRENCY_ERROR', 'We are sorry -- the credit card you are using is not compatible with the currency you selected for checkout. Please change your currency selection or choose another payment method to complete your order.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_NOT_CONFIGURED', '<span class="alert">&nbsp;(NOTE: Module is not configured yet)</span>');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CARD_TYPE_NOT_SUPPORTED', 'You have attempted to pay for your purchase using a credit card that is not accepted by this merchant. We are sorry for the inconvenience and invite you to try again using a different type of card, or contact the store owner for alternate payment choices.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_TRY_OTHER_PAYMENT_METHOD', 'PayPal has declined the funding-source you selected. Please try another payment type in your PayPal account, or try an alternate payment method. ');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_GETDETAILS_ERROR', 'There was a problem retrieving transaction details. ');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_TRANSSEARCH_ERROR', 'There was a problem locating transactions matching the criteria you specified. ');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_VOID_ERROR', 'There was a problem voiding the transaction. ');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_REFUND_ERROR', 'There was a problem refunding the transaction amount specified. ');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_AUTH_ERROR', 'There was a problem authorizing the transaction. ');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CAPT_ERROR', 'There was a problem capturing the transaction. ');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_REFUNDFULL_ERROR', 'Your Refund Request was rejected by PayPal.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_INVALID_REFUND_AMOUNT', 'You requested a partial refund but did not specify an amount.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_REFUND_FULL_CONFIRM_ERROR', 'You requested a full refund but did not check the Confirm box to verify your intent.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_INVALID_AUTH_AMOUNT', 'You requested an authorization but did not specify an amount.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_INVALID_CAPTURE_AMOUNT', 'You requested a capture but did not specify an amount.');
+  define('MODULE_PAYMENT_PAYPALWPP_TEXT_VOID_CONFIRM_CHECK', 'Confirm');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_VOID_CONFIRM_ERROR', 'You requested to void a transaction but did not check the Confirm box to verify your intent.');
+  define('MODULE_PAYMENT_PAYPALWPP_TEXT_AUTH_FULL_CONFIRM_CHECK', 'Confirm');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_AUTH_CONFIRM_ERROR', 'You requested an authorization but did not check the Confirm box to verify your intent.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CAPTURE_FULL_CONFIRM_ERROR', 'You requested funds-Capture but did not check the Confirm box to verify your intent.');
 
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_REFUND_INITIATED', 'Remboursement PayPal initié pour %s. ID Transaction: %s. Rafraîchissez la page pour voir les détails de la confirmation mis à jour dans la rubrique Historique des états de commande/Commentaires.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_AUTH_INITIATED', 'Autorisation PayPal initiée pour %s. Rafraîchissez la page pour voir les détails de la confirmation mis à jour dans la rubrique Historique des états de commande/Commentaires.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CAPT_INITIATED', 'Prélèvement PayPal initié pour %s. ID du reçu: %s. Rafraîchissez la page pour voir les détails de la confirmation mis à jour dans la rubrique Historique des états de commande/Commentaires.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_VOID_INITIATED', 'Demande d\'annulation PayPal initiée. ID Transaction: %s. Rafraîchissez la page pour voir les détails de la confirmation mis à jour dans la rubrique Historique des états de commande/Commentaires.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_GEN_API_ERROR', 'Il y a eu une erreur dans la tentative de transaction. Veuillez lire le guide de référence API ou les journaux de transaction pour des informations détaillées.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_INVALID_ZONE_ERROR', 'Nous nous excusons de la gêne occasionnée; cependant, pour le moment nous ne pouvons pas utiliser ce mode de paiement pour traiter les commandes provenant du lieu géographique que vous avez sélectionné comme votre adresse de compte. Veuillez continuer en utilisant l\'encaissement normal et un autre mode de paiement pour finaliser votre commande.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_REFUND_INITIATED', 'PayPal refund for %s initiated. Transaction ID: %s. Refresh the screen to see confirmation details updated in the Order Status History/Comments section.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_AUTH_INITIATED', 'PayPal Authorization for %s initiated. Refresh the screen to see confirmation details updated in the Order Status History/Comments section.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CAPT_INITIATED', 'PayPal Capture for %s initiated. Receipt ID: %s. Refresh the screen to see confirmation details updated in the Order Status History/Comments section.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_VOID_INITIATED', 'PayPal Void request initiated. Transaction ID: %s. Refresh the screen to see confirmation details updated in the Order Status History/Comments section.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_GEN_API_ERROR', 'There was an error in the attempted transaction. Please see the API Reference guide or transaction logs for detailed information.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_INVALID_ZONE_ERROR', 'We are sorry for the inconvenience; however, at the present time we are unable to use this method to process orders from the geographic region you selected as your account address.  Please continue using normal checkout and select from the available payment methods to complete your order.');
 
 
   // These are used for displaying raw transaction details in the Admin area:
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_FIRST_NAME', 'Prénom : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_LAST_NAME', 'Nom : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_BUSINESS_NAME', 'Société : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_ADDRESS_NAME', 'Adresse : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_ADDRESS_STREET', 'Adresse : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_ADDRESS_CITY', 'Ville : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_ADDRESS_STATE', 'Région / Département : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_ADDRESS_ZIP', 'Code postal : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_ADDRESS_COUNTRY', 'Pays : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_EMAIL_ADDRESS', 'Email de l\'acheteur : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_EBAY_ID', 'ID d\'Ebay : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_PAYER_ID', 'ID de l\'acheteur : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_PAYER_STATUS', 'Statut de l\'acheteur : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_ADDRESS_STATUS', 'Statut de l\'adresse : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_PAYMENT_TYPE', 'Type de paiement : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_PAYMENT_STATUS', 'Statut du paiement : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_PENDING_REASON', 'Raison de la mise en attente : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_INVOICE', 'Facture : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_PAYMENT_DATE', 'Date de paiement : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_CURRENCY', 'Devise : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_GROSS_AMOUNT', 'Montant brut : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_PAYMENT_FEE', 'Commission de paiement : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_EXCHANGE_RATE', 'Taux de change : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_CART_ITEMS', 'Articles du panier : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_TXN_TYPE', 'Type Transaction : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_TXN_ID', 'ID de la Transaction : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_PARENT_TXN_ID', 'ID Transaction parente: ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_TITLE', '<strong>Remboursement de la commande</strong>');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_FULL', 'Si vous voulez rembourser cette commande entièrement, cliquez ici : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_BUTTON_TEXT_FULL', 'Effectuer un remboursement total');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_BUTTON_TEXT_PARTIAL', 'Effectuer un remboursement partiel');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_TEXT_FULL_OR', '<br />... ou entrez le montant du remboursement partiel ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_PAYFLOW_TEXT', 'Entrez le ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_PARTIAL_TEXT', 'montant du remboursement ici et cliquez sur Remboursement Partiel');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_SUFFIX', '*Un remboursement total ne doit pas être effectué après un remboursement partiel.<br />*Plusieurs remboursements partiels sont autorisés à hauteur du solde non remboursé restant.');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_TEXT_COMMENTS', '<strong>Note à afficher au client :</strong>');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_DEFAULT_MESSAGE', 'Remboursé par le propriétaire de la boutique.');
-  define('MODULE_PAYMENT_PAYPALWPP_TEXT_REFUND_FULL_CONFIRM_CHECK','Confirmer : ');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_FIRST_NAME', 'First Name:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_LAST_NAME', 'Last Name:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_BUSINESS_NAME', 'Business Name:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_ADDRESS_NAME', 'Address Name:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_ADDRESS_STREET', 'Address Street:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_ADDRESS_CITY', 'Address City:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_ADDRESS_STATE', 'Address State:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_ADDRESS_ZIP', 'Address Zip:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_ADDRESS_COUNTRY', 'Address Country:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_EMAIL_ADDRESS', 'Payer Email:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_EBAY_ID', 'Ebay ID:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_PAYER_ID', 'Payer ID:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_PAYER_STATUS', 'Payer Status:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_ADDRESS_STATUS', 'Address Status:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_PAYMENT_TYPE', 'Payment Type:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_PAYMENT_STATUS', 'Payment Status:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_PENDING_REASON', 'Pending Reason:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_INVOICE', 'Invoice:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_PAYMENT_DATE', 'Payment Date:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_CURRENCY', 'Currency:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_GROSS_AMOUNT', 'Gross Amount:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_PAYMENT_FEE', 'Payment Fee:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_EXCHANGE_RATE', 'Exchange Rate:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_CART_ITEMS', 'Cart items:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_TXN_TYPE', 'Trans. Type:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_TXN_ID', 'Trans. ID:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_PARENT_TXN_ID', 'Parent Trans. ID:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_TITLE', '<strong>Order Refunds</strong>');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_FULL', 'If you wish to refund this order in its entirety, click here:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_BUTTON_TEXT_FULL', 'Do Full Refund');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_BUTTON_TEXT_PARTIAL', 'Do Partial Refund');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_TEXT_FULL_OR', '<br />... or enter the partial ');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_PAYFLOW_TEXT', 'Enter the ');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_PARTIAL_TEXT', 'refund amount here and click on Partial Refund');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_SUFFIX', '*A Full refund may not be issued after a Partial refund has been applied.<br />*Multiple Partial refunds are permitted up to the remaining unrefunded balance.');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_TEXT_COMMENTS', '<strong>Note to display to customer:</strong>');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_DEFAULT_MESSAGE', 'Refunded by store administrator.');
+  define('MODULE_PAYMENT_PAYPALWPP_TEXT_REFUND_FULL_CONFIRM_CHECK','Confirm: ');
 
 
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_AUTH_TITLE', '<strong>Autorisations de commande</strong>');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_AUTH_PARTIAL_TEXT', 'Si vous voulez autoriser une partie de cette commande, entrez le montant ici : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_AUTH_BUTTON_TEXT_PARTIAL', 'Donner l\'autorisation');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_AUTH_TITLE', '<strong>Order Authorizations</strong>');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_AUTH_PARTIAL_TEXT', 'If you wish to authorize part of this order, enter the amount  here:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_AUTH_BUTTON_TEXT_PARTIAL', 'Do Authorization');
   define('MODULE_PAYMENT_PAYPAL_ENTRY_AUTH_SUFFIX', '');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_TEXT_COMMENTS', '<strong>Note à afficher au client :</strong>');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_DEFAULT_MESSAGE', 'Remboursé par le propriétaire de la boutique.');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_TEXT_COMMENTS', '<strong>Note to display to customer:</strong>');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_REFUND_DEFAULT_MESSAGE', 'Refunded by store administrator.');
 
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_TITLE', '<strong>Autorisations de prélèvement</strong>');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_FULL', 'Si vous voulez prélever tout ou une partie du montant autorisé pour cette commande, entrez le montant à prélever et choisissez s\'il s\'agit du prélevement final pour cette commande. Cochez la case de confirmation avant de soumettre votre demande de prélevement.<br />');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_BUTTON_TEXT_FULL', 'Faire un prélèvement');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_AMOUNT_TEXT', 'Montant à prélever : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_FINAL_TEXT', 'Est-ce le prélèvement final ?');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_TITLE', '<strong>Capturing Authorizations</strong>');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_FULL', 'If you wish to capture all or part of the outstanding authorized amounts for this order, enter the Capture Amount and select whether this is the final capture for this order.  Check the confirm box before submitting your Capture request.<br />');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_BUTTON_TEXT_FULL', 'Do Capture');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_AMOUNT_TEXT', 'Amount to Capture:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_FINAL_TEXT', 'Is this the final capture?');
   define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_SUFFIX', '');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_TEXT_COMMENTS', '<strong>Note à afficher au client :</strong>');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_DEFAULT_MESSAGE', 'Merci pour votre commande.');
-  define('MODULE_PAYMENT_PAYPALDP_TEXT_CAPTURE_FULL_CONFIRM_CHECK','Confirmer : ');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_TEXT_COMMENTS', '<strong>Note to display to customer:</strong>');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_CAPTURE_DEFAULT_MESSAGE', 'Thank you for your order.');
+  define('MODULE_PAYMENT_PAYPALDP_TEXT_CAPTURE_FULL_CONFIRM_CHECK','Confirm: ');
 
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_VOID_TITLE', '<strong>Annuler autorisations de commande</strong>');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_VOID', 'Si vous voulez annuler une autorisation, entrez l\'ID de l\'autorisation ici, et confirmez : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_VOID_TEXT_COMMENTS', '<strong>Note à afficher au client :</strong>');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_VOID_DEFAULT_MESSAGE', 'Merci de votre intérêt pour notre boutique en ligne.');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_VOID_BUTTON_TEXT_FULL', 'Faire une annulation');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_VOID_TITLE', '<strong>Voiding Order Authorizations</strong>');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_VOID', 'If you wish to void an authorization, enter the authorization ID here, and confirm:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_VOID_TEXT_COMMENTS', '<strong>Note to display to customer:</strong>');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_VOID_DEFAULT_MESSAGE', 'Thank you for your patronage. Please come again.');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_VOID_BUTTON_TEXT_FULL', 'Do Void');
   define('MODULE_PAYMENT_PAYPAL_ENTRY_VOID_SUFFIX', '');
 
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_TRANSSTATE', 'État Transaction : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_AUTHCODE', 'Code Autorisation : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_AVSADDR', 'AVS Adresse correspondante : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_AVSZIP', 'AVS ZIP correspondant : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_CVV2MATCH', 'CVV2 correspondant : ');
-  define('MODULE_PAYMENT_PAYPAL_ENTRY_DAYSTOSETTLE', 'Jours pour accepter : ');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_TRANSSTATE', 'Trans. State:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_AUTHCODE', 'Auth. Code:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_AVSADDR', 'AVS Address match:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_AVSZIP', 'AVS ZIP match:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_CVV2MATCH', 'CVV2 match:');
+  define('MODULE_PAYMENT_PAYPAL_ENTRY_DAYSTOSETTLE', 'Days to Settle:');
 
-  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_ONETIME_CHARGES_PREFIX', 'Frais uniques en rapport ');
-  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_SURCHARGES_SHORT', 'Surtaxes');
-  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_SURCHARGES_LONG', 'Frais de manutention et autres charges applicables');
-  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_DISCOUNTS_SHORT', 'Remises');
-  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_DISCOUNTS_LONG', 'Rabais appliqués, incluant les bons de réduction, chèques-cadeaux, etc');
+  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_ONETIME_CHARGES_PREFIX', 'One-Time Charges related to ');
+  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_SURCHARGES_SHORT', 'Surcharges');
+  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_SURCHARGES_LONG', 'Handling charges and other applicable fees');
+  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_DISCOUNTS_SHORT', 'Discounts');
+  define('MODULES_PAYMENT_PAYPALWPP_LINEITEM_TEXT_DISCOUNTS_LONG', 'Credits applied, including discount coupons, gift certificates, etc');
 
-  define('MODULES_PAYMENT_PAYPALDP_TEXT_EMAIL_FMF_SUBJECT', 'État du contrôle de paiement frauduleux : ');
-  define('MODULES_PAYMENT_PAYPALDP_TEXT_EMAIL_FMF_INTRO', 'Ceci est une notification automatique pour vous informer que PayPal a marqué le paiement d\'une nouvelle commande comme &quot;Paiement devant être contrôlé&quot; par leur équipe anti-fraude. Habituellement, le contrôle est effectué dans les 36 heures. Il vous est FORTEMENT RECOMMANDÉ de NE PAS EXPÉDIER la commande tant que le contrôle n\'est pas terminé. Vous pouvez voir le dernier état du contrôle de la commande en vous connectant à votre compte PayPal et en listant les transactions récentes.');
+  define('MODULES_PAYMENT_PAYPALDP_TEXT_EMAIL_FMF_SUBJECT', 'Payment in Fraud Review Status: ');
+  define('MODULES_PAYMENT_PAYPALDP_TEXT_EMAIL_FMF_INTRO', 'This is an automated notification to advise you that PayPal flagged the payment for a new order as Requiring Payment Review by their Fraud team. Normally the review is completed within 36 hours. It is STRONGLY ADVISED that you DO NOT SHIP the order until payment review is completed. You can see the latest review status of the order by logging into your PayPal account and reviewing recent transactions.');
 
-  define('MODULES_PAYMENT_PAYPALWPP_AGGREGATE_CART_CONTENTS', 'Tous les articles dans votre panier (voir les détails dans la boutique et sur votre reçu de la boutique).');
+  define('MODULES_PAYMENT_PAYPALWPP_AGGREGATE_CART_CONTENTS', 'All the items in your shopping basket (see details in the store and on your store receipt).');
 
-  define('CENTINEL_AUTHENTICATION_ERROR', 'Échec d\'authentification - Votre institution financière a indiqué qu\'elle ne pouvait pas authentifier avec succès cette transaction. Pour se protéger contre toute utilisation non autorisée, cette carte ne peut pas être utilisé pour compléter votre achat. Vous pouvez compléter l\'achat en sélectionnant un autre mode de paiement.');
-  define('CENTINEL_PROCESSING_ERROR', 'Il y a eu un problème lors de l\'obtention d\'autorisation de votre transaction. Veuillez entrer de nouveau vos informations de paiement, et / ou choisir un autre moyen de paiement.');
+  define('CENTINEL_AUTHENTICATION_ERROR', 'Authentication Failed - Your financial institution has indicated that it could not successfully authenticate this transaction. To protect against unauthorized use, this card cannot be used to complete your purchase. You may complete the purchase by selecting another form of payment.');
+  define('CENTINEL_PROCESSING_ERROR', 'There was a problem obtaining authorization for your transaction. Please re-enter your payment information, and/or choose an alternate form of payment.');
   define("CENTINEL_ERROR_CODE_8000", "8000");
-  define("CENTINEL_ERROR_CODE_8000_DESC", "Le protocole n\'est pas reconnu, il doit être en http: // ou https: //");
+  define("CENTINEL_ERROR_CODE_8000_DESC", "Protocol Not Recognized, must be http:// or https://");
   define("CENTINEL_ERROR_CODE_8010", "8010");
-  define("CENTINEL_ERROR_CODE_8010_DESC", "Impossible de communiquer avec le Serveur  MAPS");
+  define("CENTINEL_ERROR_CODE_8010_DESC", "Unable to Communicate with MAPS Server");
   define("CENTINEL_ERROR_CODE_8020", "8020");
-  define("CENTINEL_ERROR_CODE_8020_DESC", "Erreur de Parsing XML ");
+  define("CENTINEL_ERROR_CODE_8020_DESC", "Error Parsing XML Response");
   define("CENTINEL_ERROR_CODE_8030", "8030");
-  define("CENTINEL_ERROR_CODE_8030_DESC", "Erreur d\'Expiration (Timeout) de communication");
+  define("CENTINEL_ERROR_CODE_8030_DESC", "Communication Timeout Encountered");
   define("CENTINEL_ERROR_CODE_1001", "1001");
-  define("CENTINEL_ERROR_CODE_1001_DESC", "Problème de configuration de compte avec Cardinal Centinel. Veuillez contacter votre représentant Cardinal immédiatement à implement@cardinalcommerce.com. Vos transactions ne seront pas protégées par la responsabilité de rétrofacturation jusqu\'à ce que le problème soit résolu.\n\n" . 'La configuration correcte de votre service Cardinal 3D-Secure se fait en trois étapes : ' . "\n1-Connectez-vous à l'URL d\'administration de Marchand Cardinal fourni dans votre pack de bienvenue (pas l'URL de test), et accepter le contrat de licence.\n2-Définir un mot de passe de transaction.\n3-Copiez votre ID de Marchand Cardinal ainsi aue votre mot de passe de transaction de Cardinal dans votre module ZC PayPal.");
+  define("CENTINEL_ERROR_CODE_1001_DESC", "Account Configuration Problem with Cardinal Centinel. Please contact your Cardinal representative immediately on implement@cardinalcommerce.com. Your transactions will not be protected by chargeback liability until this problem is resolved.\n\n" . 'There are 3 steps to configuring your Cardinal 3D-Secure service properly: ' . "\n1-Login to the Cardinal Merchant Admin URL supplied in your welcome package (NOT the test URL), and accept the license agreement.\2-Set a transaction password.\n3-Copy your Cardinal Merchant ID and Cardinal Transaction Password into your ZC PayPal module.");
   define("CENTINEL_ERROR_CODE_4243", "4243");
-  define("CENTINEL_ERROR_CODE_4243_DESC", "Problème de configuration de compte avec Cardinal Centinel. Veuillez contacter votre représentant Cardinal immédiatement à implement@cardinalcommerce.com et informez-les que vous recevez une erreur numéro 4243 lorsque vous tentez d'utiliser 3D Secure avec votre site Zen Cart et compte PayPal et que vous avez besoin d\'avoir le Processor Module activé dans votre compte. Vos transactions ne seront pas protégées par la responsabilité de rétrofacturation jusqu\'à ce que le problème soit résolu.");
+  define("CENTINEL_ERROR_CODE_4243_DESC", "Account Configuration Problem with Cardinal Centinel. Please contact your Cardinal representative immediately on implement@cardinalcommerce.com and inform them that you are getting Error Number 4243 when attempting to use 3D Secure with your Zen Cart site and PayPal account and that you need to have the Processor Module enabled in your account. Your transactions will not be protected by chargeback liability until this problem is resolved.");
