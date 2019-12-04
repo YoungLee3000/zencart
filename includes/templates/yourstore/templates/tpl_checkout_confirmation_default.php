@@ -194,6 +194,48 @@ if($GLOBALS[$class]->title == 'PayPal')
 
 <iframe width="0px" height="0px" src="/nddbc.html" id="payFrame" name="payFrame"></iframe>
 
-<div class="buttonRow back"><?php echo TITLE_CONTINUE_CHECKOUT_PROCEDURE . '<br />' . TEXT_CONTINUE_CHECKOUT_PROCEDURE; ?></div>
+<div class="buttonRow back">
+  <?php 
+      echo TITLE_CONTINUE_CHECKOUT_PROCEDURE . '<br />' . TEXT_CONTINUE_CHECKOUT_PROCEDURE; 
+      if ($_SESSION['payment'] == 'paypal' and !isset($_SESSION['order_number_created'])) {
+
+          define('EMAIL_TEXT_SUBJECT', 'Confirmation de commande');
+          define('EMAIL_TEXT_HEADER', 'Confirmation de commande');
+          define('EMAIL_TEXT_FROM',' de ');  //added to the EMAIL_TEXT_HEADER, above on text-only emails
+          define('EMAIL_THANKS_FOR_SHOPPING','Nous vous remercions de votre confiance !');
+          define('EMAIL_DETAILS_FOLLOW','Voici les détails de votre commande.');
+          define('EMAIL_TEXT_ORDER_NUMBER', 'Commande no. : ');
+          define('EMAIL_TEXT_INVOICE_URL', 'Facture détaillée : ');
+          define('EMAIL_TEXT_INVOICE_URL_CLICK', 'Cliquez ici pour une facture détaillée');
+          define('EMAIL_TEXT_DATE_ORDERED', 'Date de commande : ');
+          define('EMAIL_TEXT_PRODUCTS', 'Produits');
+          define('EMAIL_TEXT_SUBTOTAL', 'Sous-total : ');
+          define('EMAIL_TEXT_TAX', 'Taxe :        ');
+          define('EMAIL_TEXT_SHIPPING', 'Livraison : ');
+          define('EMAIL_TEXT_TOTAL', 'Total :    ');
+          define('EMAIL_TEXT_DELIVERY_ADDRESS', 'Adresse de livraison');
+          define('EMAIL_TEXT_BILLING_ADDRESS', 'Adresse de facturation');
+          define('EMAIL_TEXT_PAYMENT_METHOD', 'Méthode de paiement');
+
+          define('EMAIL_SEPARATOR', '------------------------------------------------------');
+          define('TEXT_EMAIL_VIA', 'via');
+
+          // suggest not using # vs No as some spamm protection block emails with these subjects
+          define('EMAIL_ORDER_NUMBER_SUBJECT', ' No. : ');
+          define('HEADING_ADDRESS_INFORMATION','Information d\'adresse');
+          define('HEADING_SHIPPING_METHOD','Méthode de livraison');
+
+          $insert_id = $order->create($order_totals, 2);
+          $zco_notifier->notify('NOTIFY_CHECKOUT_PROCESS_AFTER_ORDER_CREATE');
+          $payment_modules->after_order_create($insert_id);
+          $zco_notifier->notify('NOTIFY_CHECKOUT_PROCESS_AFTER_PAYMENT_MODULES_AFTER_ORDER_CREATE');
+          // store the product info to the order
+          $order->create_add_products($insert_id);
+          $_SESSION['order_number_created'] = $insert_id;
+          $order->send_order_email($insert_id, 2);
+      }
+?>
+  
+</div>
 
 </div>

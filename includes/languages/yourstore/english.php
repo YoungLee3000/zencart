@@ -625,9 +625,9 @@ define('SUCCESS_ADDED_TO_CART_PRODUCTS', '<div class="cartbox_overlay"><p>Produi
   
   // Welcome MSG to display on all pages
 if (STORE_STATUS == '0') {
-  define('TEXT_GREETING_GUEST', 'Default Welcome msg!');
+  define('TEXT_GREETING_GUEST', 'Connectez - vous!');
 } else {
-  define('TEXT_GREETING_GUEST', 'Default Welcome msg!');
+  define('TEXT_GREETING_GUEST', 'Connectez - vous!');
 }
 
 define('TEXT_GREETING_PERSONAL', 'Hello <span class="greetUser">%s</span>! Would you like to see our <a href="%s">newest additions</a>?');

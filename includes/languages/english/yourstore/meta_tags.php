@@ -8,10 +8,10 @@
  */
 
 // page title
-define('TITLE', 'YOURStore');
+define('TITLE', 'Bon Maillot');
 
 // Site Tagline
-define('SITE_TAGLINE', 'A Premium Responsive Zen Cart Theme ');
+define('SITE_TAGLINE', 'Maillot de foot bon marché');
 
 // Custom Keywords
 define('CUSTOM_KEYWORDS', 'ecommerce, open source, shop, online shopping, store, responsive, zen cart template, zencart, zen cart theme');
@@ -21,7 +21,7 @@ define('HOME_PAGE_META_DESCRIPTION', 'A responsive Zen cart template, built usin
 define('HOME_PAGE_META_KEYWORDS', 'ecommerce, open source, shop, online shopping, store, responsive, zen cart template, zencart, zen cart theme, bootstrap zen cart, responsive zencart template');
 
 // NOTE: If HOME_PAGE_TITLE is left blank (default) then TITLE and SITE_TAGLINE will be used instead.
-define('HOME_PAGE_TITLE', 'YOURStore - A Premium Responsive Zen cart Template'); // usually best left blank
+define('HOME_PAGE_TITLE', 'Bon Maillot, Maillot de foot bon marché'); // usually best left blank
 
 
 // EZ-Pages meta-tags.  Follow this pattern for all ez-pages for which you desire custom metatags. Replace the # with ezpage id.

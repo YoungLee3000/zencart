@@ -78,14 +78,14 @@ define('TEXT_UNPAID', 'Un-paid');
 define('TEXT_ALL_ORDERS', 'All Orders');
 
 define('EMAIL_SEPARATOR', '------------------------------------------------------');
-define('EMAIL_TEXT_SUBJECT', 'Order Update');
-define('EMAIL_TEXT_ORDER_NUMBER', 'Order Number:');
-define('EMAIL_TEXT_INVOICE_URL', 'Detailed Invoice:');
-define('EMAIL_TEXT_DATE_ORDERED', 'Date Ordered:');
-define('EMAIL_TEXT_COMMENTS_UPDATE', '<em>The comments for your order are: </em>');
-define('EMAIL_TEXT_STATUS_UPDATED', 'Your order has been updated to the following status:' . "\n");
-define('EMAIL_TEXT_STATUS_LABEL', '<strong>New status:</strong> %s' . "\n\n");
-define('EMAIL_TEXT_STATUS_PLEASE_REPLY', 'Please reply to this email if you have any questions.' . "\n");
+define('EMAIL_TEXT_SUBJECT', 'Actualisation de la commande');
+define('EMAIL_TEXT_ORDER_NUMBER', 'Numéro de commande :');
+define('EMAIL_TEXT_INVOICE_URL', 'Facture détaillée :');
+define('EMAIL_TEXT_DATE_ORDERED', 'Date de commande :');
+define('EMAIL_TEXT_COMMENTS_UPDATE', '<em>Les commentaires joints à votre commande sont : </em>');
+define('EMAIL_TEXT_STATUS_UPDATED', 'Votre commande a été mise à jour avec le statut suivant :' . "\n");
+define('EMAIL_TEXT_STATUS_LABEL', '<strong>Nouvel statut :</strong> %s' . "\n\n");
+define('EMAIL_TEXT_STATUS_PLEASE_REPLY', 'Veuillez nous contacter par retour d\'email si vous avez quelque question.' . "\n");
 
 define('ERROR_ORDER_DOES_NOT_EXIST', 'Error: Order does not exist.');
 define('SUCCESS_ORDER_UPDATED', 'Success: Order has been successfully updated.');
