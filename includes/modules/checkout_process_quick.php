@@ -21,21 +21,16 @@ require(DIR_WS_MODULES . zen_get_module_directory('require_languages.php'));
   } else {
     // validate customer
     if (zen_get_customer_validate_session($_SESSION['customer_id']) == false) {
-      $_SESSION['navigation']->set_snapshot(array('mode' => 'SSL', 'page' => FILENAME_CHECKOUT_SHIPPING));
-      zen_redirect(zen_href_link(FILENAME_LOGIN, '', 'SSL'));
+      $_SESSION['navigation']->set_snapshot(array('mode' => 'SSL', 'page' => 'shopping_cart'));
+      zen_redirect(zen_href_link('login', '', 'SSL'));
     }
   }
-
-// confirm where link came from
-if (!strstr($_SERVER['HTTP_REFERER'], FILENAME_CHECKOUT_CONFIRMATION)) {
-  //    zen_redirect(zen_href_link(FILENAME_CHECKOUT_PAYMENT,'','SSL'));
-}
 
 // BEGIN CC SLAM PREVENTION
 if (!isset($_SESSION['payment_attempt'])) $_SESSION['payment_attempt'] = 0;
 $_SESSION['payment_attempt']++;
 $zco_notifier->notify('NOTIFY_CHECKOUT_SLAMMING_ALERT');
-if ($_SESSION['payment_attempt'] > 3) {
+if ($_SESSION['payment_attempt'] > 100) {
   $zco_notifier->notify('NOTIFY_CHECKOUT_SLAMMING_LOCKOUT');
   $_SESSION['cart']->reset(TRUE);
   zen_session_destroy();
@@ -43,45 +38,16 @@ if ($_SESSION['payment_attempt'] > 3) {
 }
 // END CC SLAM PREVENTION
 
-if (!isset($credit_covers)) $credit_covers = FALSE;
-
-// load selected payment module
-require(DIR_WS_CLASSES . 'payment.php');
-$payment_modules = new payment($_SESSION['payment']);
-// load the selected shipping module
-require(DIR_WS_CLASSES . 'shipping.php');
-$shipping_modules = new shipping($_SESSION['shipping']);
-
-require(DIR_WS_CLASSES . 'order.php');
-$order = new order;
-
 // prevent 0-entry orders from being generated/spoofed
 if (sizeof($order->products) < 1) {
-  zen_redirect(zen_href_link(FILENAME_SHOPPING_CART));
+  zen_redirect(zen_href_link('shopping_cart'));
 }
 
-require(DIR_WS_CLASSES . 'order_total.php');
-$order_total_modules = new order_total;
 
-$zco_notifier->notify('NOTIFY_CHECKOUT_PROCESS_BEFORE_ORDER_TOTALS_PRE_CONFIRMATION_CHECK');
-if (strpos($GLOBALS[$_SESSION['payment']]->code, 'paypal') !== 0) {
-  $order_totals = $order_total_modules->pre_confirmation_check();
-}
-if ($credit_covers === TRUE)
-{
-	$order->info['payment_method'] = $order->info['payment_module_code'] = '';
-}
-$zco_notifier->notify('NOTIFY_CHECKOUT_PROCESS_BEFORE_ORDER_TOTALS_PROCESS');
-$order_totals = $order_total_modules->process();
-$zco_notifier->notify('NOTIFY_CHECKOUT_PROCESS_AFTER_ORDER_TOTALS_PROCESS');
-
-if (!isset($_SESSION['payment']) && $credit_covers === FALSE) {
-  zen_redirect(zen_href_link(FILENAME_DEFAULT));
+if (!isset($_SESSION['payment'])) {
+  zen_redirect(zen_href_link('index'));
 }
 
-// load the before_process function from the payment modules
-$payment_modules->before_process();
-$zco_notifier->notify('NOTIFY_CHECKOUT_PROCESS_AFTER_PAYMENT_MODULES_BEFOREPROCESS');
 // create the order record
 $insert_id = $order->create($order_totals, 2);
 $zco_notifier->notify('NOTIFY_CHECKOUT_PROCESS_AFTER_ORDER_CREATE');

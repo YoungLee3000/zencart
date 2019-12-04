@@ -8,7 +8,7 @@
  * @copyright Copyright 2003-2006 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @version $Id: jscript_addr_pulldowns.php 4830 2006-10-24 21:58:27Z drbyte $
+ * @version $Id: J_Schilz for Integrated COWOA - 14 April 2007
  */
 ?>
 <script language="javascript" type="text/javascript"><!--
@@ -54,7 +54,7 @@ function update_zone(theForm) {
     theForm.state.setAttribute('className', 'visibleField');
     document.getElementById("stateLabel").className = 'inputLabel visibleField';
     document.getElementById("stateLabel").setAttribute('className', 'inputLabel visibleField');
-    document.getElementById("stText").className = 'alert visibleField';
+    document.getElementById("stText").className = 'alert-text visibleField';
     document.getElementById("stText").setAttribute('className', 'alert visibleField');
     document.getElementById("stBreak").className = 'clearBoth visibleField';
     document.getElementById("stBreak").setAttribute('className', 'clearBoth visibleField');

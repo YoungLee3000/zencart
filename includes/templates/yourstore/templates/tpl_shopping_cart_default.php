@@ -156,8 +156,8 @@
 		<?php
 			if (SHOW_SHIPPING_ESTIMATOR_BUTTON == '1') {
     ?>
-		<div class="back btn btn--ys btn--light"><?php echo '<a href="javascript:popupWindow(\'' . zen_href_link(FILENAME_POPUP_SHIPPING_ESTIMATOR, '', 'SSL') . '\')">' .
-			zen_image_button(BUTTON_IMAGE_SHIPPING_ESTIMATOR, BUTTON_SHIPPING_ESTIMATOR_ALT) . '</a>'; ?></div>
+		<!-- <div class="back btn btn--ys btn--light"><?php //echo '<a href="javascript:popupWindow(\'' . zen_href_link(FILENAME_POPUP_SHIPPING_ESTIMATOR, '', 'SSL') . '\')">' .
+			//zen_image_button(BUTTON_IMAGE_SHIPPING_ESTIMATOR, BUTTON_SHIPPING_ESTIMATOR_ALT) . '</a>'; ?></div> -->
 		<?php
       }
     ?>
@@ -165,17 +165,17 @@
 			// show update cart button
 			if (SHOW_SHOPPING_CART_UPDATE == 2 or SHOW_SHOPPING_CART_UPDATE == 3) {
 		?>
-				<div class="back btn--light pull-left updateall_btn btn-right">
-					<?php echo zen_image_submit(ICON_IMAGE_UPDATE, 'UPDATE TOTAL'); ?>
-				</div>
+				<!-- <div class="back btn--light pull-left updateall_btn btn-right">
+					<?php //echo zen_image_submit(ICON_IMAGE_UPDATE, 'UPDATE TOTAL'); ?>
+				</div> -->
 		<?php
 		 } else { // don't show update button below cart
 		?>
 		<?php
 		} // show update button
 		?>
-		<div class="forward checkout_button btn btn--ys btn--light pull-right"><?php echo '<a href="' . zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL') . '">' . zen_image_button(BUTTON_IMAGE_CHECKOUT, BUTTON_CHECKOUT_ALT) . '</a><span class="icon icon-keyboard_arrow_right"></span>'; ?></div>
-		<div class="back btn btn--ys btn--light btn-right pull-right"><?php echo '<span class="icon icon-keyboard_arrow_left"></span>'.zen_back_link() . zen_image_button(BUTTON_IMAGE_CONTINUE_SHOPPING, BUTTON_CONTINUE_SHOPPING_ALT) . '</a>'; ?></div>
+		<!-- <div class="forward checkout_button btn btn--ys btn--light pull-right"><?php //echo '<a href="' . zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL') . '">' . zen_image_button(BUTTON_IMAGE_CHECKOUT, BUTTON_CHECKOUT_ALT) . '</a><span class="icon icon-keyboard_arrow_right"></span>'; ?></div> -->
+		<!-- <div class="back btn btn--ys btn--light btn-right pull-right"><?php //echo '<span class="icon icon-keyboard_arrow_left"></span>'.zen_back_link() . zen_image_button(BUTTON_IMAGE_CONTINUE_SHOPPING, BUTTON_CONTINUE_SHOPPING_ALT) . '</a>'; ?></div> -->
 	<!--eof shopping cart buttons-->
 	</div>
 </form>
@@ -196,11 +196,160 @@ if (defined('MODULE_PAYMENT_PAYPALWPP_STATUS') && MODULE_PAYMENT_PAYPALWPP_STATU
 ?>
 	<div class="shippingEstimatorCont">
       <?php require(DIR_WS_MODULES . zen_get_module_directory('shipping_estimator.php')); ?>
-	</div>
 
 <?php
       }
 ?>
+<div class="clearBoth"></div>
+<?php if (COWOA_STATUS == 'true') { ?> 
+<!--quick shopping-->
+<?php echo zen_draw_form('no_account', zen_href_link('quick_shopping', '', 'SSL'), 'post', 'onsubmit="return check_form(no_account);"') . zen_draw_hidden_field('action', 'process') . zen_draw_hidden_field('email_pref_html', 'email_format'); ?>
+<?php if (!$_SESSION['customer_id']) { ?>
+<div id="withOutAccount">
+	<h2>Non - Paiement Par Compte</h2>
+	<p>Pour une expérience pratique, nous offrons l'option de vérifier sans créer un compte.</p>
+	<p>Si vous avez notre compte, vous pouvez Clic<a href="<?php echo zen_href_link('login');?>" rel="nofollow" style="color:red;"><em>Page de connexion</em></a>, Ou  <a href="<?php echo zen_href_link('create_account');?>" rel="nofollow" style="color:red;">Créer un compte</a>
+  </p>
+	<p class="forward"><a href="<?php echo zen_href_link('password_forgotten');?>" style="color:red;">Vous avez perdu votre mot de passe?</a></p>
+</div>
+<?php } ?>
+
+<div class="clearBoth"></div>
+<!--address-->
+<?php 
+if (!$_SESSION['customer_id']) {
+/*
+ * Set flags for template use:
+ */
+  $selected_country = (isset($_POST['zone_country_id']) && $_POST['zone_country_id'] != '') ? $country : SHOW_CREATE_ACCOUNT_DEFAULT_COUNTRY;
+  $flag_show_pulldown_states = ((($process == true || $entry_state_has_zones == true) && $zone_name == '') || ACCOUNT_STATE_DRAW_INITIAL_DROPDOWN == 'true' || $error_state_input) ? true : false;
+  $flag_show_pulldown_states = true;
+  $state = ($flag_show_pulldown_states) ? ($state == '' ? '&nbsp;' : $state) : $zone_name;
+  $state_field_label = ($flag_show_pulldown_states) ? '' : ENTRY_STATE;
+  if (!isset($email_format)) $email_format = (ACCOUNT_EMAIL_PREFERENCE == '1' ? 'HTML' : 'TEXT');
+  if (!isset($newsletter))   $newsletter = (ACCOUNT_NEWSLETTER_STATUS == '1' ? false : true);
+  require($template->get_template_dir('tpl_modules_no_account.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_no_account.php'); 
+}else{
+  echo '<fieldset><legend><div>Your Shipping Address</div></legend>';
+  echo '<div style="padding:5px;">'.zen_address_label($_SESSION['customer_id'], (isset($_SESSION['sendto'])?$_SESSION['sendto']:$_SESSION['customer_default_address_id']), true, ' ', '<br />').'</div>';
+  echo '<div class="forward buttonRow"><a href="' . zen_href_link('checkout_shipping_address', '', 'SSL') . '">' . zen_image_button(BUTTON_IMAGE_CHANGE_ADDRESS, BUTTON_CHANGE_ADDRESS_ALT) . '</a></div>';
+  echo '</fieldset>';
+}
+?>
+<fieldset>
+<legend><div>Note Spéciale ou Note de Commande</div></legend>
+<?php echo zen_draw_textarea_field('comments', '100', '5'); ?>
+</fieldset>
+<div class="clearBoth"></div>
+<!--end address-->
+<!--payment-->
+<div class="back" style="width:100%;">
+<?php
+require(DIR_WS_CLASSES . 'payment.php');
+$payment_modules = new payment;	
+?>
+<fieldset id="paymentSelect">
+<legend><div>Mode de Paiement</div></legend>
+<!-- <br class="clearBoth" /> -->
+<?php $selection = $payment_modules->selection();
+      if (sizeof($selection) == 0) {?>
+<p class="important"><span class="alert">Sorry, we are not accepting payments from your region at this time.</span><br />Please contact us for alternate arrangements.</p>
+<?php }
+$radio_buttons = 0;
+for ($i=0, $n=sizeof($selection); $i<$n; $i++) {
+if (sizeof($selection) > 1) {
+    if (empty($selection[$i]['noradio'])) { 
+    echo zen_draw_radio_field('payment', $selection[$i]['id'], ($selection[$i]['id'] == $_SESSION['payment'] ? true : false), 'id="pmt-'.$selection[$i]['id'].'"'); 
+    } 
+} else {
+echo zen_draw_hidden_field('payment', $selection[$i]['id']); 
+}?>
+
+<label for="pmt-<?php echo $selection[$i]['id']; ?>" class="radioButtonLabel"><?php echo $selection[$i]['module']; ?></label>
+<br class="clearBoth">
+<?php if (isset($selection[$i]['error'])){?>
+<div><?php echo $selection[$i]['error']; ?></div>
+<?php } elseif (isset($selection[$i]['fields']) && is_array($selection[$i]['fields'])) {?>
+<div class="ccinfo">
+<?php for ($j=0, $n2=sizeof($selection[$i]['fields']); $j<$n2; $j++) {?>
+<label <?php echo (isset($selection[$i]['fields'][$j]['tag']) ? 'for="'.$selection[$i]['fields'][$j]['tag'] . '" ' : ''); ?>class="inputLabelPayment"><?php echo $selection[$i]['fields'][$j]['title']; ?></label><?php echo $selection[$i]['fields'][$j]['field']; ?>
+<?php }?>
+</div>
+<?php }
+$radio_buttons++;?>
+<?php }//eof: for $selection?>
+</fieldset>
+</div>
+<!--end payment-->
+<div class="clearBoth"></div>
+<!--shipping-->
+<?php
+require(DIR_WS_CLASSES . 'shipping.php');
+$shipping_modules = new shipping();
+$quotes = $shipping_modules->quote();
+?>
+<fieldset id="shippingSelect">
+<legend><div>Procédé de Transport:</div></legend>
+<?php
+$radio_buttons = 0;
+for ($i=0, $n=sizeof($quotes); $i<$n; $i++) {
+for ($j=0, $n2=sizeof($quotes[$i]['methods']); $j<$n2; $j++) {
+$checked = (($quotes[$i]['id'] . '_' . $quotes[$i]['methods'][$j]['id'] == $_SESSION['shipping']['id']) ? true : false);
+?>
+<span>
+
+<?php if (sizeof($quotes) > 1 && sizeof($quotes[0]) > 1) {
+    echo zen_draw_radio_field('shipping', $i, $checked, 'id="ship-'.$quotes[$i]['id'] . '-' . str_replace(' ', '-', $quotes[$i]['methods'][$j]['id']) .'"'); ?>
+<?php }else{ 
+   echo '<input type="hidden" name="shipping" value="'.$i.'" />'; 
+      }	
+?>
+
+
+<label for="ship-<?php echo $quotes[$i]['id'] . '-' . str_replace(' ', '-', $quotes[$i]['methods'][$j]['id']); ?>" class="checkboxLabel" ><?php echo $quotes[$i]['module']; ?></label>
+<div class="important forward"><?php echo $currencies->format($quotes[$i]['methods'][$j]['cost']); ?></div>
+</span>
+<br class="clearBoth" />
+<?php
+$radio_buttons++;
+}     
+}
+?>
+</fieldset>
+<!--end shipping-->
+<div class="clearBoth"></div>
+<!--total-->
+<fieldset>
+<legend id="checkoutPaymentHeadingTotal"><div>Votre Nombre Total</div></legend>
+<div id="checkoutOrderTotals">
+<img style="float:right;" src="<?php echo DIR_WS_TEMPLATE;?>images/home_loading.gif">
+</div>
+</fieldset>
+<script>
+	$(document).ready(function(){
+$("#checkoutOrderTotals").load('<?php echo zen_href_link('ajax_order_total');?>');
+$("#paymentSelect input:radio").click(function(){
+	 $("#checkoutOrderTotals").html('<img style="float:right;" src="<?php echo DIR_WS_TEMPLATE;?>images/home_loading.gif">');
+	 $.post("<?php echo zen_href_link('ajax_order_total');?>",{payment:$(this).val()},
+		     function(data){
+               $("#checkoutOrderTotals").load('<?php echo zen_href_link('ajax_order_total');?>');
+			 }, "json");
+});
+$("#shippingSelect input:radio").click(function(){
+	$("#checkoutOrderTotals").html('<img style="float:right;" src="<?php echo DIR_WS_TEMPLATE;?>images/home_loading.gif">');
+	 $.post("<?php echo zen_href_link('ajax_order_total');?>",{shipping:$(this).val()},
+		     function(data){
+               $("#checkoutOrderTotals").load('<?php echo zen_href_link('ajax_order_total');?>');
+			 }, "json");
+});
+	});
+</script>
+<!--end total-->
+<div class="buttonRow forward"><?php echo zen_image_submit(BUTTON_IMAGE_CONFIRM_ORDER, BUTTON_CONFIRM_ORDER_ALT); ?></div>
+</form>
+<!--end quick shopping-->
+<?php }?>
+
 <?php
   } else {
 ?>

@@ -29,7 +29,7 @@ table td, .centerBoxWrapperContents table td {padding: 0px;}
 FIELDSET {border: none !important;}
 LEGEND {font-weight: bold;padding: 0.3em 0.3em 0.3em 0;}
 .return_customer LEGEND {padding: 0 0 0.5em 0;}
-LABEL.checkboxLabel, LABEL.radioButtonLabel {font-size: 0.95em;margin: 0.2em 0.5em;font-weight: normal;display:inline;}
+LABEL.checkboxLabel, LABEL.radioButtonLabel {font-size: 18px;margin: 0.2em 0.5em;font-weight: normal;display:inline;}
 #createAccountForm fieldset legend {font-size: 1.2em;}
 #createAccountForm fieldset legend {font-size: 1.2em;}
 /*CSS For Breadcrumb*/
@@ -47,7 +47,7 @@ input[type="submit"], input[type="reset"], input[type="button"], input[type="rad
 #ezPageBoxList li {margin: 0;padding: 0.2em 0;text-align: center;}
 #contentMainWrapper, #logoWrapper, #ezPageBoxList, #ezPageBoxList ul, #popupAdditionalImage, #popupImage {float: left;margin: 0 6px 10px;padding: 0;width: 94%;}
 .main_page_text {background: #f2f2f2 none repeat scroll 0 0;margin: 30px 0 0;padding: 20px;}
-.categoryIcon, .information, #checkoutShippingContentChoose {margin-bottom: 15px;}
+.categoryIcon, .information, #checkoutShippingContentChoose {margin-bottom: 18px;}
 .more_info_text {font-style: italic;}
 .normalprice, .productSpecialPriceSale {color: #acacac;font-size: 18px;text-decoration: line-through;margin-right: 8px;}
 .normalprice, .productSpecialPriceSale, .productSalePrice, .productBasePrice, .productSpecialPrice {display:inline-block}

@@ -1,10 +1,10 @@
 <?php
 /**
  * @package shippingMethod
- * @copyright Copyright 2003-2018 Zen Cart Development Team
+ * @copyright Copyright 2003-2009 Zen Cart Development Team
  * @copyright Portions Copyright 2003 osCommerce
  * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
- * @version $Id: mc12345678 Tue Aug 28 21:18:16 2018 -0400 Modified in v1.5.6 $
+ * @version $Id: zones.php 14498 2009-10-01 20:16:16Z ajeh $
  */
 /*
 
@@ -96,13 +96,11 @@
     var $code, $title, $description, $enabled, $num_zones;
 
 // class constructor
-    function __construct() {
+    function zones() {
       $this->code = 'zones';
       $this->title = MODULE_SHIPPING_ZONES_TEXT_TITLE;
       $this->description = MODULE_SHIPPING_ZONES_TEXT_DESCRIPTION;
-      $this->sort_order = defined('MODULE_SHIPPING_ZONES_SORT_ORDER') ? MODULE_SHIPPING_ZONES_SORT_ORDER : null;
-      if (null === $this->sort_order) return false;
-
+      $this->sort_order = MODULE_SHIPPING_ZONES_SORT_ORDER;
       $this->icon = '';
       $this->tax_class = MODULE_SHIPPING_ZONES_TAX_CLASS;
       $this->tax_basis = MODULE_SHIPPING_ZONES_TAX_BASIS;
@@ -144,13 +142,12 @@
 
 // class methods
     function quote($method = '') {
-      global $order, $shipping_weight, $shipping_num_boxes, $total_count;
+      global $order, $shipping_num_boxes;
       $dest_country = $order->delivery['country']['iso_code_2'];
       $dest_zone = 0;
       $error = false;
-      $shipping_method = '';
-      $shipping_cost = 0;
-
+    $shipping_weight = $_SESSION['cart']->show_weight();
+    $total_count = $_SESSION['cart']->count_contents();
     $order_total_amount = $_SESSION['cart']->show_total() - $_SESSION['cart']->free_shipping_prices() ;
 
       for ($i=1; $i<=$this->num_zones; $i++) {
@@ -339,3 +336,4 @@
       return $keys;
     }
   }
+?>

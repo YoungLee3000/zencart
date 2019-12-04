@@ -123,6 +123,7 @@ define('BOX_CONFIGURATION_ALL_LISTING', 'All Listing');
 define('BOX_CONFIGURATION_INDEX_LISTING', 'Index Listing');
 define('BOX_CONFIGURATION_DEFINE_PAGE_STATUS', 'Define Page Status');
 define('BOX_CONFIGURATION_EZPAGES_SETTINGS', 'EZ-Pages Settings');
+define('BOX_CONFIGURATION_CHECK_PROCESS','Scutephp: Checkout Process');
 
 // modules box text
 define('BOX_HEADING_MODULES', 'Modules');
@@ -202,6 +203,7 @@ define('BOX_TOOLS_DEFINE_CHECKOUT_SUCCESS','Checkout Success');
 define('BOX_TOOLS_DEFINE_PAGE_2','Page 2');
 define('BOX_TOOLS_DEFINE_PAGE_3','Page 3');
 define('BOX_TOOLS_DEFINE_PAGE_4','Page 4');
+
 
 // localization box text
 define('BOX_HEADING_LOCALIZATION', 'Localization');
