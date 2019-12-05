@@ -19,12 +19,11 @@
   // to show the PayPal logo as the payment option name, use this:  https://www.paypal.com/en_US/i/logo/PayPal_mark_37x23.gif
   // to show CC icons with PayPal, use this instead:  https://www.paypal.com/en_US/i/bnr/horizontal_solution_PPeCheck.gif
   // You should only use choices listed on this page: https://ppmts.custhelp.com/app/answers/detail/a_id/632
-  define('MODULE_PAYMENT_PAYPAL_MARK_BUTTON_IMG', 'https://www.paypal.com/en_US/i/logo/PayPal_mark_37x23.gif');
+  define('MODULE_PAYMENT_PAYPAL_MARK_BUTTON_IMG', 'images/paypal.png');
   define('MODULE_PAYMENT_PAYPAL_MARK_BUTTON_ALT', 'Encaisser avec PayPal');
   define('MODULE_PAYMENT_PAYPAL_ACCEPTANCE_MARK_TEXT', 'Gagnez du temps. Encaissez en toute sécurité. Payez sans dévoiler vos informations financières.');
 
-  define('MODULE_PAYMENT_PAYPAL_TEXT_CATALOG_LOGO', '<img src="' . MODULE_PAYMENT_PAYPAL_MARK_BUTTON_IMG . '" alt="' . MODULE_PAYMENT_PAYPAL_MARK_BUTTON_ALT . '" title="' . MODULE_PAYMENT_PAYPAL_MARK_BUTTON_ALT . '" /> &nbsp;' .
-                                                    '<span class="smallText">' . MODULE_PAYMENT_PAYPAL_ACCEPTANCE_MARK_TEXT . '</span>');
+  define('MODULE_PAYMENT_PAYPAL_TEXT_CATALOG_LOGO', '<img src="' . MODULE_PAYMENT_PAYPAL_MARK_BUTTON_IMG . '" alt="' . MODULE_PAYMENT_PAYPAL_MARK_BUTTON_ALT . '" title="' . MODULE_PAYMENT_PAYPAL_MARK_BUTTON_ALT . '" width = 120  height=100'.   ' /> &nbsp;' . '<span class="smallText">' . MODULE_PAYMENT_PAYPAL_ACCEPTANCE_MARK_TEXT . '</span>');
 
   define('MODULE_PAYMENT_PAYPAL_ENTRY_FIRST_NAME', 'Prénom : ');
   define('MODULE_PAYMENT_PAYPAL_ENTRY_LAST_NAME', 'Nom : ');
