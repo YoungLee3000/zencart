@@ -160,7 +160,7 @@ while(!$show_display_category->EOF) {
 ?>
 <?php // bof - Best Sellers Reloaded v1.1 - aclarke - 2007-07-22 ?>
 <?php if ($show_display_category->fields['configuration_key'] == $show_product_type.'_BEST_SELLERS') { ?>
-	<?php require($template->get_template_dir('tpl_modules_best_sellers_reloaded.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_best_sellers_reloaded.php'); ?>
+	<?php //require($template->get_template_dir('tpl_modules_best_sellers_reloaded.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_best_sellers_reloaded.php'); ?>
 <?php } ?>
 <?php // eof - Best Sellers Reloaded v1.1 - aclarke - 2007-07-22 ?>
 <?php if($saf_display_style!='split' || ($fproducts_display_style!='slider' || $sproducts_display_style!='slider')  ) {  ?>
@@ -170,7 +170,7 @@ while(!$show_display_category->EOF) {
 	 * display the Featured Products Center Box
 	 */
 	?>
-	<?php require($template->get_template_dir('tpl_modules_featured_products.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_featured_products.php'); ?>
+	<?php //require($template->get_template_dir('tpl_modules_featured_products.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_featured_products.php'); ?>
 	<?php } ?>
 	<?php if ($show_display_category->fields['configuration_key'] == $show_product_type.'_SPECIALS_PRODUCTS') { ?>
 	<?php
@@ -178,7 +178,7 @@ while(!$show_display_category->EOF) {
 	 * display the Special Products Center Box
 	 */
 	?>
-	<?php require($template->get_template_dir('tpl_modules_specials_default.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_specials_default.php'); ?>
+	<?php //require($template->get_template_dir('tpl_modules_specials_default.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_specials_default.php'); ?>
 	<?php } ?>
 <?php } ?>
 <?php if ($show_display_category->fields['configuration_key'] == $show_product_type.'_NEW_PRODUCTS') { ?>
@@ -187,7 +187,7 @@ while(!$show_display_category->EOF) {
  * display the New Products Center Box
  */
 ?>
-<?php require($template->get_template_dir('tpl_modules_whats_new.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_whats_new.php'); ?>
+<?php //require($template->get_template_dir('tpl_modules_whats_new.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_whats_new.php'); ?>
 <?php } ?>
 
 <?php //if ($show_display_category->fields['configuration_key'] == $show_product_type.'_UPCOMING') { ?>

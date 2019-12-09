@@ -41,12 +41,20 @@
 
 <?php    if (STOCK_ALLOW_CHECKOUT == 'true') {  ?>
 
-<div class="alert alert-danger alert-dismissable"><?php echo OUT_OF_STOCK_CAN_CHECKOUT; ?></div>
-<?php    } else { ?>
-<div class="alert alert-danger alert-dismissable"><?php echo OUT_OF_STOCK_CANT_CHECKOUT; ?></div>
+          <div class="alert alert-danger alert-dismissable"><?php echo OUT_OF_STOCK_CAN_CHECKOUT; ?></div>
+      <?php    
+        } 
+        else { 
+        ?>
+            <div class="alert alert-danger alert-dismissable"><?php echo OUT_OF_STOCK_CANT_CHECKOUT; ?></div>
 
-<?php    } //endif STOCK_ALLOW_CHECKOUT ?>
-<?php  } //endif flagAnyOutOfStock ?>
+        <?php    
+            } //endif STOCK_ALLOW_CHECKOUT 
+          ?>
+    <?php 
+      } //endif flagAnyOutOfStock 
+    ?>
+</form>
 <div class="cart-container">
     <div class="table-responsive table-container">
         <table class="table table-bordered">
@@ -150,35 +158,11 @@
 				<?php echo $cartShowTotal; ?>
 			</div>
 		</div>
-	<div class="divider divider--xs"></div>
+	<div class="divider divider--xs"> 
+  </div>
 	<!--bof shopping cart buttons-->
-	<div class="clearfix shopping-cart-btns">
-		<?php
-			if (SHOW_SHIPPING_ESTIMATOR_BUTTON == '1') {
-    ?>
-		<!-- <div class="back btn btn--ys btn--light"><?php //echo '<a href="javascript:popupWindow(\'' . zen_href_link(FILENAME_POPUP_SHIPPING_ESTIMATOR, '', 'SSL') . '\')">' .
-			//zen_image_button(BUTTON_IMAGE_SHIPPING_ESTIMATOR, BUTTON_SHIPPING_ESTIMATOR_ALT) . '</a>'; ?></div> -->
-		<?php
-      }
-    ?>
-				<?php
-			// show update cart button
-			if (SHOW_SHOPPING_CART_UPDATE == 2 or SHOW_SHOPPING_CART_UPDATE == 3) {
-		?>
-				<!-- <div class="back btn--light pull-left updateall_btn btn-right">
-					<?php //echo zen_image_submit(ICON_IMAGE_UPDATE, 'UPDATE TOTAL'); ?>
-				</div> -->
-		<?php
-		 } else { // don't show update button below cart
-		?>
-		<?php
-		} // show update button
-		?>
-		<!-- <div class="forward checkout_button btn btn--ys btn--light pull-right"><?php //echo '<a href="' . zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL') . '">' . zen_image_button(BUTTON_IMAGE_CHECKOUT, BUTTON_CHECKOUT_ALT) . '</a><span class="icon icon-keyboard_arrow_right"></span>'; ?></div> -->
-		<!-- <div class="back btn btn--ys btn--light btn-right pull-right"><?php //echo '<span class="icon icon-keyboard_arrow_left"></span>'.zen_back_link() . zen_image_button(BUTTON_IMAGE_CONTINUE_SHOPPING, BUTTON_CONTINUE_SHOPPING_ALT) . '</a>'; ?></div> -->
-	<!--eof shopping cart buttons-->
-	</div>
-</form>
+</div>
+
 
 <!-- ** BEGIN PAYPAL EXPRESS CHECKOUT ** -->
 <?php  // the tpl_ec_button template only displays EC option if cart contents >0 and value >0
@@ -208,7 +192,7 @@ if (defined('MODULE_PAYMENT_PAYPALWPP_STATUS') && MODULE_PAYMENT_PAYPALWPP_STATU
 <div id="withOutAccount">
 	<h2>Non - Paiement Par Compte</h2>
 	<p>Pour une expérience pratique, nous offrons l'option de vérifier sans créer un compte.</p>
-	<p>Si vous avez notre compte, vous pouvez Clic<a href="<?php echo zen_href_link('login');?>" rel="nofollow" style="color:red;"><em>Page de connexion</em></a>, Ou  <a href="<?php echo zen_href_link('create_account');?>" rel="nofollow" style="color:red;">Créer un compte</a>
+	<p>Si vous avez notre compte, vous pouvez Clic <a href="<?php echo zen_href_link('login');?>" rel="nofollow" style="color:red;"><em>Page de connexion</em></a>, Ou  <a href="<?php echo zen_href_link('create_account');?>" rel="nofollow" style="color:red;">Créer un compte</a>
   </p>
 	<p class="forward"><a href="<?php echo zen_href_link('password_forgotten');?>" style="color:red;">Vous avez perdu votre mot de passe?</a></p>
 </div>
@@ -232,13 +216,14 @@ if (!$_SESSION['customer_id']) {
 }else{
   echo '<fieldset><legend><div>Your Shipping Address</div></legend>';
   echo '<div style="padding:5px;">'.zen_address_label($_SESSION['customer_id'], (isset($_SESSION['sendto'])?$_SESSION['sendto']:$_SESSION['customer_default_address_id']), true, ' ', '<br />').'</div>';
-  echo '<div class="forward buttonRow"><a href="' . zen_href_link('checkout_shipping_address', '', 'SSL') . '">' . zen_image_button(BUTTON_IMAGE_CHANGE_ADDRESS, BUTTON_CHANGE_ADDRESS_ALT) . '</a></div>';
+  echo '<div class="forward buttonRow"><a href="' . zen_href_link('checkout_shipping_address', '', 'SSL') . '" class='. 
+  '"btn btn--ys btn--sm'. '" >' . zen_image_button(BUTTON_IMAGE_CHANGE_ADDRESS, BUTTON_CHANGE_ADDRESS_ALT) . '</a></div>';
   echo '</fieldset>';
 }
 ?>
 <fieldset>
 <legend><div>Note Spéciale ou Note de Commande</div></legend>
-<?php echo zen_draw_textarea_field('comments', '100', '5'); ?>
+<?php echo zen_draw_textarea_field('comments', '100', '5','', 'id="sp_comments"' . 'onblur="' . "cooki('sp_comments')" . '"'); ?>
 </fieldset>
 <div class="clearBoth"></div>
 <!--end address-->
@@ -262,7 +247,7 @@ if (sizeof($selection) > 1) {
     echo zen_draw_radio_field('payment', $selection[$i]['id'], ($selection[$i]['id'] == $_SESSION['payment'] ? true : false), 'id="pmt-'.$selection[$i]['id'].'"'); 
     } 
 } else {
-echo zen_draw_hidden_field('payment', $selection[$i]['id']); 
+echo zen_draw_hidden_field('payment', $selection[$i]['id'], 'id="pmt-'.$selection[$i]['id'].'"'); 
 }?>
 
 <label for="pmt-<?php echo $selection[$i]['id']; ?>" class="radioButtonLabel"><?php echo $selection[$i]['module']; ?></label>
@@ -284,7 +269,7 @@ $radio_buttons++;?>
 <div class="clearBoth"></div>
 <!--shipping-->
 <?php
-require(DIR_WS_CLASSES . 'shipping.php');
+//require(DIR_WS_CLASSES . 'shipping.php');
 $shipping_modules = new shipping();
 $quotes = $shipping_modules->quote();
 ?>
@@ -354,7 +339,8 @@ $("#shippingSelect input:radio").click(function(){
   } else {
 ?>
 
-<h2 id="cartEmptyText"><?php echo TEXT_CART_EMPTY; ?></h2>
+<!-- <h2 id="cartEmptyText"><?php echo TEXT_CART_EMPTY; ?></h2> -->
+<h6 id="cartEmptyText" style="float: left;"><?php echo TEXT_CART_EMPTY; ?></h2>
 <?php
 	$show_display_shopping_cart_empty = $db->Execute(SQL_SHOW_SHOPPING_CART_EMPTY);
 	while (!$show_display_shopping_cart_empty->EOF) {
@@ -366,7 +352,7 @@ $("#shippingSelect input:radio").click(function(){
 	 * display the Featured Products Center Box
 	 */
 	?>
-		<?php require($template->get_template_dir('tpl_modules_featured_products.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_featured_products.php'); ?>
+		<?php //require($template->get_template_dir('tpl_modules_featured_products.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_featured_products.php'); ?>
 	<?php } ?>
 	<?php
 	  if ($show_display_shopping_cart_empty->fields['configuration_key'] == 'SHOW_SHOPPING_CART_EMPTY_SPECIALS_PRODUCTS') { ?>
@@ -375,7 +361,7 @@ $("#shippingSelect input:radio").click(function(){
 	 * display the Special Products Center Box
 	 */
 	?>
-	<?php require($template->get_template_dir('tpl_modules_specials_default.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_specials_default.php'); ?>
+	<?php //require($template->get_template_dir('tpl_modules_specials_default.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_specials_default.php'); ?>
 	<?php } ?>
 
 	<?php
@@ -385,12 +371,12 @@ $("#shippingSelect input:radio").click(function(){
 	 * display the New Products Center Box
 	 */
 	?>
-	<?php require($template->get_template_dir('tpl_modules_whats_new.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_whats_new.php'); ?>
+	<?php //require($template->get_template_dir('tpl_modules_whats_new.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_whats_new.php'); ?>
 	<?php } ?>
 
 	<?php
 	  if ($show_display_shopping_cart_empty->fields['configuration_key'] == 'SHOW_SHOPPING_CART_EMPTY_UPCOMING') {
-		include(DIR_WS_MODULES . zen_get_module_directory(FILENAME_UPCOMING_PRODUCTS));
+		//include(DIR_WS_MODULES . zen_get_module_directory(FILENAME_UPCOMING_PRODUCTS));
 	  }
 	?>
 	<?php
@@ -402,3 +388,63 @@ $("#shippingSelect input:radio").click(function(){
 ?>
 </div>
 </div>
+</div>
+<script src="<?php  echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'jscript').'/jquery.cookie.js'?>" type="text/javascript"></script>
+<script type="text/javascript">
+  function cooki(v){
+      var value = $('#' + v).val();
+      if (value != ''){
+          $.cookie(v,value,{expires:1});
+      }
+  }
+  $(function (){
+      var company = $.cookie('company');
+      var firstname = $.cookie('firstname');
+      var lastname = $.cookie('lastname');
+      var street_address = $.cookie('street-address');
+      var suburb = $.cookie('suburb');
+      var city = $.cookie('city');
+      var state = $.cookie('state');
+      var email_address = $.cookie('email-address');
+      var postcode = $.cookie('postcode');
+      var telephone = $.cookie('telephone');
+      var customers_referral = $.cookie('customers_referral');
+      var sp_comments = $.cookie('sp_comments');
+      if (company != '' && company != 'undefined' && company != 'null') {
+        $('#company').val(company);
+      }
+      if (firstname != '' && firstname != 'undefined' && firstname != 'null') {
+        $('#firstname').val(firstname);
+      }
+      if (lastname != '' && lastname != 'undefined' && lastname != 'null') {
+        $('#lastname').val(lastname);
+      }
+      if (street_address != '' && street_address != 'undefined' && street_address != 'null') {
+        $('#street-address').val(street_address);
+      }
+      if (suburb != '' && suburb != 'undefined' && suburb != 'null') {
+        $('#suburb').val(suburb);
+      }
+      if ( city != '' && city != 'undefined' && city != 'null') {
+        $('#city').val(city);
+      }
+      if ( state != '' && state != 'undefined' && state != 'null') {
+        $('#state').val(state);
+      }
+      if ( email_address != '' && email_address != 'undefined' && email_address != 'null') {
+        $('#email-address').val(email_address);
+      }
+      if ( postcode != '' && postcode != 'undefined' && postcode != 'null') {
+        $('#postcode').val(postcode);
+      }
+      if (telephone != '' && telephone != 'undefined' && telephone != 'null') {
+        $('#telephone').val(telephone);
+      }
+      if (customers_referral != '' && customers_referral != 'undefined' && customers_referral != 'null') {
+        $('#customers_referral').val(customers_referral);
+      }
+      if (sp_comments != '' && sp_comments != 'undefined' && sp_comments != 'null') {
+        $('#sp_comments').val(sp_comments);
+      }
+  });
+</script>

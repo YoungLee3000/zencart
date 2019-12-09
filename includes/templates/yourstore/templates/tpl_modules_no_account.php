@@ -34,7 +34,7 @@
 <fieldset>
 <legend><div><?php echo CATEGORY_COMPANY; ?></div></legend>
 <label class="inputLabel" for="company"><?php echo ENTRY_COMPANY; ?></label>
-<?php echo zen_draw_input_field('company', '', zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_company', '40') . ' id="company"') . (zen_not_null(ENTRY_COMPANY_TEXT) ? '<span class="alert-text">' . ENTRY_COMPANY_TEXT . '</span>': ''); ?>
+<?php echo zen_draw_input_field('company', '', zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_company', '40') . ' id="company"' . 'onblur="' . "cooki('company')" . '"') . (zen_not_null(ENTRY_COMPANY_TEXT) ? '<span class="alert-text">' . ENTRY_COMPANY_TEXT . '</span>': ''); ?>
 </fieldset>
 <?php
   }
@@ -55,29 +55,29 @@
 <label class="inputLabel" for="firstname">
   <span class="alert-text">*</span>
   <?php echo ENTRY_FIRST_NAME; ?></label>
-<?php echo zen_draw_input_field('firstname', '', zen_set_field_length(TABLE_CUSTOMERS, 'customers_firstname', '40') . ' id="firstname"') . (zen_not_null(ENTRY_FIRST_NAME_TEXT) ? '<span class="alert-text">' . ENTRY_FIRST_NAME_TEXT . '</span>': ''); ?>
+<?php echo zen_draw_input_field('firstname', '', zen_set_field_length(TABLE_CUSTOMERS, 'customers_firstname', '40') . ' id="firstname"' . 'onblur="' . "cooki('firstname')" . '"' ) . (zen_not_null(ENTRY_FIRST_NAME_TEXT) ? '<span class="alert-text">' . ENTRY_FIRST_NAME_TEXT . '</span>': ''); ?>
 <!-- <br class="clearBoth" /> -->
 
 <label class="inputLabel" for="lastname"><?php echo ENTRY_LAST_NAME; ?></label>
-<?php echo zen_draw_input_field('lastname', '', zen_set_field_length(TABLE_CUSTOMERS, 'customers_lastname', '40') . ' id="lastname"') . (zen_not_null(ENTRY_LAST_NAME_TEXT) ? '<span class="alert-text">' . ENTRY_LAST_NAME_TEXT . '</span>': ''); ?>
+<?php echo zen_draw_input_field('lastname', '', zen_set_field_length(TABLE_CUSTOMERS, 'customers_lastname', '40') . ' id="lastname"' . 'onblur="' . "cooki('lastname')" . '"') . (zen_not_null(ENTRY_LAST_NAME_TEXT) ? '<span class="alert-text">' . ENTRY_LAST_NAME_TEXT . '</span>': ''); ?>
 <!-- <br class="clearBoth" /> -->
 
 <label class="inputLabel" for="street-address"><?php echo ENTRY_STREET_ADDRESS; ?></label>
-  <?php echo zen_draw_input_field('street_address', '', zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_street_address', '40') . ' id="street-address"') . (zen_not_null(ENTRY_STREET_ADDRESS_TEXT) ? '<span class="alert-text">' . ENTRY_STREET_ADDRESS_TEXT . '</span>': ''); ?>
+  <?php echo zen_draw_input_field('street_address', '', zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_street_address', '40') . ' id="street-address"' . 'onblur="' . "cooki('street-address')" . '"') . (zen_not_null(ENTRY_STREET_ADDRESS_TEXT) ? '<span class="alert-text">' . ENTRY_STREET_ADDRESS_TEXT . '</span>': ''); ?>
 <!-- <br class="clearBoth" /> -->
 
 <?php
   if (ACCOUNT_SUBURB == 'true') {
 ?>
 <label class="inputLabel" for="suburb"><?php echo ENTRY_SUBURB; ?></label>
-<?php echo zen_draw_input_field('suburb', '', zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_suburb', '40') . ' id="suburb"') . (zen_not_null(ENTRY_SUBURB_TEXT) ? '<span class="alert-text">' . ENTRY_SUBURB_TEXT . '</span>': ''); ?>
+<?php echo zen_draw_input_field('suburb', '', zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_suburb', '40') . ' id="suburb"' . 'onblur="' . "cooki('suburb')" . '"') . (zen_not_null(ENTRY_SUBURB_TEXT) ? '<span class="alert-text">' . ENTRY_SUBURB_TEXT . '</span>': ''); ?>
 <!-- <br class="clearBoth" /> -->
 <?php
   }
 ?>
 
-<label class="inputLabel" for="city"><?php echo ENTRY_CITY; ?></label>
-<?php echo zen_draw_input_field('city', '', zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_city', '40') . ' id="city"') . (zen_not_null(ENTRY_CITY_TEXT) ? '<span class="alert-text">' . ENTRY_CITY_TEXT . '</span>': ''); ?>
+<label class="inputLabel" for="city"><span class="alert-text">* </span><?php echo ENTRY_CITY; ?></label>
+<?php echo zen_draw_input_field('city', '', zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_city', '40') . ' id="city"' . 'onblur="' . "cooki('city')" . '"') . (zen_not_null(ENTRY_CITY_TEXT) ? '<span class="alert-text">' . ENTRY_CITY_TEXT . '</span>': ''); ?>
 <!-- <br class="clearBoth" /> -->
 
 <?php
@@ -87,17 +87,17 @@
 <label class="inputLabel" for="stateZone" id="zoneLabel"><?php echo ENTRY_STATE; ?></label>
 <?php
       echo zen_draw_pull_down_menu('zone_id', zen_prepare_country_zones_pull_down($selected_country), $zone_id, 'id="stateZone"');
-      if (zen_not_null(ENTRY_STATE_TEXT)) echo '&nbsp;<span class="alert-text">' . ENTRY_STATE_TEXT . '</span>'; 
+      //if (zen_not_null(ENTRY_STATE_TEXT)) echo '&nbsp;<span class="alert-text">' . ENTRY_STATE_TEXT . '</span>'; 
     }
 ?>
 
 <?php if ($flag_show_pulldown_states == true) { ?>
 <!-- <br class="clearBoth" id="stBreak" /> -->
 <?php } ?>
-<label class="inputLabel" for="state" id="stateLabel"><?php echo ENTRY_STATE; ?></label>
+<!-- <label class="inputLabel" for="state" id="stateLabel"><?php //echo ENTRY_STATE; ?></label> -->
 <?php
-    echo zen_draw_input_field('state', '', zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_state', '40') . ' id="state"');
-    if (zen_not_null(ENTRY_STATE_TEXT)) echo '&nbsp;<span class="alert-text" id="stText">' . ENTRY_STATE_TEXT . '</span>';
+    echo zen_draw_input_field('state', '', zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_state', '40') . ' id="state"' . 'onblur="' . "cooki('state')" . '"');
+    //if (zen_not_null(ENTRY_STATE_TEXT)) echo '&nbsp;<span class="alert-text" id="stText">' . ENTRY_STATE_TEXT . '</span>';
     if ($flag_show_pulldown_states == false) {
       echo zen_draw_hidden_field('zone_id', $zone_name, ' ');
     }
@@ -107,8 +107,8 @@
   }
 ?>
 
-<label class="inputLabel" for="postcode"><?php echo ENTRY_POST_CODE; ?></label>
-<?php echo zen_draw_input_field('postcode', '', zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_postcode', '40') . ' id="postcode"') . (zen_not_null(ENTRY_POST_CODE_TEXT) ? '<span class="alert-text">' . ENTRY_POST_CODE_TEXT . '</span>': ''); ?>
+<label class="inputLabel" for="postcode"><span class="alert-text">* </span><?php echo ENTRY_POST_CODE; ?></label>
+<?php echo zen_draw_input_field('postcode', '', zen_set_field_length(TABLE_ADDRESS_BOOK, 'entry_postcode', '40') . ' id="postcode"' . 'onblur="' . "cooki('postcode')" . '"') . (zen_not_null(ENTRY_POST_CODE_TEXT) ? '<span class="alert-text">' . ENTRY_POST_CODE_TEXT . '</span>': ''); ?>
 <!-- <br class="clearBoth" /> -->
 
 <label class="inputLabel" for="country"><?php echo ENTRY_COUNTRY; ?></label>
@@ -121,24 +121,27 @@
 <label class="inputLabel" for="email-address">
   <span class="alert-text">*</span>
   <?php echo ENTRY_EMAIL_ADDRESS; ?></label>
-<?php echo zen_draw_input_field('email_address', '', zen_set_field_length(TABLE_CUSTOMERS, 'customers_email_address', '40') . ' id="email-address"') . (zen_not_null(ENTRY_EMAIL_ADDRESS_TEXT) ? '<span class="alert-text">' . ENTRY_EMAIL_ADDRESS_TEXT . '</span>': ''); ?>
+<?php echo zen_draw_input_field('email_address', $_POST['email_address'], zen_set_field_length(TABLE_CUSTOMERS, 'customers_email_address', '40') . ' id="email-address"' . 'onblur="' . "cooki('email-address')" . '"') . (zen_not_null(ENTRY_EMAIL_ADDRESS_TEXT) ? '<span class="alert-text">' . ENTRY_EMAIL_ADDRESS_TEXT . '</span>': ''); ?>
 
 <!-- <br class="clearBoth" /> -->
 <input type="hidden" name="email_format" value="TEXT" checked="checked" id="email-format-text" />
 
 <label class="inputLabel" for="telephone"><?php echo ENTRY_TELEPHONE_NUMBER; ?></label>
-<?php echo zen_draw_input_field('telephone', '', zen_set_field_length(TABLE_CUSTOMERS, 'customers_telephone', '40') . ' id="telephone"') ; ?>
+<?php 
+echo zen_draw_input_field('telephone', '', zen_set_field_length(TABLE_CUSTOMERS, 'customers_telephone', '40') . ' id="telephone"' . 
+'onblur="' . "cooki('telephone')" . '"') ; ?>
 
 <?php
-  if (ACCOUNT_FAX_NUMBER == 'true') {
+  //if (ACCOUNT_FAX_NUMBER == 'true') {
 ?>
 <!-- <br class="clearBoth" /> -->
-<label class="inputLabel" for="fax"><?php echo ENTRY_FAX_NUMBER; ?></label>
-<?php echo zen_draw_input_field('fax', '', 'id="fax"'); ?>
+<!-- <label class="inputLabel" for="fax"><?php echo ENTRY_FAX_NUMBER; ?></label> -->
+<?php //echo zen_draw_input_field('fax', $_POST['fax'], 'id="fax"' . 'onblur="' . "cooki('fax')" . '"'); ?>
 <?php
-  }
+  //}
 ?>
 </fieldset>
+
 
 <?php
   if (CUSTOMERS_REFERRAL_STATUS == 2) {
@@ -147,7 +150,8 @@
 
 <legend><div><?php echo TABLE_HEADING_REFERRAL_DETAILS; ?></div></legend>
 <label class="inputLabel" for="customers_referral"><?php echo ENTRY_CUSTOMERS_REFERRAL; ?></label>
-<?php echo zen_draw_input_field('customers_referral', '', zen_set_field_length(TABLE_CUSTOMERS, 'customers_referral', '15') . ' id="customers_referral"'); ?>
+<?php echo zen_draw_input_field('customers_referral', '', zen_set_field_length(TABLE_CUSTOMERS, 'customers_referral', '15') . ' id="customers_referral"' . 'onblur="' . "cooki('customers_referral')" . '"'); ?>
 <!-- <br class="clearBoth" /> -->
 </fieldset>
 <?php } ?>
+

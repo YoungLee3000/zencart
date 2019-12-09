@@ -95,8 +95,9 @@ div#checkoutOrderTotals {
     margin-bottom: 20px;
 }
 
-.important.forward {
-    display: inline;
+.floatingBox.important.forward.alert.alert-info {
+    display: block;
+
 }
 /********end**without checkout*************/
 

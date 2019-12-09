@@ -42,8 +42,10 @@ function update_zone(theForm) {
     theForm.state.setAttribute('className', 'hiddenField');
     document.getElementById("stateLabel").className = 'hiddenField';
     document.getElementById("stateLabel").setAttribute('className', 'hiddenField');
-    document.getElementById("stText").className = 'hiddenField';
-    document.getElementById("stText").setAttribute('className', 'hiddenField');
+    if (document.getElementById("stText")) {
+      document.getElementById("stText").className = 'hiddenField';
+      document.getElementById("stText").setAttribute('className', 'hiddenField');
+    }
     document.getElementById("stBreak").className = 'hiddenField';
     document.getElementById("stBreak").setAttribute('className', 'hiddenField');
   }
@@ -54,7 +56,7 @@ function update_zone(theForm) {
     theForm.state.setAttribute('className', 'visibleField');
     document.getElementById("stateLabel").className = 'inputLabel visibleField';
     document.getElementById("stateLabel").setAttribute('className', 'inputLabel visibleField');
-    document.getElementById("stText").className = 'alert-text visibleField';
+    document.getElementById("stText").className = 'alert visibleField';
     document.getElementById("stText").setAttribute('className', 'alert visibleField');
     document.getElementById("stBreak").className = 'clearBoth visibleField';
     document.getElementById("stBreak").setAttribute('className', 'clearBoth visibleField');

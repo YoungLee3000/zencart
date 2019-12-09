@@ -1,5 +1,6 @@
 <?php
 require(DIR_WS_MODULES . zen_get_module_directory('require_languages.php'));
+// include(DIR_WS_MODULES . zen_get_module_directory(FILENAME_CREATE_ACCOUNT));
 
 if (!$_SESSION['customer_id']) {
    include(DIR_WS_MODULES . zen_get_module_directory('no_account_quick.php'));
@@ -55,9 +56,23 @@ $zco_notifier->notify('NOTIFY_CHECKOUT_PROCESS_BEFORE_ORDER_TOTALS_PROCESS');
 $order_totals = $order_total_modules->process();//处理订单信息
 $zco_notifier->notify('NOTIFY_CHECKOUT_PROCESS_AFTER_ORDER_TOTALS_PROCESS');
 
+if ($_SESSION['payment'] == 'paypal' and !isset($_SESSION['order_number_created'])) {
+    include(DIR_WS_LANGUAGES . $_SESSION['language'] . '/checkout_process.php');
+    $insert_id = $order->create($order_totals, 2);
+    $zco_notifier->notify('NOTIFY_CHECKOUT_PROCESS_AFTER_ORDER_CREATE');
+    $payment_modules->after_order_create($insert_id);
+    $zco_notifier->notify('NOTIFY_CHECKOUT_PROCESS_AFTER_PAYMENT_MODULES_AFTER_ORDER_CREATE');
+    // store the product info to the order
+    $order->create_add_products($insert_id);
+    $_SESSION['order_number_created'] = $insert_id;
+    $order->send_order_email($insert_id, 2);
+}
+
+
 $confirmation = $payment_modules->confirmation();
 
-if (isset($$_SESSION['payment']->form_action_url)) {
+if (isset(${$_SESSION['payment']}->form_action_url)) {
+  echo $_SESSION['payment'];
    echo '<html xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Payment Redirecting</title>
@@ -69,20 +84,24 @@ body {text-align:center;}
 #wrapper img{margin-bottom:35px;}
 .forbid{text-align:center; font-size:16px; padding-top:10px;}
 </style>
-</head>
-<body onload="return document.checkout_confirmation.submit();">
-<div style="text-align:center;width:100%"><div id="wrapper">
+</head>'.
+'<body onload="return document.checkout_confirmation.submit();">'.
+//'<body >'.
+'<div style="text-align:center;width:100%"><div id="wrapper">
 <h1>Please wait while you\'re redirected</h1>
 <p>Redirecting...</p>
 <img src="includes/images/redirection-loader.gif" alt="loading...">
 </div></div>
-'. zen_draw_form('checkout_confirmation', $$_SESSION['payment']->form_action_url, 'post')
-. $$_SESSION['payment']->process_button()
+'. zen_draw_form('checkout_confirmation', ${$_SESSION['payment']}->form_action_url, 'post')
+. $payment_modules->process_button()
 .'<center><input name="submit" type="image" style="margin:0 auto" src="includes/images/ie1hJo.png" ></center>
 </form>
-</body></html>';
+</body>'.
+//'<script language="javascript">checkout_confirmation.submit();</script>'.
+'</html>';
 //$_SESSION['cart']->reset(true);
   exit;
+
 }
 
 $payment_modules->before_process();
