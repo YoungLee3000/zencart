@@ -117,7 +117,7 @@
 </fieldset>
 
 <fieldset>
-<legend><div>Détails de Contact</div></legend>
+<legend><div><?php echo TITLE_DETAIL_CONTACT; ?></div></legend>
 <label class="inputLabel" for="email-address">
   <span class="alert-text">*</span>
   <?php echo ENTRY_EMAIL_ADDRESS; ?></label>

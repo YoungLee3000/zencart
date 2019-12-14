@@ -630,7 +630,7 @@ if (STORE_STATUS == '0') {
   define('TEXT_GREETING_GUEST', 'Connectez - vous!');
 }
 
-define('TEXT_GREETING_PERSONAL', 'Hello <span class="greetUser">%s</span>! Would you like to see our <a href="%s">newest additions</a>?');
+define('TEXT_GREETING_PERSONAL', 'Bonjour <span class="greetUser">%s</span>! Souhaitez-vous voir notre <a href="%s">les plus récents ajouts</a>?');
 
 define('PZEN_SIDEBAR_TITLE_CATEGORIES', 'catégories');
 define('HEADER_TITLE_ACCOUNT', 'Compte');

@@ -28,4 +28,23 @@ define('TEXT_TOTAL_AMOUNT', '&nbsp;&nbsp;Montant : ');
 
 define('TEXT_VISITORS_CART', '<a href="javascript:session_win();">[Aide (?)]</a>');
 define('TEXT_OPTION_DIVIDER', '&nbsp;-&nbsp;');
+
+define('TEXT_YOUR_ADDRESS','Votre adresse d\'expédition');
+
+define('TITLE_NO_ACCOUNT','Non - Paiement Par Compte');
+define('TITLE_SPECIAL_NOTE','Note Spéciale ou Note de Commande');
+define('TITLE_PAYMENT','Mode de Paiement');
+define('TITLE_TRANSPORT','Procédé de Transport:');
+define('TITLE_DETAIL_CONTACT','Détails de Contact');
+define('TITLE_NUMBER_TOTAL','Votre Nombre Total');
+
+
+define('TIPS_NO_ACCOUNT_OPTION','Pour une expérience pratique, nous offrons l\'option de vérifier sans créer un compte.');
+define('TIPS_CLICK','Si vous avez notre compte, vous pouvez Clic ');
+define('TIPS_PAGE_CONNECTION','Page de connexion');
+define('TIPS_OR',', Ou  ');
+define('TIPS_CREATE_ACCOUNT','Créer un compte');
+define('TIPS_FORGOT_PASSWORD','Vous avez perdu votre mot de passe?');
+define('TIPS_NO_ACCEPT','Désolé, nous n\'acceptons pas les paiements de votre région en ce moment.');
+define('TIPS_CONTACT_FOR','S\'il vous plaît contactez-nous pour d\'autres arrangements.');
 ?>

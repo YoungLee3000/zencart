@@ -49,6 +49,8 @@ define('EMAIL_SUBJECT', 'Bienvenue chez ' . STORE_NAME);
 define('EMAIL_GREET_MR', 'Cher Mr. %s,' . "\n\n");
 define('EMAIL_GREET_MS', 'Chère Mme. %s,' . "\n\n");
 define('EMAIL_GREET_NONE', 'Cher %s' . "\n\n");
+define('EMAIL_USER','Compte: ');
+define('EMAIL_PASSWORD', 'Mot de passe: ');
 
 // First line of the greeting
 define('EMAIL_WELCOME', 'Nous sommes heureux de vous accueillir chez <strong>' . STORE_NAME . '</strong>.' . "\n\n");

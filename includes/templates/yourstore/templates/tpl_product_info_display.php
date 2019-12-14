@@ -444,7 +444,7 @@
 
 							<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
 
-							<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f99347b4d58a004"></script>
+							<script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f99347b4d58a004"></script>
 
 							<!-- AddThis Button END -->
 						<!--bof Add to Cart Box -->

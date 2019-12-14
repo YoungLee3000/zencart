@@ -190,11 +190,11 @@ if (defined('MODULE_PAYMENT_PAYPALWPP_STATUS') && MODULE_PAYMENT_PAYPALWPP_STATU
 <?php echo zen_draw_form('no_account', zen_href_link('quick_shopping', '', 'SSL'), 'post', 'onsubmit="return check_form(no_account);"') . zen_draw_hidden_field('action', 'process') . zen_draw_hidden_field('email_pref_html', 'email_format'); ?>
 <?php if (!$_SESSION['customer_id']) { ?>
 <div id="withOutAccount">
-	<h2>Non - Paiement Par Compte</h2>
-	<p>Pour une expérience pratique, nous offrons l'option de vérifier sans créer un compte.</p>
-	<p>Si vous avez notre compte, vous pouvez Clic <a href="<?php echo zen_href_link('login');?>" rel="nofollow" style="color:red;"><em>Page de connexion</em></a>, Ou  <a href="<?php echo zen_href_link('create_account');?>" rel="nofollow" style="color:red;">Créer un compte</a>
+	<h2><?php echo TITLE_NO_ACCOUNT; ?></h2>
+	<p><?php echo TIPS_NO_ACCOUNT_OPTION; ?></p>
+	<p><?php echo TIPS_CLICK; ?><a href="<?php echo zen_href_link('login');?>" rel="nofollow" style="color:red;"><em><?php echo TIPS_PAGE_CONNECTION; ?></em></a><?php echo TIPS_OR; ?><a href="<?php echo zen_href_link('create_account');?>" rel="nofollow" style="color:red;"><?php echo TIPS_CREATE_ACCOUNT; ?></a>
   </p>
-	<p class="forward"><a href="<?php echo zen_href_link('password_forgotten');?>" style="color:red;">Vous avez perdu votre mot de passe?</a></p>
+	<p class="forward"><a href="<?php echo zen_href_link('password_forgotten');?>" style="color:red;"><?php echo TIPS_FORGOT_PASSWORD; ?></a></p>
 </div>
 <?php } ?>
 
@@ -205,7 +205,7 @@ if (!$_SESSION['customer_id']) {
 /*
  * Set flags for template use:
  */
-  $selected_country = (isset($_POST['zone_country_id']) && $_POST['zone_country_id'] != '') ? $country : SHOW_CREATE_ACCOUNT_DEFAULT_COUNTRY;
+  $selected_country = (isset($_POST['zone_country_id']) && $_POST['zone_country_id'] != '') ? $country : 73; //默认国家法国
   $flag_show_pulldown_states = ((($process == true || $entry_state_has_zones == true) && $zone_name == '') || ACCOUNT_STATE_DRAW_INITIAL_DROPDOWN == 'true' || $error_state_input) ? true : false;
   $flag_show_pulldown_states = true;
   $state = ($flag_show_pulldown_states) ? ($state == '' ? '&nbsp;' : $state) : $zone_name;
@@ -214,7 +214,7 @@ if (!$_SESSION['customer_id']) {
   if (!isset($newsletter))   $newsletter = (ACCOUNT_NEWSLETTER_STATUS == '1' ? false : true);
   require($template->get_template_dir('tpl_modules_no_account.php',DIR_WS_TEMPLATE, $current_page_base,'templates'). '/tpl_modules_no_account.php'); 
 }else{
-  echo '<fieldset><legend><div>Your Shipping Address</div></legend>';
+  echo '<fieldset><legend><div>'.TEXT_YOUR_ADDRESS.'</div></legend>';
   echo '<div style="padding:5px;">'.zen_address_label($_SESSION['customer_id'], (isset($_SESSION['sendto'])?$_SESSION['sendto']:$_SESSION['customer_default_address_id']), true, ' ', '<br />').'</div>';
   echo '<div class="forward buttonRow"><a href="' . zen_href_link('checkout_shipping_address', '', 'SSL') . '" class='. 
   '"btn btn--ys btn--sm'. '" >' . zen_image_button(BUTTON_IMAGE_CHANGE_ADDRESS, BUTTON_CHANGE_ADDRESS_ALT) . '</a></div>';
@@ -222,7 +222,7 @@ if (!$_SESSION['customer_id']) {
 }
 ?>
 <fieldset>
-<legend><div>Note Spéciale ou Note de Commande</div></legend>
+<legend><div><?php echo  TITLE_SPECIAL_NOTE; ?></div></legend>
 <?php echo zen_draw_textarea_field('comments', '100', '5','', 'id="sp_comments"' . 'onblur="' . "cooki('sp_comments')" . '"'); ?>
 </fieldset>
 <div class="clearBoth"></div>
@@ -234,11 +234,11 @@ require(DIR_WS_CLASSES . 'payment.php');
 $payment_modules = new payment;	
 ?>
 <fieldset id="paymentSelect">
-<legend><div>Mode de Paiement</div></legend>
+<legend><div><?php echo  TITLE_PAYMENT; ?></div></legend>
 <!-- <br class="clearBoth" /> -->
 <?php $selection = $payment_modules->selection();
       if (sizeof($selection) == 0) {?>
-<p class="important"><span class="alert">Sorry, we are not accepting payments from your region at this time.</span><br />Please contact us for alternate arrangements.</p>
+<p class="important"><span class="alert"><?php echo  TIPS_NO_ACCEPT; ?></span><br /><?php echo  TIPS_CONTACT_FOR; ?></p>
 <?php }
 $radio_buttons = 0;
 for ($i=0, $n=sizeof($selection); $i<$n; $i++) {
@@ -274,7 +274,7 @@ $shipping_modules = new shipping();
 $quotes = $shipping_modules->quote();
 ?>
 <fieldset id="shippingSelect">
-<legend><div>Procédé de Transport:</div></legend>
+<legend><div><?php echo  TITLE_TRANSPORT; ?></div></legend>
 <?php
 $radio_buttons = 0;
 for ($i=0, $n=sizeof($quotes); $i<$n; $i++) {
@@ -305,7 +305,7 @@ $radio_buttons++;
 <div class="clearBoth"></div>
 <!--total-->
 <fieldset>
-<legend id="checkoutPaymentHeadingTotal"><div>Votre Nombre Total</div></legend>
+<legend id="checkoutPaymentHeadingTotal"><div><?php echo TITLE_NUMBER_TOTAL;?></div></legend>
 <div id="checkoutOrderTotals">
 <img style="float:right;" src="<?php echo DIR_WS_TEMPLATE;?>images/home_loading.gif">
 </div>
