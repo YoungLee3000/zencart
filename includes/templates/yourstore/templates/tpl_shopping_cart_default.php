@@ -312,19 +312,19 @@ $radio_buttons++;
 </fieldset>
 <script>
 	$(document).ready(function(){
-$("#checkoutOrderTotals").load('<?php echo zen_href_link('ajax_order_total');?>');
+$("#checkoutOrderTotals").load('<?php echo zen_href_link('ajax_order_total','','SSL');?>');
 $("#paymentSelect input:radio").click(function(){
 	 $("#checkoutOrderTotals").html('<img style="float:right;" src="<?php echo DIR_WS_TEMPLATE;?>images/home_loading.gif">');
-	 $.post("<?php echo zen_href_link('ajax_order_total');?>",{payment:$(this).val()},
+	 $.post("<?php echo zen_href_link('ajax_order_total','','SSL');?>",{payment:$(this).val()},
 		     function(data){
-               $("#checkoutOrderTotals").load('<?php echo zen_href_link('ajax_order_total');?>');
+               $("#checkoutOrderTotals").load('<?php echo zen_href_link('ajax_order_total','','SSL');?>');
 			 }, "json");
 });
 $("#shippingSelect input:radio").click(function(){
 	$("#checkoutOrderTotals").html('<img style="float:right;" src="<?php echo DIR_WS_TEMPLATE;?>images/home_loading.gif">');
-	 $.post("<?php echo zen_href_link('ajax_order_total');?>",{shipping:$(this).val()},
+	 $.post("<?php echo zen_href_link('ajax_order_total','','SSL');?>",{shipping:$(this).val()},
 		     function(data){
-               $("#checkoutOrderTotals").load('<?php echo zen_href_link('ajax_order_total');?>');
+               $("#checkoutOrderTotals").load('<?php echo zen_href_link('ajax_order_total','','SSL');?>');
 			 }, "json");
 });
 	});

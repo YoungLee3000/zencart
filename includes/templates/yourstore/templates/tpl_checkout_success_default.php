@@ -30,11 +30,11 @@
 
 <h1 id="checkoutSuccessHeading"><?php echo HEADING_TITLE; ?></h1>
 <br>
-<div id="checkoutSuccessOrderNumber"><font color="red">Please Keep in mind the following information.</font></div>
+<div id="checkoutSuccessOrderNumber"><font color="red"><?php echo  TEXT_KEEP_IN_MIND; ?></font></div>
 <div id="checkoutSuccessOrderNumber"><?php echo TEXT_YOUR_ORDER_NUMBER .ORDER_PREV. $zv_orders_id; ?></div>
 <?php if($_SESSION['COWOA']){ ?>
-<div id="checkoutSuccessOrderNumber"><strong>Username:</strong><?php echo $_SESSION['email_address']; ?></div>
-<div id="checkoutSuccessOrderNumber"><strong>Password:</strong><?php echo $_SESSION['password']; ?></div>
+<div id="checkoutSuccessOrderNumber"><strong><?php echo TEXT_USER_NAME; ?></strong><?php echo $_SESSION['email_address']; ?></div>
+<div id="checkoutSuccessOrderNumber"><strong><?php echo TEXT_PASSWORD; ?></strong><?php echo $_SESSION['password']; ?></div>
 <?php } ?>
 <!-- bof Order Steps (tableless) -->
 <?php if($_SESSION['COWOA']) $COWOA=TRUE; ?>

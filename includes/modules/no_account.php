@@ -315,8 +315,8 @@ if (isset($_POST['action']) && ($_POST['action'] == 'process')) {
     $html_msg['EMAIL_LAST_NAME']  = $lastname;
 
     // initial welcome
-    $email_text .=  EMAIL_WELCOME . "\n".'User Name: '.$email_address."\n".'Password: '.$password."\n";
-    $html_msg['EMAIL_WELCOME'] = str_replace('\n','',EMAIL_WELCOME) . "<br />".'User Name: '.$email_address."<br />".'Password: '.$password.'<br />';
+    $email_text .=  EMAIL_WELCOME . "\n".'Compte: '.$email_address."\n".'Mot de passe: '.$password."\n";
+    $html_msg['EMAIL_WELCOME'] = str_replace('\n','',EMAIL_WELCOME) . "<br />".'Compte: '.$email_address."<br />".'Mot de passe: '.$password.'<br />';
 
     if (NEW_SIGNUP_DISCOUNT_COUPON != '' and NEW_SIGNUP_DISCOUNT_COUPON != '0') {
       $coupon_id = NEW_SIGNUP_DISCOUNT_COUPON;

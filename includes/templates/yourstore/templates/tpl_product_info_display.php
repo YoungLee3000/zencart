@@ -32,6 +32,9 @@
             <?php }	?>
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
 				<div class="row <?php echo ($prodinfo_image_layout==1)? 'big-size' : 'small-size'; ?> product-view">
+					<div class="product-info__title">
+							<h4>&nbsp;&nbsp;<?php echo $products_name; ?></h4>
+					</div>
 				  <?php	if (zen_not_null($products_image)) { ?>
 					<div class="<?php echo ($prodinfo_image_layout==1)? 'col-sm-6 col-md-6 col-lg-6 col-xl-6' : 'col-sm-4 col-md-4 col-lg-4 col-xl-4'; ?> hidden-xs">
 
@@ -199,9 +202,9 @@
 							<?php } ?>
 						</div> -->
 						<?php } ?>
-						<div class="product-info__title">
+						<!-- <div class="product-info__title">
 							<h2><?php echo $products_name; ?></h2>
-						</div>
+						</div> -->
 						<!-- <div class="wrapper visible-xs">
 							<div class="product-info__sku pull-left">
 								<?php //echo (($flag_show_product_info_model == 1 and $products_model !='') ? TEXT_PRODUCT_MODEL . '<strong>'.$products_model.'</strong>' : ''); ?>

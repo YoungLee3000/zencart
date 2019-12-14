@@ -1099,7 +1099,7 @@ CREATE TABLE orders_products (
   orders_id int(11) NOT NULL default '0',
   products_id int(11) NOT NULL default '0',
   products_model varchar(32) default NULL,
-  products_name varchar(64) NOT NULL default '',
+  products_name varchar(250) NOT NULL default '',
   products_price decimal(15,4) NOT NULL default '0.0000',
   final_price decimal(15,4) NOT NULL default '0.0000',
   products_tax decimal(7,4) NOT NULL default '0.0000',
