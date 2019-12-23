@@ -1624,3 +1624,6 @@ aside a#topcartlink.dropdown-toggle {display: none;}
     display: inline;
     width: 100%;
 }
+ul.level1 > li.col-sm-3 {
+    width: 20%;
+}

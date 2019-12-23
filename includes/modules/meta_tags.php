@@ -239,7 +239,7 @@ switch ($metatag_page_name) {
 
       if (!empty($product_info_metatags->fields['metatags_keywords'])) {
         // use custom keywords
-        $metatags_keywords = $product_info_metatags->fields['metatags_keywords'] . METATAGS_DIVIDER . CUSTOM_KEYWORDS;  // CUSTOM skips categories
+        $metatags_keywords = $product_info_metatags->fields['metatags_keywords'] ;//. METATAGS_DIVIDER . CUSTOM_KEYWORDS;  // CUSTOM skips categories
       } else {
         // no custom keywords defined use product_description
         $metatags_keywords = KEYWORDS . METATAGS_DIVIDER . $meta_products_name . METATAGS_DIVIDER;
