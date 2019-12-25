@@ -470,168 +470,170 @@ function pzen_get_categories_ul_li($categories_ul_li = '', $parent_id = '0', $cp
 }
 
 function pzen_get_additional_images($products_ar , $width='', $height=''){
-	global $db;
+	// global $db;
 
-	$cPath = (isset($products_ar['cPath'])) ? $products_ar['cPath'] : '';
-	$zen_get_info_page = (isset($products_ar['zen_get_info_page'])) ? $products_ar['zen_get_info_page'] : '';
+	// $cPath = (isset($products_ar['cPath'])) ? $products_ar['cPath'] : '';
+	// $zen_get_info_page = (isset($products_ar['zen_get_info_page'])) ? $products_ar['zen_get_info_page'] : '';
 	
-	$products_image = $products_ar['products_image'];
-	$products_id = $products_ar['products_id'];
-	$product_link=zen_href_link($zen_get_info_page, 'cPath=' . $cPath . '&products_id=' . $products_id, 'SSL');
+	// $products_image = $products_ar['products_image'];
+	// $products_id = $products_ar['products_id'];
+	// $product_link=zen_href_link($zen_get_info_page, 'cPath=' . $cPath . '&products_id=' . $products_id, 'SSL');
 	
-	$dis_addimgs_type=get_pzen_options('prodlist_addtionalimg_type');
-	$prodlist_nums_addimgs=(get_pzen_options('prodlist_nums_addimgs'))? get_pzen_options('prodlist_nums_addimgs') : '4';
+	// $dis_addimgs_type=get_pzen_options('prodlist_addtionalimg_type');
+	// $prodlist_nums_addimgs=(get_pzen_options('prodlist_nums_addimgs'))? get_pzen_options('prodlist_nums_addimgs') : '4';
 	
-	$width=($width=='') ? IMAGE_PRODUCT_LISTING_WIDTH : $width;
-	$height=($height=='') ? IMAGE_PRODUCT_LISTING_HEIGHT : $height;
+	// $width=($width=='') ? IMAGE_PRODUCT_LISTING_WIDTH : $width;
+	// $height=($height=='') ? IMAGE_PRODUCT_LISTING_HEIGHT : $height;
 	
-	$content='';
-	if (!defined('IMAGE_ADDITIONAL_DISPLAY_LINK_EVEN_WHEN_NO_LARGE')) define('IMAGE_ADDITIONAL_DISPLAY_LINK_EVEN_WHEN_NO_LARGE','Yes');
-	$images_array = array();
+	// $content='';
+	// if (!defined('IMAGE_ADDITIONAL_DISPLAY_LINK_EVEN_WHEN_NO_LARGE')) define('IMAGE_ADDITIONAL_DISPLAY_LINK_EVEN_WHEN_NO_LARGE','Yes');
+	// $images_array = array();
 
-	// do not check for additional images when turned off
-	if ($products_image != '') {
-	  // prepare image name
-	  $products_image_extension = substr($products_image, strrpos($products_image, '.'));
-	  $products_image_base = str_replace($products_image_extension, '', $products_image);
+	// // do not check for additional images when turned off
+	// if ($products_image != '') {
+	//   // prepare image name
+	//   $products_image_extension = substr($products_image, strrpos($products_image, '.'));
+	//   $products_image_base = str_replace($products_image_extension, '', $products_image);
 
-	  // if in a subdirectory
-	  if (strrpos($products_image, '/')) {
-		$products_image_match = substr($products_image, strrpos($products_image, '/')+1);
-		//echo 'TEST 1: I match ' . $products_image_match . ' - ' . $file . ' -  base ' . $products_image_base . '<br>';
-		$products_image_match = str_replace($products_image_extension, '', $products_image_match) . '_';
-		$products_image_base = $products_image_match;
-	  }
+	//   // if in a subdirectory
+	//   if (strrpos($products_image, '/')) {
+	// 	$products_image_match = substr($products_image, strrpos($products_image, '/')+1);
+	// 	//echo 'TEST 1: I match ' . $products_image_match . ' - ' . $file . ' -  base ' . $products_image_base . '<br>';
+	// 	$products_image_match = str_replace($products_image_extension, '', $products_image_match) . '_';
+	// 	$products_image_base = $products_image_match;
+	//   }
 
-	  $products_image_directory = str_replace($products_image, '', substr($products_image, strrpos($products_image, '/')));
-	  if ($products_image_directory != '') {
-		$products_image_directory = DIR_WS_IMAGES . str_replace($products_image_directory, '', $products_image) . "/";
-	  } else {
-		$products_image_directory = DIR_WS_IMAGES;
-	  }
+	//   $products_image_directory = str_replace($products_image, '', substr($products_image, strrpos($products_image, '/')));
+	//   if ($products_image_directory != '') {
+	// 	$products_image_directory = DIR_WS_IMAGES . str_replace($products_image_directory, '', $products_image) . "/";
+	//   } else {
+	// 	$products_image_directory = DIR_WS_IMAGES;
+	//   }
 
-	  // Check for additional matching images
-	  $file_extension = $products_image_extension;
-	  $products_image_match_array = array();
-	  if ($dir = @dir($products_image_directory)) {
-		while ($file = $dir->read()) {
-		  if (!is_dir($products_image_directory . $file)) {
-			if (substr($file, strrpos($file, '.')) == $file_extension) {
-			  if(preg_match('/\Q' . $products_image_base . '\E/i', $file) == 1) {
-				if ($file != $products_image) {
-				  if ($products_image_base . str_replace($products_image_base, '', $file) == $file) {
-					//  echo 'I AM A MATCH ' . $file . '<br>';
-					$images_array[] = $file;
-				  } else {
-					//  echo 'I AM NOT A MATCH ' . $file . '<br>';
-				  }
-				}
-			  }
-			}
-		  }
-		}
-		if (sizeof($images_array)) {
-		  sort($images_array);
-		}
-		$dir->close();
-	  }
-	}
-	$num_images = sizeof($images_array);
-	// Build output based on images found
-	if($dis_addimgs_type==2){
-		$num_images=($num_images > 1) ? 1 : $num_images;
-	}else if($prodlist_nums_addimgs){
-		$max_additionalimg = (int)($prodlist_nums_addimgs);
-		$num_images = ($num_images > $max_additionalimg) ? $max_additionalimg : $num_images;
-	}
-	$list_box_contents = array();
-	$title = '';
-	if ($num_images && $dis_addimgs_type!=1) {
-	  $row = 0;
-	  $col = 0;
-	  if ($num_images < IMAGES_AUTO_ADDED || IMAGES_AUTO_ADDED == 0 ) {
-		$col_width = floor(100/$num_images);
-	  } else {
-		$col_width = floor(100/IMAGES_AUTO_ADDED);
-	  }
-	  for ($i=0, $n=$num_images; $i<$n; $i++) {
-		$file = $images_array[$i];
-		$products_image_medium = str_replace(DIR_WS_IMAGES, DIR_WS_IMAGES . 'medium/', $products_image_directory) . str_replace($products_image_extension, '', $file) . IMAGE_SUFFIX_MEDIUM . $products_image_extension;
-		//  Begin Image Handler changes 1 of 2
-			if (function_exists('handle_image')) {
-				$newimg = handle_image($products_image_medium, addslashes($products_name), $width, $height, '');
-				list($src, $alt, $width, $height, $parameters) = $newimg;
-				$products_image_medium = zen_output_string($src);
-			} 
-			$flag_has_medium = file_exists($products_image_medium);
-		//  End Image Handler changes 1 of 2
-		$products_image_medium = ($flag_has_medium ? $products_image_medium : $products_image_directory . $file);
-		$flag_display_medium = (IMAGE_ADDITIONAL_DISPLAY_LINK_EVEN_WHEN_NO_MEDIUM == 'Yes' || $flag_has_medium);
-		$base_image = $products_image_directory . $file;
-		$thumb_slashes = zen_image(addslashes($base_image), addslashes($products_ar['products_name']), SMALL_IMAGE_WIDTH, SMALL_IMAGE_HEIGHT);
-	//  Begin Image Handler changes 2 of 2
-	//  remove additional single quotes from image attributes (important!)
-		$thumb_slashes = preg_replace("/([^\\\\])'/", '$1\\\'', $thumb_slashes);
-	//  End Image Handler changes 2 of 2
-		$image_regular = zen_image($products_image_medium, $products_ar['products_name'], $width, $height, 'class="adt-img"');
-		$large_link = zen_href_link(FILENAME_POPUP_IMAGE_ADDITIONAL, 'pID=' . $products_id . '&pic=' . $i . '&products_image_large_additional=' . $products_image_medium, 'SSL');
-		$script_link = '<a href="'.$product_link.'" title="' . $products_ar['products_name'] . '">' . $image_regular .'</a>';
-		// List Box array generation:
-		$list_box_contents[$row][$col] = array('params' => 'class="item "', 'text' => array('imglink' => $script_link, 'img' => $image_regular));
-		$col ++;
-		if ($col > (IMAGES_AUTO_ADDED -1)) {
-		  $col = 0;
-		  $row ++;
-		}
-	  } // end for loop
-		if($dis_addimgs_type==2){
-				$second_img='';
-				for($row=0;$row<sizeof($list_box_contents);$row++)
-				{
-					for($col=0;$col<sizeof($list_box_contents[$row]);$col++) 
-					{
-						$r_params = "";
-						if (isset($list_box_contents[$row][$col]['params'])) $r_params .= ' ' . (string)$list_box_contents[$row][$col]['params'];
-							if (isset($list_box_contents[$row][$col]['text']['img'])) 
-							{ 
-								$second_img.=$list_box_contents[$row][$col]['text']['img'];
-							}
-						}
-				}
+	//   // Check for additional matching images
+	//   $file_extension = $products_image_extension;
+	//   $products_image_match_array = array();
+	//   if ($dir = @dir($products_image_directory)) {
+	// 	while ($file = $dir->read()) {
+	// 	  if (!is_dir($products_image_directory . $file)) {
+	// 		if (substr($file, strrpos($file, '.')) == $file_extension) {
+	// 		  if(preg_match('/\Q' . $products_image_base . '\E/i', $file) == 1) {
+	// 			if ($file != $products_image) {
+	// 			  if ($products_image_base . str_replace($products_image_base, '', $file) == $file) {
+	// 				//  echo 'I AM A MATCH ' . $file . '<br>';
+	// 				$images_array[] = $file;
+	// 			  } else {
+	// 				//  echo 'I AM NOT A MATCH ' . $file . '<br>';
+	// 			  }
+	// 			}
+	// 		  }
+	// 		}
+	// 	  }
+	// 	}
+	// 	if (sizeof($images_array)) {
+	// 	  sort($images_array);
+	// 	}
+	// 	$dir->close();
+	//   }
+	// }
+	// $num_images = sizeof($images_array);
+	// // Build output based on images found
+	// if($dis_addimgs_type==2){
+	// 	$num_images=($num_images > 1) ? 1 : $num_images;
+	// }else if($prodlist_nums_addimgs){
+	// 	$max_additionalimg = (int)($prodlist_nums_addimgs);
+	// 	$num_images = ($num_images > $max_additionalimg) ? $max_additionalimg : $num_images;
+	// }
+	// $list_box_contents = array();
+	// $title = '';
+	// if ($num_images && $dis_addimgs_type!=1) {
+	//   $row = 0;
+	//   $col = 0;
+	//   if ($num_images < IMAGES_AUTO_ADDED || IMAGES_AUTO_ADDED == 0 ) {
+	// 	$col_width = floor(100/$num_images);
+	//   } else {
+	// 	$col_width = floor(100/IMAGES_AUTO_ADDED);
+	//   }
+	//   for ($i=0, $n=$num_images; $i<$n; $i++) {
+	// 	$file = $images_array[$i];
+	// 	$products_image_medium = str_replace(DIR_WS_IMAGES, DIR_WS_IMAGES . 'medium/', $products_image_directory) . str_replace($products_image_extension, '', $file) . IMAGE_SUFFIX_MEDIUM . $products_image_extension;
+	// 	//  Begin Image Handler changes 1 of 2
+	// 		if (function_exists('handle_image')) {
+	// 			$newimg = handle_image($products_image_medium, addslashes($products_name), $width, $height, '');
+	// 			list($src, $alt, $width, $height, $parameters) = $newimg;
+	// 			$products_image_medium = zen_output_string($src);
+	// 		} 
+	// 		$flag_has_medium = file_exists($products_image_medium);
+	// 	//  End Image Handler changes 1 of 2
+	// 	$products_image_medium = ($flag_has_medium ? $products_image_medium : $products_image_directory . $file);
+	// 	$flag_display_medium = (IMAGE_ADDITIONAL_DISPLAY_LINK_EVEN_WHEN_NO_MEDIUM == 'Yes' || $flag_has_medium);
+	// 	$base_image = $products_image_directory . $file;
+	// 	$thumb_slashes = zen_image(addslashes($base_image), addslashes($products_ar['products_name']), SMALL_IMAGE_WIDTH, SMALL_IMAGE_HEIGHT);
+	// //  Begin Image Handler changes 2 of 2
+	// //  remove additional single quotes from image attributes (important!)
+	// 	$thumb_slashes = preg_replace("/([^\\\\])'/", '$1\\\'', $thumb_slashes);
+	// //  End Image Handler changes 2 of 2
+	// 	$image_regular = zen_image($products_image_medium, $products_ar['products_name'], $width, $height, 'class="adt-img"');
+	// 	$large_link = zen_href_link(FILENAME_POPUP_IMAGE_ADDITIONAL, 'pID=' . $products_id . '&pic=' . $i . '&products_image_large_additional=' . $products_image_medium, 'SSL');
+	// 	$script_link = '<a href="'.$product_link.'" title="' . $products_ar['products_name'] . '">' . $image_regular .'</a>';
+	// 	// List Box array generation:
+	// 	$list_box_contents[$row][$col] = array('params' => 'class="item "', 'text' => array('imglink' => $script_link, 'img' => $image_regular));
+	// 	$col ++;
+	// 	if ($col > (IMAGES_AUTO_ADDED -1)) {
+	// 	  $col = 0;
+	// 	  $row ++;
+	// 	}
+	//   } // end for loop
+	// 	if($dis_addimgs_type==2){
+	// 			$second_img='';
+	// 			for($row=0;$row<sizeof($list_box_contents);$row++)
+	// 			{
+	// 				for($col=0;$col<sizeof($list_box_contents[$row]);$col++) 
+	// 				{
+	// 					$r_params = "";
+	// 					if (isset($list_box_contents[$row][$col]['params'])) $r_params .= ' ' . (string)$list_box_contents[$row][$col]['params'];
+	// 						if (isset($list_box_contents[$row][$col]['text']['img'])) 
+	// 						{ 
+	// 							$second_img.=$list_box_contents[$row][$col]['text']['img'];
+	// 						}
+	// 					}
+	// 			}
 				
-				$content.='<a class="image-swap-effect" href="'.$product_link.'" title="' . $products_ar['products_name'] . '">' . zen_image(DIR_WS_IMAGES.$products_image, $products_ar['products_name'], $width, $height, 'class="base-img"') .$second_img.'</a>';
+	// 			$content.='<a class="image-swap-effect" href="'.$product_link.'" title="' . $products_ar['products_name'] . '">' . zen_image(DIR_WS_IMAGES.$products_image, $products_ar['products_name'], $width, $height, 'class="base-img"') .$second_img.'</a>';
 		  
-		}else{
-			$content.='
-			<!-- product image carousel -->
-			<div class="product__inside__carousel slide" data-ride="carousel">
-				<div class="carousel-inner" role="listbox">';
-				$content.='<div class="item active"><a href="'.$product_link.'" title="' . $products_ar['products_name'] . '">' . zen_image(DIR_WS_IMAGES.$products_image, $products_ar['products_name'], $width, $height) .'</a></div>';
+	// 	}else{
+	// 		$content.='
+	// 		<!-- product image carousel -->
+	// 		<div class="product__inside__carousel slide" data-ride="carousel">
+	// 			<div class="carousel-inner" role="listbox">';
+	// 			$content.='<div class="item active"><a href="'.$product_link.'" title="' . $products_ar['products_name'] . '">' . zen_image(DIR_WS_IMAGES.$products_image, $products_ar['products_name'], $width, $height) .'</a></div>';
 				
 				
-			for($row=0;$row<sizeof($list_box_contents);$row++)
-				{
-					$params = "";
-					//if (isset($list_box_contents[$row]['params'])) $params .= ' ' . $list_box_contents[$row]['params'];
-					for($col=0;$col<sizeof($list_box_contents[$row]);$col++) 
-					{
-						$r_params = "";
-						if (isset($list_box_contents[$row][$col]['params'])) $r_params .= ' ' . (string)$list_box_contents[$row][$col]['params'];
-							if (isset($list_box_contents[$row][$col]['text']['imglink'])) 
-							{ 
-								$content.='<div' . $r_params . '>' . $list_box_contents[$row][$col]['text']['imglink'] .  '</div>';
-							}
-						}
-				}
-			$content.='
-				</div>
-				<!-- Controls --> 
-				<a class="carousel-control next"></a> <a class="carousel-control prev"></a>
-			</div>';
-		}
-	}else{ // endif
-		$content.='<a href="'.$product_link.'" title="' . $products_ar['products_name'] . '">' .zen_image(DIR_WS_IMAGES.$products_image, $products_ar['products_name'], IMAGE_PRODUCT_LISTING_WIDTH, IMAGE_PRODUCT_LISTING_HEIGHT) .'</a>';
-	}
+	// 		for($row=0;$row<sizeof($list_box_contents);$row++)
+	// 			{
+	// 				$params = "";
+	// 				//if (isset($list_box_contents[$row]['params'])) $params .= ' ' . $list_box_contents[$row]['params'];
+	// 				for($col=0;$col<sizeof($list_box_contents[$row]);$col++) 
+	// 				{
+	// 					$r_params = "";
+	// 					if (isset($list_box_contents[$row][$col]['params'])) $r_params .= ' ' . (string)$list_box_contents[$row][$col]['params'];
+	// 						if (isset($list_box_contents[$row][$col]['text']['imglink'])) 
+	// 						{ 
+	// 							$content.='<div' . $r_params . '>' . $list_box_contents[$row][$col]['text']['imglink'] .  '</div>';
+	// 						}
+	// 					}
+	// 			}
+	// 		$content.='
+	// 			</div>
+	// 			<!-- Controls --> 
+	// 			<a class="carousel-control next"></a> <a class="carousel-control prev"></a>
+	// 		</div>';
+	// 	}
+	// }else{ // endif
+	// 	$content.='<a href="'.$product_link.'" title="' . $products_ar['products_name'] . '">' .zen_image(DIR_WS_IMAGES.$products_image, $products_ar['products_name'], IMAGE_PRODUCT_LISTING_WIDTH, IMAGE_PRODUCT_LISTING_HEIGHT) .'</a>';
+	// }
+
+  $content.='<a href="'.$product_link.'" title="' . $products_ar['products_name'] . '">' .zen_image(DIR_WS_IMAGES.$products_image, $products_ar['products_name'], IMAGE_PRODUCT_LISTING_WIDTH, IMAGE_PRODUCT_LISTING_HEIGHT) .'</a>';
 	return $content;
 }
 
@@ -864,8 +866,9 @@ function pzen_get_product_content($products_lst, $etc_ar=array(), $type=''){
 	$products_ar['hover_label']='';
 	$products_ar['products_review']='';
 	$products_ar['products_new']='';
+	$products_ar['time']=0.0;
 	
-	
+  // $loop_start = microtime(true);
 	
 	if($type=='ar'){
 		$products_lst_ar=$products_lst;
@@ -879,17 +882,21 @@ function pzen_get_product_content($products_lst, $etc_ar=array(), $type=''){
 	//Additional Image
 	$image_width = (isset($etc_ar['image_width'])) ? $etc_ar['image_width'] : '';
 	$image_height = (isset($etc_ar['image_height'])) ? $etc_ar['image_height'] : '';
-	$products_ar['products_image'] =  pzen_get_additional_images($products_lst_ar, $image_width, $image_height);
-	
+   $loop_start = microtime(true);//0.1356  ------------------------------耗时函数pzen_get_additional_images
+	//$products_ar['products_image'] =  pzen_get_additional_images($products_lst_ar, $image_width, $image_height);
+   $products_ar['products_image'] = '<a href="'.zen_href_link($products_lst_ar['zen_get_info_page'], 'cPath=' . $products_lst_ar['cPath'] . '&products_id=' . $products_lst_ar['products_id'], 'SSL')  .'" title="' . $products_lst_ar['products_name'] .  '">'.zen_image(DIR_WS_IMAGES . $products_lst_ar['products_image'], $products_lst_ar['products_name'], LARGE_IMAGE_WIDTH, LARGE_IMAGE_HEIGHT).'</a>';
+
+	// $loop_start = microtime(true); //0.0021
 	//pzen quickview
 	$products_ar['hover_label'] = pzen_quickview($products_lst_ar['products_id']);
-	
+	// $loop_start = microtime(true); //0.0026
 	//pzen product review
 	$products_ar['products_review'] = pzen_product_reviews($products_lst_ar['products_id']);
 	
 	//is products new
 	$products_ar['products_new'] = pzen_new_product($products_lst_ar);
 		
+  // $loop_start = microtime(true);
 	//wishlist 
 	if (UN_MODULE_WISHLISTS_ENABLED) {
 		$products_ar['wishlist_link']= '<span class="icon icon-favorite_border  tooltip-link"></span><a href="' . zen_href_link(UN_FILENAME_WISHLIST, 'products_id=' . $products_lst_ar['products_id'] . '&action=wishlist_add_product', 'SSL') . '"><span class="text">'.TITLE_ADD_TO_WISHLIST.'</span></a>';
@@ -917,5 +924,8 @@ function pzen_get_product_content($products_lst, $etc_ar=array(), $type=''){
 	}else{
 		$products_ar['buy_now']= zen_get_buy_now_button($products_lst_ar['products_id'],'<a class="btn btn-buynow btn--ys btn--xl" href="' . zen_href_link($_GET['main_page'], zen_get_all_get_params(array('action')) . 'action=buy_now&products_id=' . $products_lst_ar['products_id'], 'SSL') . '" '.pzenExtraBtnLink($products_lst).'><span class="icon icon-shopping_basket"></span>'.TITLE_ADD_TO_CART.'</a>').(($minmaxqty) ?'<span class="min-max-qty">'.$minmaxqty.'</span>' : '');
 	}
+
+ $products_ar['time']=  microtime(true) - $loop_start;
+
 	return $products_ar;
 }
