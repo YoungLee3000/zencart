@@ -2019,11 +2019,30 @@ if ( isset($_POST['localfile']) || isset($_FILES['usrfl']) ) {
 	
 				if (mysqli_num_rows($result_incategory) == 0) {
 					// nope, this is a new category for this product
+
 					$res1 = ep_query($con,'INSERT INTO '. DB_DATABASE . "." .TABLE_PRODUCTS_TO_CATEGORIES.' (products_id, categories_id)
 								VALUES ("' . $v_products_id . '", "' . $v_categories_id . '")');
+
+					$parent_category_id = $v_categories_id;
+					while ($parent_category_id != 0){
+						$result_parent_category = ep_query($con,"SELECT cat.parent_id AS catID FROM ". DB_DATABASE . "." .TABLE_CATEGORIES." AS cat, ". DB_DATABASE . "." .TABLE_CATEGORIES_DESCRIPTION." AS des WHERE
+							cat.categories_id = des.categories_id AND
+							des.language_id = $epdlanguage_id AND
+							cat.categories_id = " . $parent_category_id . " LIMIT 1");
+						if ( $row_cat = mysqli_fetch_array($result_parent_category) ){ 
+							$parent_category_id = $row_cat['catID'];
+						}
+						if ($parent_category_id != 0){
+							ep_query($con,'INSERT INTO '. DB_DATABASE . "." .TABLE_PRODUCTS_TO_CATEGORIES.' (products_id, categories_id)
+								VALUES ("' . $v_products_id . '", "' . $parent_category_id . '")');
+						}
+					}	
+					 
+					
 				} else {
 					// already in this category, nothing to do!
 				}
+					
 			}
 			
 			///************************
