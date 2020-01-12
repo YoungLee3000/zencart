@@ -289,9 +289,11 @@ $checked = (($quotes[$i]['id'] . '_' . $quotes[$i]['methods'][$j]['id'] == $_SES
    echo '<input type="hidden" name="shipping" value="'.$i.'" />'; 
       }	
 ?>
+<span class="add_title">
+                    <?php echo $quotes[$i]['module']; ?>&nbsp;<?php if (isset($quotes[$i]['icon']) && zen_not_null($quotes[$i]['icon'])) { echo $quotes[$i]['icon']; } ?>
+                </span>
 
-
-<label for="ship-<?php echo $quotes[$i]['id'] . '-' . str_replace(' ', '-', $quotes[$i]['methods'][$j]['id']); ?>" class="checkboxLabel" ><?php echo $quotes[$i]['module']; ?></label>
+<!-- <label for="ship-<?php echo $quotes[$i]['id'] . '-' . str_replace(' ', '-', $quotes[$i]['methods'][$j]['id']); ?>" class="checkboxLabel" ><?php echo $quotes[$i]['module']; ?></label> -->
 <div class="important forward"><?php echo $currencies->format($quotes[$i]['methods'][$j]['cost']); ?></div>
 </span>
 <br class="clearBoth" />
