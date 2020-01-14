@@ -41,7 +41,7 @@
   define('LANGUAGE_CURRENCY', 'EUR');
 
 // Global entries for the <html> tag
-  define('HTML_PARAMS','dir="'.((get_pzen_options('theme_mode')==1)? "rtl" : "ltr").'"" lang="en"');
+  define('HTML_PARAMS','dir="'.((get_pzen_options('theme_mode')==1)? "rtl" : "ltr").'"" lang="fr"');
 
 // charset for web pages and emails
   define('CHARSET', 'utf-8');
