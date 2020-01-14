@@ -47,4 +47,8 @@ define('TIPS_CREATE_ACCOUNT','Créer un compte');
 define('TIPS_FORGOT_PASSWORD','Vous avez perdu votre mot de passe?');
 define('TIPS_NO_ACCEPT','Désolé, nous n\'acceptons pas les paiements de votre région en ce moment.');
 define('TIPS_CONTACT_FOR','S\'il vous plaît contactez-nous pour d\'autres arrangements.');
+
+define("TABLE_HEADING_PRODUCTS_IMAGE", 'Image du produit');
+define("TABLE_HEADING_PRODUCTS_NAME", 'Détail du produit');
+
 ?>

@@ -102,8 +102,8 @@
 		$content.='</ul>';
 		$content.='<div class="cart__bottom">
 						<div class="cart__total">'.TEXT_AJAX_CART_SUBTOTAL.' <span> '.$currencies->format($_SESSION['cart']->show_total()).'</span></div>
-						<button class="btn btn--ys btn-checkout" onclick="window.location=\''.zen_href_link(FILENAME_CHECKOUT_SHIPPING, '', 'SSL').'\'" >'.TEXT_AJAX_CART_CHECKOUT.' <span class="icon icon--flippedX icon-reply"></span></button>
-						<a class="btn btn--ys" href="'.zen_href_link(FILENAME_SHOPPING_CART, '', 'NONSSL').'"><span class="icon icon-shopping_basket"></span> '.TEXT_AJAX_CART_VIEW_CART.'</a>
+						<button class="btn btn--ys btn-checkout" onclick="window.location=\''.zen_href_link(FILENAME_SHOPPING_CART, '', 'SSL').'\'" >'.TEXT_AJAX_CART_CHECKOUT.' <span class="icon icon--flippedX icon-reply"></span></button>
+						<a class="btn btn--ys" href="'.zen_href_link(FILENAME_SHOPPING_CART, '', 'SSL').'"><span class="icon icon-shopping_basket"></span> '.TEXT_AJAX_CART_VIEW_CART.'</a>
 					</div>';
 	
 	}else{

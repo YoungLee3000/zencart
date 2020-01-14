@@ -54,7 +54,7 @@
     <?php 
       } //endif flagAnyOutOfStock 
     ?>
-</form>
+<!-- </form> -->
 <div class="cart-container">
     <div class="table-responsive table-container">
         <table class="table table-bordered">
@@ -163,7 +163,7 @@
 	<!--bof shopping cart buttons-->
 </div>
 
-
+</form>
 <!-- ** BEGIN PAYPAL EXPRESS CHECKOUT ** -->
 <?php  // the tpl_ec_button template only displays EC option if cart contents >0 and value >0
 if (defined('MODULE_PAYMENT_PAYPALWPP_STATUS') && MODULE_PAYMENT_PAYPALWPP_STATUS == 'True') {
@@ -180,7 +180,7 @@ if (defined('MODULE_PAYMENT_PAYPALWPP_STATUS') && MODULE_PAYMENT_PAYPALWPP_STATU
 ?>
 	<div class="shippingEstimatorCont">
       <?php require(DIR_WS_MODULES . zen_get_module_directory('shipping_estimator.php')); ?>
-
+  </div>
 <?php
       }
 ?>
@@ -388,7 +388,6 @@ $("#shippingSelect input:radio").click(function(){
 <?php
   }
 ?>
-</div>
 </div>
 </div>
 <script src="<?php  echo $template->get_template_dir('',DIR_WS_TEMPLATE, $current_page_base,'jscript').'/jquery.cookie.js'?>" type="text/javascript"></script>
