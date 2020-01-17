@@ -2491,7 +2491,8 @@ function zen_limit_image_filename($filename, $table_name, $field_name, $extensio
         " where pa.products_id= ptoc.products_id and ptoc.categories_id= c.categories_id and c.categories_id = cd.categories_id and cd.language_id = '" . (int)$_SESSION['languages_id'] . "' order by categories_name");
     while (!$categories->EOF) {
       if (!in_array($categories->fields['categories_id'], $exclude)) {
-        $select_string .= '<option value="' . $categories->fields['categories_id'] . '">' . $categories->fields['categories_name'] . '</option>';
+        $select_string .= '<option value="' . $categories->fields['categories_id'] . '">' . $categories->fields['categories_name'] . '  #ID'.
+        $categories->fields['categories_id'] . '</option>';
       }
       $categories->MoveNext();
     }
